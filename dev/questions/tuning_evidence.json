@@ -1,0 +1,2170 @@
+{
+  "questions": "dev/questions/tuning_qa.json",
+  "items": [
+    {
+      "id": 1001,
+      "status": "traced",
+      "doc_id": "ai-addressing-accuracy-issues-fuzzy",
+      "evidence": [
+        {
+          "doc_id": "ai-addressing-accuracy-issues-fuzzy",
+          "page": 16,
+          "kind": "text",
+          "quote": "and activation values are bounded in an interval. Secondly, the number of learnable parameters is strictly conditioned by the number of problem features. Thirdly, the model converges to a unique fixed point in most cases, which causes the classifier to recognize a single decision class. That is why the kappa score is often zero. In contrast, the LTCN-based classifier does not seem affected by the unique fixed-point attractors while outperforming the logistic regression model.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-addressing-accuracy-issues-fuzzy",
+          "page": 15,
+          "kind": "text",
+          "quote": "Figure 10.3 shows that the classic FCM classifier performs worse than the logistic regression model. Such a result is explained by three aspects. Firstly, the generalization capability of the classic FCM formalism is quite limited since weights",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "names_document",
+        "non_native"
+      ],
+      "note": "The paragraph starts at the bottom of page 15 ('Figure 10.3 shows that the classic FCM classifier performs worse than the logistic regression model ...') and the quote is its continuation on page 16. In this PDF the formulas are also extracted as spoken text, which does not affect this passage."
+    },
+    {
+      "id": 1002,
+      "status": "traced",
+      "doc_id": "ai-amortized-planning-large-scale",
+      "evidence": [
+        {
+          "doc_id": "ai-amortized-planning-large-scale",
+          "page": 9,
+          "kind": "text",
+          "quote": "Paradoxically, this means that our agent, despite being in a position of overwhelming win percentage, sometimes fails to take the (virtually) guaranteed win (see Figure 4) and might draw or even end up losing since small chances of a mistake accumulate with longer games. To alleviate this, we check whether the predicted scores for all top five moves lie above a win percentage of 99% and double-check this condition with Stockfish, and if so, use Stockfish’s top move (out of these) to have consistency in strategy across time-steps."
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "Section 4, under 'Indecisiveness in the face of overwhelming victory'. The sentences before the quote give the cause: mate-in-k outputs are all mapped to a win percentage of 100%, so several moves fall into the top value bin."
+    },
+    {
+      "id": 1003,
+      "status": "traced",
+      "doc_id": "ai-attention-all-you-need",
+      "evidence": [
+        {
+          "doc_id": "ai-attention-all-you-need",
+          "page": 8,
+          "kind": "text",
+          "quote": "We estimate the number of floating point operations used to train a model by multiplying the training time, the number of GPUs used, and an estimate of the sustained single-precision floating-point capacity of each GPU 5. 6.2 Model Variations To evaluate the importance of different components of the Transformer, we varied our base model in different ways, measuring the change in performance on English-to-German translation on the 5We used values of 2.8, 3.7, 6.0 and 9.5 TFLOPS for K80, K40, M40 and P100, respectively.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-attention-all-you-need",
+          "page": 8,
+          "kind": "text",
+          "quote": "The configuration of this model is listed in the bottom line of Table 3. Training took 3.5 days on 8 P100 GPUs.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-attention-all-you-need",
+          "page": 8,
+          "kind": "table",
+          "quote": "Transformer (base model) 27.3 38.1 3.3 · 1018 Transformer (big) 28.4 41.8 2.3 · 1019",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "arithmetic",
+        "names_document"
+      ],
+      "note": "3.5 days = 302,400 s; 302,400 × 8 × 9.5e12 = 2.298e19. In the text layer the footnote with the TFLOPS values sits in the middle of the next paragraph and the exponents of the table are flattened ('2.3 · 1019'). The same recipe with 12 hours gives the 3.3 · 10^18 of the base model."
+    },
+    {
+      "id": 1004,
+      "status": "traced",
+      "doc_id": "ai-autoformer-decomposition-transformers-auto",
+      "evidence": [
+        {
+          "doc_id": "ai-autoformer-decomposition-transformers-auto",
+          "page": 14,
+          "kind": "table",
+          "quote": "Table 8: Autoformer performance under different lengths of input of the decoder. O, I 2 + O, I + O corresponds to the decoder input without past information, with half past information, with full past information respectively. We fix the forecasting setting as input-96-predict-336 on the ETT dataset. Decoder input length O (without past) I 2 + O (with half past) I + O (with full past) MSE 0.360 0.339 0.333 MAE 0.383 0.372 0.369 Memory Cost 3029 MB 3271 MB 3599 MB"
+        }
+      ],
+      "traits": [
+        "arithmetic",
+        "names_document"
+      ],
+      "note": "The fraction I/2 comes out as 'I 2' in the text layer. The paragraph above the table says Autoformer adopts the half-past input, I/2 + O, as its trade-off."
+    },
+    {
+      "id": 1005,
+      "status": "traced",
+      "doc_id": "ai-autoregressive-image-generation-residual",
+      "evidence": [
+        {
+          "doc_id": "ai-autoregressive-image-generation-residual",
+          "page": 7,
+          "kind": "table",
+          "quote": "Table 4. Comparison of FIDs between ImageNet validation images and their reconstructed images according to codebook size (K) and the shape of code map H × W × D. † denotes the reproduced performance, and ∗denotes 50 epochs of training. H × W × D K rFID VQ-GAN [14] 16×16×1 16,384 4.90 VQ-GAN† 16×16×1 16,384 4.32 VQ-GAN 8×8×1 16,384 17.95 VQ-GAN 8×8×1 65,536 17.66 VQ-GAN 8×8×1 131,072 17.09 RQ-VAE 8×8×2 16,384 10.77 RQ-VAE 8×8×4 16,384 4.73 RQ-VAE∗ 8×8×4 16,384 3.20 RQ-VAE 8×8×8 16,384 2.69 RQ-VAE 8×8×16 16,384 1.83",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-autoregressive-image-generation-residual",
+          "page": 8,
+          "kind": "text",
+          "quote": "Table 4 shows that increasing the quantization depth D is more effective to improve the reconstruction quality than increasing the codebook size K. Here, we remark that RQ-VAE with D = 1 is equivalent to VQ-GAN.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "131,072 / 16,384 = 8. The row marked with ∗ (3.20) is the same 8×8×4 model trained for 50 epochs instead of 10. Table 6 in the appendix repeats the 4.73 for depth 4."
+    },
+    {
+      "id": 1006,
+      "status": "traced",
+      "doc_id": "ai-big-self-supervised-models",
+      "evidence": [
+        {
+          "doc_id": "ai-big-self-supervised-models",
+          "page": 5,
+          "kind": "text",
+          "quote": "We use global batch normalization, but we remove weight decay, learning rate warmup, and use a much smaller learning rate, i.e. 0.16 (= 0.005 × sqrt(BatchSize)) for standard ResNets [25], and 0.064 (= 0.002 × sqrt(BatchSize)) for larger ResNets variants (with width multiplier larger than 1 and/or SK [28]). A batch size of 1024 is used."
+        }
+      ],
+      "traits": [
+        "arithmetic",
+        "names_document"
+      ],
+      "note": "SimCLRv2 is the method of 'Big Self-Supervised Models are Strong Semi-Supervised Learners'. The same paper uses another coefficient for pretraining (0.1 × sqrt(BatchSize), i.e. 6.4 at its batch size of 4096, page 4); the question is about fine-tuning."
+    },
+    {
+      "id": 1007,
+      "status": "traced",
+      "doc_id": "ai-bootstrap-your-own-latent",
+      "evidence": [
+        {
+          "doc_id": "ai-bootstrap-your-own-latent",
+          "page": 30,
+          "kind": "figure",
+          "quote": "When using no normalization at all, the projection l2 norm rapidly increases during the first 100 epochs and stabilizes at around 3 · 106 as shown in Figure 7. Despite this behaviour, using no normalization still performs reasonably well (67.4%). The l2 normalization performs the best.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-bootstrap-your-own-latent",
+          "page": 29,
+          "kind": "table",
+          "quote": "Normalization Top-1 Top-5 l2-norm 72.5 90.8 LAYERNORM 72.5±0.4 90.1 No normalization 67.4 87.1 BATCHNORM 65.3 85.3 Table 20: Top-1 accuracy in % under linear evaluation protocol at 300 epochs for different normalizations in the loss.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "false_premise",
+        "names_document"
+      ],
+      "note": "False premise: without normalization in the loss BYOL does not collapse. The first passage is the sentence that describes Figure 7; it mentions 'the first 100 epochs', which is not the answer. Table 20 gives the same 67.4% next to the 72.5% of the default. The exponent of 3·10^6 is flattened to '3 · 106' in the text layer."
+    },
+    {
+      "id": 1008,
+      "status": "traced",
+      "doc_id": "ai-bootstrap-your-own-latent",
+      "evidence": [
+        {
+          "doc_id": "ai-bootstrap-your-own-latent",
+          "page": 28,
+          "kind": "text",
+          "quote": "Note that this multiplication by 2α matters as the LARS optimizer is not completely invariant with respect to the scale of the loss. Indeed, LARS applies a preconditioning to gradient updates on all weights, except for biases and batch normalization parameters. Updates on preconditioned weights are invariant by multiplicative scaling of the loss. However, the bias and batch normalization parameter updates remain sensitive to multiplicative scaling of the loss."
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "Appendix F.5: the authors multiply the original SimCLR loss by 2α, α being the temperature. The question does not name the optimizer."
+    },
+    {
+      "id": 1009,
+      "status": "traced",
+      "doc_id": "ai-byzantine-robust-distributed-learning",
+      "evidence": [
+        {
+          "doc_id": "ai-byzantine-robust-distributed-learning",
+          "page": 11,
+          "kind": "table",
+          "quote": "α 0 0.05 Algorithm mean mean median trimmed mean Test accuracy (%) 88.0 76.8 87.2 86.9 Table 2: Test accuracy on the logistic regression model using gradient descent. We set m = 40, and for trimmed mean, we choose β = 0.05."
+        }
+      ],
+      "traits": [
+        "arithmetic",
+        "names_document"
+      ],
+      "note": "The other experiments of the paper use other settings: m = 10 and α = 0.1 (one Byzantine machine) for the convolutional network and for the one-round algorithm, which is also run on logistic regression; the question therefore specifies gradient descent."
+    },
+    {
+      "id": 1010,
+      "status": "traced",
+      "doc_id": "ai-byzantine-robust-distributed-learning",
+      "evidence": [
+        {
+          "doc_id": "ai-byzantine-robust-distributed-learning",
+          "page": 8,
+          "kind": "text",
+          "quote": "Here we need stronger assumptions on the tail behavior of the partial derivatives of the loss functions—in particular, sub-exponentiality. Assumption 6 (Sub-exponential gradients). We assume that for all k ∈[d] and w ∈W, the partial derivative of f(w; z) with respect to the k-th coordinate of w, ∂kf(w; z), is v-sub-exponential. The sub-exponential property implies that all the moments of the derivatives are bounded. This is a stronger assumption than the bounded absolute skewness (hence bounded third moments) required by the median-based GD algorithm.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-byzantine-robust-distributed-learning",
+          "page": 9,
+          "kind": "text",
+          "quote": "In particular, the trimmed-mean-based algorithm has better rates when each worker machine has small local sample size—the rates are meaningful even in the extreme case n = O(1). On the other hand, the median-based algorithm requires milder tail/moment assumptions on the loss derivatives (bounded skewness) than its trimmed-mean counterpart (sub-exponentiality). Finally, the trimmed-mean operation requires an additional parameter β, which can be any upper bound on the fraction α of Byzantine machines in order to guarantee robustness.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "false_premise"
+      ],
+      "note": "False premise: the trimmed-mean variant needs the stronger tail assumption, not the weaker one. The question gives only the topic; coordinate-wise median and trimmed mean identify the paper among the Byzantine-robustness documents of the corpus. The same comparison is summarised in the paper's Table 1 (page 9)."
+    },
+    {
+      "id": 1011,
+      "status": "traced",
+      "doc_id": "ai-byzantine-robust-federated-learning",
+      "evidence": [
+        {
+          "doc_id": "ai-byzantine-robust-federated-learning",
+          "page": 8,
+          "kind": "table",
+          "quote": "TABLE II SELECTED RATE OF HONEST AND MALICIOUS GRADIENTS Attack SignGuard SignGuard-Sim SignGuard-Dist H M H M H M ByzMean 0.9625 0 0.7791 0 0.9272 0.0003 Sign-flip 0.6870 0.3908 0.7639 0.0981 0.7570 0.2440 LIE 0.9532 0 0.7727 0 0.9151 0 Min-Max 0.9650 0 0.7866 0.0003 0.9105 0.0009 Min-Sum 0.9640 0 0.7752 0 0.9111 0",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-byzantine-robust-federated-learning",
+          "page": 8,
+          "kind": "text",
+          "quote": "We also report the average selected rate of both benign and Byzantine gradients during the training process of ResNet18 in Table II. We notice that the SignGuard-type methods inevitably exclude part of honest gradients, and select some malicious gradients under the sign-flipping attack. The reason lies in the fact that the proportions of positive and negative elements in normal gradient are approximate for ResNet18.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "The numbers are in Table II (columns H and M for honest and malicious, three variants) and the reason is in the paragraph before it. Page 5 states the same weakness in general terms: with similar amounts of positive and negative elements, naive sign statistics may not detect reversed gradients."
+    },
+    {
+      "id": 1012,
+      "status": "traced",
+      "doc_id": "ai-communication-efficient-learning-deep",
+      "evidence": [
+        {
+          "doc_id": "ai-communication-efficient-learning-deep",
+          "page": 6,
+          "kind": "text",
+          "quote": "The unbalanced and non-IID distribution of the Shakespeare (by role in the play) is much more representative of the kind of data distribution we expect for real-world applications. Encouragingly, for this problem learning on the non-IID and unbalanced data is actually much easier (a 95× speedup vs 13× for the balanced IID data); we conjecture this is largely due to the fact some roles have relatively large local datasets, which makes increased local training particularly valuable."
+        }
+      ],
+      "traits": [],
+      "note": "The question gives only the topic. The round counts behind the two speedups are in the paper's Table 2 (Shakespeare LSTM, same page)."
+    },
+    {
+      "id": 1013,
+      "status": "traced",
+      "doc_id": "ai-connecting-dots-trustworthy-artificial",
+      "evidence": [
+        {
+          "doc_id": "ai-connecting-dots-trustworthy-artificial",
+          "page": 19,
+          "kind": "text",
+          "quote": "Since the AI Act imposes obligations on providers, importers, distributors, and users, the latter can be deemed as providers in certain cases. For instance, if a user slightly modifies or uses a ready-made AI-based product such as ChatGPT for a different purpose, this makes him/her become responsible and accountable for the system’s consequences, depending on the conditions that define HRAIs."
+        }
+      ],
+      "traits": [
+        "names_document",
+        "non_native"
+      ],
+      "note": "Section 6.2. HRAIs is the paper's abbreviation for high-risk AI systems."
+    },
+    {
+      "id": 1014,
+      "status": "traced",
+      "doc_id": "ai-counterfactual-explanations-without-opening",
+      "evidence": [
+        {
+          "doc_id": "ai-counterfactual-explanations-without-opening",
+          "page": 21,
+          "kind": "text",
+          "quote": "our counterfactual explanations are not making use of causal models or equivalently, that they make naive assumptions that variables are independent of one another. There are several reasons for this. One important use of counterfactual explanations is to provide the data subject with information to make a guided audit of the data and check for relevant inaccuracies in the data. Treating such errors as independent and drawn from a robust distribution such as the Laplacian (corresponding to use of the L1 norm in our objective) is a sensible model for these errors. More importantly, creating and interpreting accurate causal models is difficult."
+        }
+      ],
+      "traits": [
+        "false_premise",
+        "names_document"
+      ],
+      "note": "False premise: the paper uses no causal model at all. The quote starts in the middle of a sentence to stay within the length limit."
+    },
+    {
+      "id": 1015,
+      "status": "traced",
+      "doc_id": "ai-counterfactual-explanations-without-opening",
+      "evidence": [
+        {
+          "doc_id": "ai-counterfactual-explanations-without-opening",
+          "page": 19,
+          "kind": "text",
+          "quote": "The second artefact is that the algorithm much prefers significantly varying the GPA than the exam results, and this is down to our choice of distance function. We took as d(·,·), the squared Euclidean distance, and this generally prefers changes that are as small as possible and spread uniformly across all variables. However, the range of the GPA is much smaller than that of the exam scores. Adjusting for this by normalising each component by its standard deviation, i.e. Equation 6 gives the set of counterfactuals shown in Table 2. Table 2 - Normalised L2 After normalisation, the GPA remains much more consistent, and naturally remains within an expected range of values."
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "The question says 'grade-point average' and 'admission test'; the passage says GPA and exam results. Page 18 describes the data set in words closer to the question but does not hold the answer."
+    },
+    {
+      "id": 1016,
+      "status": "traced",
+      "doc_id": "ai-dall-eval-probing-reasoning",
+      "evidence": [
+        {
+          "doc_id": "ai-dall-eval-probing-reasoning",
+          "page": 8,
+          "kind": "text",
+          "quote": "7For social bias analysis, we only experiment with images from minDALL-E, Stable Diffusion, and Karlo, because we find that the visual quality of images from DALL-ESmall is highly distorted and does not provide meaningful semantics.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-dall-eval-probing-reasoning",
+          "page": 9,
+          "kind": "table",
+          "quote": "Profession Average Gender (male: -1 / female: +1) minDALL-E Karlo Stable Diffusion Engineer -0.78 -1.0 -1.0 Library assistant -0.11 1.0 1.0 Scientist -0.11 0.56 -0.33 Singer -0.33 0.33 0.56 Baker -0.11 -0.33 0.33 Average -0.25 -0.22 -0.42",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "false_premise",
+        "names_document"
+      ],
+      "note": "False premise: DALL-E Small appears in the visual reasoning evaluation (and in the appendix's image-text alignment and image quality results) but was excluded from the bias analysis (footnote 7). The text layer writes the model's name as 'DALL-ESmall', without a space."
+    },
+    {
+      "id": 1017,
+      "status": "traced",
+      "doc_id": "ai-dall-eval-probing-reasoning",
+      "evidence": [
+        {
+          "doc_id": "ai-dall-eval-probing-reasoning",
+          "page": 9,
+          "kind": "text",
+          "quote": "The MAD of Nhot distributions of 10-category of are as follows: MAD(1-hot) = 0.18, MAD(2-hot) = 0.16, MAD(3-hot) = 0.14, · · · , MAD(10-hot=uniform) = 0. As the models show MAD between 0.16 and 0.18, their skin tone distributions are similar to 1-hot and 2-hot distributions with a concentration on the MST scales of 5 and 6.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-dall-eval-probing-reasoning",
+          "page": 6,
+          "kind": "text",
+          "quote": "(MAD) that measures the distance between detected gender/skin tone category/attribute distributions and unbiased uniform distribution: 1 N PN i=1 |pi − ̄p|, where pi ∈[0, 1] are the normalized counts of the i-th gender or skin tone category, ̄p is the mean normalized counts (0.5 for gender; 0.1 for skin tone), and N is the number of gender/skin tone scales (2 for gender; 10 for skin tone). MAD is minimized to 0 when the category distribution is uniform (unbiased) and maximized when the category distribution is one-hot (entirely biased to a single category).",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "arithmetic",
+        "names_document"
+      ],
+      "note": "The listed values are on page 9 and the definition on page 6, where the formula is set in loose mathematical notation ('1 N PN i=1 |pi − p̄|'). The value for four tones is not in the paper; it follows from the formula and continues the listed sequence."
+    },
+    {
+      "id": 1018,
+      "status": "traced",
+      "doc_id": "ai-denoising-diffusion-probabilistic-models",
+      "evidence": [
+        {
+          "doc_id": "ai-denoising-diffusion-probabilistic-models",
+          "page": 6,
+          "kind": "text",
+          "quote": "they are not competitive with other types of likelihood-based generative models [7]. Since our samples are nonetheless of high quality, we conclude that diffusion models have an inductive bias that makes them excellent lossy compressors. Treating the variational bound terms L1 +· · ·+LT as rate and L0 as distortion, our CIFAR10 model with the highest quality samples has a rate of 1.78 bits/dim and a distortion of 1.97 bits/dim, which amounts to a root mean squared error of 0.95 on a scale from 0 to 255. More than half of the lossless codelength describes imperceptible distortions."
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "The 52.5% is computed from the two values; the paper only says 'more than half'. The total of 3.75 bits/dim agrees with the bound reported for this model in the paper's Table 1."
+    },
+    {
+      "id": 1019,
+      "status": "traced",
+      "doc_id": "ai-easily-accessible-text-image",
+      "evidence": [
+        {
+          "doc_id": "ai-easily-accessible-text-image",
+          "page": 12,
+          "kind": "text",
+          "quote": "Interestingly, due to Dall·E’s “guardrails” that ensure the generated images exhibit a diverse range of skin tones, we find that for prompts mentioning occupation, the Dall·E outputs have a range of skin tones and stereotypically masculine/feminine features. We posit that this is because occupational biases have been amongst the most well-studied in computer science bias scholarship (De-Arteaga et al., 2019) and thus have been explicitly considered by the creators of Dall·E. However, other subtler biases, biases more fully studied in other disciplinary contexts, as well as biases on other dimensions beyond gender and race, persist."
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "The paper writes the system's name as 'Dall·E'. Another document of the corpus, ai-stable-bias-analyzing-societal, reports its own measurements of DALL-E 2 on profession prompts; the question asks for the explanation given in this paper."
+    },
+    {
+      "id": 1020,
+      "status": "traced",
+      "doc_id": "ai-estimating-limit-state-space",
+      "evidence": [
+        {
+          "doc_id": "ai-estimating-limit-state-space",
+          "page": 13,
+          "kind": "figure",
+          "quote": "Fig. 6. Relative average gap when varying the φparameter, with and without considering the weight information when estimating the bounds. about the q-FCM model is quite limited, we can still gain some insights into the model’s behavior, reflected in an overall average gap of 0.21. However, as discussed, using the weight information significantly enhances state space estimation precision, reducing the average gap to 0.05 across all configurations. These findings underscore that the estimated bounds closely match the actual outcomes, especially when the weight information is considered."
+        }
+      ],
+      "traits": [],
+      "note": "The question names no paper, only the topic. The quote is the caption of Figure 6 followed by the text that sums the figure up; the two values are stated in the text, not read off the plot. The sentence with 0.21 starts on page 12 ('In contrast, when only the network topology is known, ... In this case, while the available information'), which is what ties 0.21 to the topology-only estimate. Looseness is measured by the 'relative average gap' of Definition 10 (page 11). In this PDF calligraphic symbols are dropped and spaces around φ are lost."
+    },
+    {
+      "id": 1021,
+      "status": "traced",
+      "doc_id": "ai-explainable-artificial-intelligence-xai",
+      "evidence": [
+        {
+          "doc_id": "ai-explainable-artificial-intelligence-xai",
+          "page": 32,
+          "kind": "text",
+          "quote": "On one hand, connectionist methods are more precise but opaque. On the other hand, symbolic methods are popularly considered less efficient, while they offer a greater explainability thus respecting the conditions mentioned above: • The ability to refer to established reasoning rules allows symbolic methods to be constrictive. • The use of a KB formalized e.g. by an ontology can allow data to be processed directly in a qualitative way. • Being selective is less straightforward for connectionist models than for symbolic ones.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-explainable-artificial-intelligence-xai",
+          "page": 32,
+          "kind": "text",
+          "quote": "First, explanations are better when constrictive, meaning that a prerequisite for a good explanation is that it does not only indicate why the model made a decision X, but also why it made decision X rather than decision Y. It is also explained that probabilities are not as important as causal links in order to provide a satisfying explanation. Considering that black box models tend to process data in a quantitative manner, it would be necessary to translate the probabilistic results into qualitative notions containing causal links. In addition, they state that explanations are selective, meaning that focusing solely on the main causes of a decision-making process is sufficient.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-explainable-artificial-intelligence-xai",
+          "page": 32,
+          "kind": "text",
+          "quote": "Recalling that a good explanation needs to influence the mental model of the user, i.e. the representation of the external reality using, among other things, symbols, it seems obvious that the use of the symbolic learning paradigm is appropriate to produce an explanation.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "The three conditions (constrictive, qualitative rather than probabilistic, selective) are defined a few lines above the list of reasons, on the same page; both stretches are quoted."
+    },
+    {
+      "id": 1022,
+      "status": "traced",
+      "doc_id": "ai-explainable-artificial-intelligence-xai",
+      "evidence": [
+        {
+          "doc_id": "ai-explainable-artificial-intelligence-xai",
+          "page": 14,
+          "kind": "table",
+          "quote": "Bayesian Models Statistical relationships modeled among variables and the variables themselves should be directly understandable by the target audience Statistical relationships involve so many variables that they must be decomposed in marginals so as to ease their analysis Statistical relationships cannot be interpreted even if already decomposed, and predictors are so complex that model can be only analyzed with mathematical tools Not needed",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-explainable-artificial-intelligence-xai",
+          "page": 14,
+          "kind": "table",
+          "quote": "Model Transparent ML Models Post-hoc analysis Simulatability Decomposability Algorithmic Transparency Linear/Logistic Regression Predictors are human readable and interactions among them are kept to a minimum",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-explainable-artificial-intelligence-xai",
+          "page": 17,
+          "kind": "text",
+          "quote": "Once again, Bayesian models fall below the ceiling of Transparent models. Its categorization leaves it under simulatable, decomposable and algorithmically transparent.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "false_premise",
+        "names_document"
+      ],
+      "note": "False premise: Bayesian models are classed as transparent, so no post-hoc technique is listed for them. In the same table post-hoc analysis is marked as needed only for tree ensembles, support vector machines and multi-layer, convolutional and recurrent neural networks. The second passage is the header row of the table, which names the columns."
+    },
+    {
+      "id": 1023,
+      "status": "traced",
+      "doc_id": "ai-exploring-simple-siamese-representation",
+      "evidence": [
+        {
+          "doc_id": "ai-exploring-simple-siamese-representation",
+          "page": 5,
+          "kind": "text",
+          "quote": "This variant does not cause collapse, although the accuracy is low (34.6%). The low accuracy is likely because of optimization difficulty. Adding BN to the hidden layers (Table 3b) increases accuracy to 67.4%.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-exploring-simple-siamese-representation",
+          "page": 4,
+          "kind": "table",
+          "quote": "proj. MLP’s BN pred. MLP’s BN case hidden output hidden output acc. (%) (a) none - - - - 34.6 (b) hidden-only ✓ - ✓ - 67.4 (c) default ✓ ✓ ✓ - 68.1 (d) all ✓ ✓ ✓ ✓ unstable Table 3. Effect of batch normalization on MLP heads (ImageNet linear evaluation accuracy with 100-epoch pre-training).",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "false_premise",
+        "names_document"
+      ],
+      "note": "False premise: in SimSiam removing BN from the heads does not cause collapse (the paper credits the stop-gradient with preventing it). The sentence that introduces 'this variant' (Table 3a, all BN layers removed from the MLP heads) ends page 4, and the first quote is its continuation on page 5. Later on page 5: 'we have seen no evidence that BN helps to prevent collapsing'."
+    },
+    {
+      "id": 1024,
+      "status": "traced",
+      "doc_id": "ai-feature-generating-networks-zero",
+      "evidence": [
+        {
+          "doc_id": "ai-feature-generating-networks-zero",
+          "page": 8,
+          "kind": "text",
+          "quote": "Between “none” and “Image”, we observe that generating images of unseen classes improves the performance i.e. harmonic mean on FLO (49.0% for “Image” vs 21.9% for “none”), but hurts the performance on CUB (31.9% for “Image” vs 45.1% for “none”). This is because generating birds is a much harder task than generating flowers. Upon visual inspection, we have observed that although many images have an accurate visual appearance as birds or flowers, they lack the necessary discriminative details to be classified correctly and the generated images are not class-consistent."
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "The four values are also in Table 5 on the same page (rows 'none' and 'Image', column H for CUB and for FLO), which adds the result of generating CNN features instead (H = 54.0 on CUB, 65.6 on FLO); the reason is only in this paragraph."
+    },
+    {
+      "id": 1025,
+      "status": "traced",
+      "doc_id": "ai-fltrust-byzantine-robust-federated",
+      "evidence": [
+        {
+          "doc_id": "ai-fltrust-byzantine-robust-federated",
+          "page": 12,
+          "kind": "table",
+          "quote": "TABLE IV: The testing error rates of different variants of FLTrust under different attacks and the attack success rates of the Scaling attacks on MNIST-0.5. The results for the Scaling attacks are in the form of “testing error rate / attack success rate”. “–” means that the attacks are not applicable. No attack LF attack Krum attack Trim attack Scaling attack Adaptive attack FLTrust-Server 0.21 – – – – – FLTrust-withServer 0.07 0.08 0.09 0.10 0.08 / 0.01 0.94 FLTrust-NoReLU 0.28 0.90 0.90 0.90 0.94 / 0.08 0.90 FLTrust-NoNorm 0.05 0.06 0.06 0.08 0.94 / 0.08 0.06 FLTrust-ParNorm 0.06 0.06 0.06 0.06 0.06 / 0.01 0.06 FLTrust 0.05 0.05 0.05 0.06 0.05 / 0.00 0.06",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-fltrust-byzantine-robust-federated",
+          "page": 6,
+          "kind": "text",
+          "quote": "In principle, the server model update can be treated as a local model update with a trust score of 1 and the global model update can be weighted average of the clients’ local model updates together with the server model update. However, such variant may negatively impact the global model because the root dataset is small and may not have the same distribution as the training data, but the server model update derived from it has a trust score of 1, reducing the contributions of the benign clients’ local model updates (see our experimental results in Section VI-B).",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "names_document",
+        "non_native"
+      ],
+      "note": "The answer needs both passages: the numbers are only in Table IV (page 12), where the variant is called FLTrust-withServer, and the reason is in the method section (page 6)."
+    },
+    {
+      "id": 1026,
+      "status": "traced",
+      "doc_id": "ai-high-resolution-image-synthesis",
+      "evidence": [
+        {
+          "doc_id": "ai-high-resolution-image-synthesis",
+          "page": 20,
+          "kind": "text",
+          "quote": "For example, when training a LDM directly in the latent space of a KLregularized model (see Tab. 8), this ratio is very high, such that the model allocates a lot of semantic detail early on in the reverse denoising process. In contrast, when rescaling the latent space by the component-wise standard deviation of the latents as described in Sec. G, the SNR is descreased. We illustrate the effect on convolutional sampling for semantic image synthesis in Fig. 15. Note that the VQ-regularized space has a variance close to 1, such that it does not have to be rescaled."
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "The sentence just before the quote names 'this ratio': the signal-to-noise ratio induced by the variance of the latent space. Section 4.3.2 (page 7) says that this ratio matters and that the KL latents are rescaled by their component-wise standard deviation, but not why the VQ ones are left as they are."
+    },
+    {
+      "id": 1027,
+      "status": "traced",
+      "doc_id": "ai-high-resolution-image-synthesis",
+      "evidence": [
+        {
+          "doc_id": "ai-high-resolution-image-synthesis",
+          "page": 28,
+          "kind": "table",
+          "quote": "CelebA-HQ 2562 LDM-4 (ours, 500 steps, 410K) 14.4 - 14.4 0.43 274M 5.11 - 0.72 0.49",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-high-resolution-image-synthesis",
+          "page": 28,
+          "kind": "text",
+          "quote": "As they report their used compute in V100 days and we train all our models on a single NVIDIA A100 GPU, we convert the A100 days to V100 days by assuming a ×2.2 speedup of A100 vs V100 [74]4.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "arithmetic",
+        "names_document"
+      ],
+      "note": "Both passages are needed: the row of Table 18 gives the V100-days (the caption says the unit) and the paragraph under the table, on the same page, gives the conversion factor. The row is far from the table header in the extracted text."
+    },
+    {
+      "id": 1028,
+      "status": "traced",
+      "doc_id": "ai-hippo-recurrent-memory-optimal",
+      "evidence": [
+        {
+          "doc_id": "ai-hippo-recurrent-memory-optimal",
+          "page": 46,
+          "kind": "text",
+          "quote": "LegT Window Length In Figure 9(c), shows that the approximation error of LegT is sensitive to the hyperparameter θ, the length of the window. Specifying θ to be even slightly too small (by 0.5% relative to the total sequence length) causes huge errors in approximation. This is expected by the HiPPO framework, as the final measure μ(t) is not supported everywhere, so the projection problem does not care that the reconstructed function is highly inaccurate near x = 0."
+        }
+      ],
+      "traits": [
+        "names_document",
+        "non_native"
+      ],
+      "note": "The passage is in Appendix F.8 and comments Figure 9(c); the reason asked for is given in the running text, not in the plot."
+    },
+    {
+      "id": 1029,
+      "status": "traced",
+      "doc_id": "ai-hippo-recurrent-memory-optimal",
+      "evidence": [
+        {
+          "doc_id": "ai-hippo-recurrent-memory-optimal",
+          "page": 42,
+          "kind": "table",
+          "quote": "Table 4: Our methods and related baselines. Permuted MNIST (pMNIST) validation scores. (Top): Our methods. (Bottom): Recurrent baselines. Method Validation accuracy (%) HiPPO-LegS 98.34 HiPPO-LagT ∆t = 1.0 98.15 HiPPO-LegT θ = 200 98.00 HiPPO-LegT θ = 2000 97.90 HiPPO-LagT ∆t = 0.1 96.44 HiPPO-LegT θ = 20 91.75",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-hippo-recurrent-memory-optimal",
+          "page": 7,
+          "kind": "text",
+          "quote": "LegT additionally considers an additional hyperparameter θ, which should be set to the timescale of the data if known a priori; to show the effect of the timescale, we set it to the ideal value as well as values that are too large and small.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "arithmetic",
+        "names_document"
+      ],
+      "note": "The ideal value is θ = 200. Table 1 in the main text repeats the values for θ = 200 and θ = 20 but not the one for θ = 2000. For the Copying task the paper only says that both mis-settings slow convergence."
+    },
+    {
+      "id": 1030,
+      "status": "traced",
+      "doc_id": "ai-i-trust-you-explaining",
+      "evidence": [
+        {
+          "doc_id": "ai-i-trust-you-explaining",
+          "page": 7,
+          "kind": "text",
+          "quote": "The original classifier achieves an accuracy score of 57.3% on the religion dataset, while the “cleaned” classifier achieves a score of 69.0%. In contrast, the test accuracy on the original 20 newsgroups split is 94.0% and 88.6%, respectively – suggesting that the worse classifier would be selected if accuracy alone is used as a measure of trust.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-i-trust-you-explaining",
+          "page": 7,
+          "kind": "text",
+          "quote": "Specifically, users have to decide between two classifiers: SVM trained on the original 20 newsgroups dataset, and a version of the same classifier trained on a “cleaned” dataset where many of the features that do not generalize have been manually removed.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-i-trust-you-explaining",
+          "page": 7,
+          "kind": "text",
+          "quote": "We download Atheism and Christianity websites from the DMOZ directory and human curated lists, yielding 819 webpages in each class.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "The gaps are 5.4 points in favour of the original classifier on the test split and 11.7 points in favour of the cleaned one on the religion dataset."
+    },
+    {
+      "id": 1031,
+      "status": "traced",
+      "doc_id": "ai-improved-baselines-momentum-contrastive",
+      "evidence": [
+        {
+          "doc_id": "ai-improved-baselines-momentum-contrastive",
+          "page": 2,
+          "kind": "table",
+          "quote": "unsup. pre-train ImageNet VOC detection case MLP aug+ cos epochs acc. AP50 AP AP75 supervised 76.5 81.3 53.5 58.8 MoCo v1 200 60.6 81.5 55.9 62.6 (a) ✓ 200 66.2 82.0 56.4 62.6 (b) ✓ 200 63.4 82.2 56.8 63.2 (c) ✓ ✓ 200 67.3 82.5 57.2 63.9 (d) ✓ ✓ ✓ 200 67.5 82.4 57.0 63.6 (e) ✓ ✓ ✓ 800 71.1 82.5 57.4 64.0 Table 1. Ablation of MoCo baselines, evaluated by ResNet-50 for (i) ImageNet linear classification, and (ii) fine-tuning VOC object detection (mean of 5 trials).",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-improved-baselines-momentum-contrastive",
+          "page": 2,
+          "kind": "text",
+          "quote": "The extra augmentation alone (i.e., no MLP) improves the MoCo baseline on ImageNet by 2.8% to 63.4%, Table 1(b). Interestingly, its detection accuracy is higher than that of using the MLP alone, Table 1(b) vs. (a), despite much lower linear classification accuracy (63.4% vs. 66.2%). This indicates that linear classification accuracy is not monotonically related to transfer performance in detection.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "MoCo v2 is the method of 'Improved Baselines with Momentum Contrastive Learning'. In the extracted table, rows (a) and (b) each carry a single check mark with nothing to tell which column it stands in; only the text identifies (a) as the MLP head and (b) as the extra augmentation. The detection numbers are only in the table."
+    },
+    {
+      "id": 1032,
+      "status": "traced",
+      "doc_id": "ai-informer-beyond-efficient-transformer",
+      "evidence": [
+        {
+          "doc_id": "ai-informer-beyond-efficient-transformer",
+          "page": 8,
+          "kind": "table",
+          "quote": "Prediction length 336 480 Prediction offset +0 +12 +24 +48 +72 +0 +48 +96 +144 +168 Informer‡ MSE 0.207 0.209 0.211 0.211 0.216 0.198 0.203 0.203 0.208 0.208 MAE 0.385 0.387 0.391 0.393 0.397 0.390 0.392 0.393 0.401 0.403 Informer§ MSE 0.201 - - - - 0.392 - - - - MAE 0.393 - - - - 0.484 - - - - 1 Informer§ replaces our decoder with dynamic decoding one in Informer‡. 2 The ‘-’ indicates failure for the unacceptable metric results. Table 6: Ablation study of the generative style decoder."
+        }
+      ],
+      "traits": [
+        "arithmetic",
+        "names_document"
+      ],
+      "note": "Table 6 has two blocks of five columns (lengths 336 and 480); the value for 480 with offset +0 is the 6th of each row. The S4 paper in the corpus reproduces Informer's main results tables but not this ablation."
+    },
+    {
+      "id": 1033,
+      "status": "traced",
+      "doc_id": "ai-itransformer-inverted-transformers-effective",
+      "evidence": [
+        {
+          "doc_id": "ai-itransformer-inverted-transformers-effective",
+          "page": 6,
+          "kind": "text",
+          "quote": "Besides, PatchTST as the previous state-of-the-art, fails in many cases of PEMS, which can stem from the extremely fluctuating series of the dataset, and the patching mechanism of PatchTST may lose focus on specific locality to handle rapid fluctuation. By contrast, the proposed model aggregating the whole series variations for series representations can better cope with this situation."
+        }
+      ],
+      "traits": [
+        "names_document",
+        "non_native"
+      ],
+      "note": "The question is about PatchTST, whose own paper is in the corpus but has no PEMS experiments; the passage is in the iTransformer paper."
+    },
+    {
+      "id": 1034,
+      "status": "traced",
+      "doc_id": "ai-levels-agi-operationalizing-progress",
+      "evidence": [
+        {
+          "doc_id": "ai-levels-agi-operationalizing-progress",
+          "page": 7,
+          "kind": "text",
+          "quote": "We hesitate to specify the number or percentage of tasks that a system must pass at a given level of performance in order to be declared a General AI at that Level (e.g., a rule such as “a system must pass at least 90% of an AGI benchmark at a given performance level to get that rating”). While we think this will be a very high percentage, it will probably not be 100%, since it seems clear that broad but imperfect generality is impactful (individual humans also lack consistent performance across all possible tasks, but are generally intelligent). Determining what portion of benchmarking tasks at a given level demonstrate generality remains an open research question."
+        }
+      ],
+      "traits": [
+        "false_premise",
+        "names_document"
+      ],
+      "note": "False premise: the paper declines to set a share. The 90% in the passage is only an example of the kind of rule it does not adopt, so a system that picks up the number answers wrongly."
+    },
+    {
+      "id": 1035,
+      "status": "traced",
+      "doc_id": "ai-lushness-numerical-index-1",
+      "evidence": [
+        {
+          "doc_id": "ai-lushness-numerical-index-1",
+          "page": 15,
+          "kind": "text",
+          "quote": "To prove (2) it is enough to remark that Xα contains a subspace isometric to l(m) ∞, where m is the entire part of 1/α. This subspace is spanned by the functions 1[0,α], 1[α,2α], . . . , 1[(m−1)α,mα]."
+        }
+      ],
+      "traits": [],
+      "note": "The question does not name the paper; it quotes the norm of Theorem 4.12. '(2)' in the passage is item (2) of that theorem, dist(X_alpha, L1[0,1]) tends to infinity as alpha tends to 0, stated at the top of the same page. The definition of the norm in the theorem's statement (page 14) is garbled in the text layer (the braces of the formula come out as the control characters U+001A and U+001B), while the decisive sentence of the proof is in words."
+    },
+    {
+      "id": 1036,
+      "status": "traced",
+      "doc_id": "ai-mastering-atari-go-chess",
+      "evidence": [
+        {
+          "doc_id": "ai-mastering-atari-go-chess",
+          "page": 13,
+          "kind": "text",
+          "quote": "Using a variation of this scheme, in the Atari domain actions are sampled from the visit count distribution throughout the duration of each game, instead of just the first k moves. Moreover, the visit count distribution is parametrized using a temperature parameter T: pα = N(α)1/T P b N(b)1/T (6) T is decayed as a function of the number of training steps of the network. Specifically, for the first 500k training steps a temperature of 1 is used, for the next 250k steps a temperature of 0.5 and for the remaining 250k a temperature of 0.25. This ensures that the action selection becomes greedier as training progresses."
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "Applying the schedule: step 600k lies in the second phase (500k to 750k). The schedule is for Atari only."
+    },
+    {
+      "id": 1037,
+      "status": "traced",
+      "doc_id": "ai-mastering-chess-shogi-self",
+      "evidence": [
+        {
+          "doc_id": "ai-mastering-chess-shogi-self",
+          "page": 15,
+          "kind": "table",
+          "quote": "Chess Shogi Go Mini-batches 700k 700k 700k Training Time 9h 12h 34h Training Games 44 million 24 million 21 million Thinking Time 800 sims 800 sims 800 sims 40 ms 80 ms 200 ms Table S3: Selected statistics of AlphaZero training in Chess, Shogi and Go."
+        }
+      ],
+      "traits": [
+        "arithmetic",
+        "names_document"
+      ],
+      "note": "The rates are not in the paper; they are the quotient of two rows of Table S3 (44e6 / 9 h = 4.89e6 per hour = 1,358 per second; 21e6 / 34 h = 0.618e6 per hour = 172 per second; ratio 7.9)."
+    },
+    {
+      "id": 1038,
+      "status": "traced",
+      "doc_id": "ai-measuring-implicit-bias-shap",
+      "evidence": [
+        {
+          "doc_id": "ai-measuring-implicit-bias-shap",
+          "page": 10,
+          "kind": "table",
+          "quote": "ID Features Associates with SHAP Gender Age Foreign worker F1 Checking account 0.03 0.08 0.08 0.093 F2 Duration 0.11 0.04 0.17 0.035 F3 Credit history 0.12 0.13 0.07 0.023 F4 Purpose 0.15 0.14 0.17 0.019 F5 Credit amount 0.08 0.03 0.04 0.026 F6 Savings account 0.07 0.10 0.04 0.026 F7 Employment since 0.22 0.37 0.08 0.012 F8 Installment rate 0.13 0.06 0.13 0.009 F9 Gender 1.00 0.11 0.05 0.015 F10 Other debtors 0.01 0.02 0.12 0.005 F11 Residence since 0.11 0.27 0.08 0.009 F12 Property 0.09 0.17 0.14 0.017 F13 Age 0.11 1.00 0.02 0.013 F14 Other installment 0.05 0.03 0.04 0.018 F15 Housing 0.23 0.21 0.07 0.017"
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "Another document of the corpus gives different values for the same quantity: ai-modeling-implicit-bias-fuzzy (the 2021 precursor) has the corresponding German Credit table computed with another association measure (employment since vs age 0.17) and names existing credits, employment since and residence since as the features most correlated with age. The quote is the part of Table 1 up to row F15; rows F16 to F20 have lower values in the age column (at most 0.15). The text on page 9 names the same three features as possibly encoding age bias, without the values."
+    },
+    {
+      "id": 1039,
+      "status": "traced",
+      "doc_id": "ai-modeling-implicit-bias-fuzzy",
+      "evidence": [
+        {
+          "doc_id": "ai-modeling-implicit-bias-fuzzy",
+          "page": 5,
+          "kind": "text",
+          "quote": "It should be mentioned that, when the denominator of the nonlinear component is zero and φ , 0, then the neuron’s activation value will be given by (1 −φ) a(0) i . Two reasons move this rule: (i) we need to avoid indetermination issues in the denominator, and (ii) we want to prevent situations in which the neurons receiving no information flow at all get arbitrarily activated by the transfer function. For example, the sigmoid transfer function produces 0.5 when its argument is zero, leading to misleading simulation results."
+        }
+      ],
+      "traits": [
+        "arithmetic"
+      ],
+      "note": "The question names no paper, only the topic. In the text layer the 'not equal' sign of 'φ ≠ 0' comes out as a comma. A later paper of the corpus (ai-measuring-implicit-bias-shap, page 4) restates the transfer function as f(X) = 0 for a zero vector, from which the same value follows; the two reasons are only in this paper."
+    },
+    {
+      "id": 1040,
+      "status": "traced",
+      "doc_id": "ai-numerical-index-duality",
+      "evidence": [
+        {
+          "doc_id": "ai-numerical-index-duality",
+          "page": 8,
+          "kind": "text",
+          "quote": "Prop osition 4.1. L et X b e a Bana h sp a e with the RNP. If n(X) = 1 , then n(X∗) = 1 ."
+        },
+        {
+          "doc_id": "ai-recent-progress-open-questions",
+          "page": 8,
+          "kind": "text",
+          "quote": "that if a Bana h spa e X with the RadonNik o dým prop ert y has n umeri al index 1 , then X∗ has n umeri al index 1 as w ell."
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "The paper does not say this in so many words; it follows from Proposition 4.1 and Example 3.1 (page 6). The text layer of this PDF is damaged: the letter 'c' and some ligatures are dropped and words are split ('Bana h spa e', 'n umeri al'), so the quote reads oddly and word matching fails on it. The second passage is the same statement in the survey ai-recent-progress-open-questions (same damage), which also restates the example on its page 6; either passage is enough."
+    },
+    {
+      "id": 1041,
+      "status": "traced",
+      "doc_id": "ai-recent-progress-open-questions",
+      "evidence": [
+        {
+          "doc_id": "ai-recent-progress-open-questions",
+          "page": 14,
+          "kind": "text",
+          "quote": "Theo rem 7 ([23, Theorem 9℄). L et X b e a Bana h sp a e with dim(X) > 1 . Then N(X) ⊃[0, 1/3[ in the r e al ase and N(X) ⊃[e−1, 1/2[ in the omplex ase.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-recent-progress-open-questions",
+          "page": 12,
+          "kind": "text",
+          "quote": "In 2003, C. Finet, M. Martín, and R. P a y á [23 ℄ studied the n umeri al index from the isomorphi p oin t of view, i.e. they in v estigated the set N(X) of those v alues of the n umeri al index whi h an b e obtained b y equiv alen t renormings of a Bana h spa e X .",
+          "group": "a"
+        }
+      ],
+      "traits": [],
+      "note": "The question gives only the topic. The text layer of this PDF drops the letter 'c' and ligatures and splits words; the quotes are as extracted ('e−1' is e to the power −1, about 0.368)."
+    },
+    {
+      "id": 1042,
+      "status": "traced",
+      "doc_id": "ai-resurrecting-recurrent-neural-networks",
+      "evidence": [
+        {
+          "doc_id": "ai-resurrecting-recurrent-neural-networks",
+          "page": 11,
+          "kind": "text",
+          "quote": "Restricting the range of the phase at initialization to be [0, π/10], our LRU achieved 94.2% on PathX, aligning with state-of-the-art deep SSMs. We did not explore using a smaller phase at initialization for the other LRA tasks, although we believe this might further improve performance on other tasks as well. Note that using both γnormalization and restricting the eigenvalue phase at initialization were crucial to solving PathX. We were unable to learn when using restricted phase at initialization without also introducing γnormalization.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-resurrecting-recurrent-neural-networks",
+          "page": 10,
+          "kind": "figure",
+          "quote": "Adding normalization helps: the train loss is lower at initialization, and the optimizer is able to escape the suboptimal region and train accuracy also increases. Interestingly, this model still fails to generalize at all. Finally, reducing initialization phase (i.e. tuning the range of θ) dramatically improves convergence on the training set, while also generalizing to the test set.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "false_premise",
+        "names_document"
+      ],
+      "note": "False premise: neither change sufficed alone. The second passage is the caption of Fig. 5."
+    },
+    {
+      "id": 1043,
+      "status": "traced",
+      "doc_id": "ai-short-term-cognitive-networks",
+      "evidence": [
+        {
+          "doc_id": "ai-short-term-cognitive-networks",
+          "page": 9,
+          "kind": "table",
+          "quote": "TABLE III: Pairwise analysis using the STCN algorithm as the control method (multiple regression setting). Algorithm p-value Bonferroni Holm Holland LREG 7.767E-6 3.883E-5 3.883E-5 3.883E-5 kNN 1.224E-5 6.121E-5 4.896E-5 4.896E-5 MLP 0.001858 0.009290 0.005574 0.005574 SVM 0.013389 0.066945 0.026778 0.026778 RF 0.079676 0.398380 0.079676 0.079676",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-short-term-cognitive-networks",
+          "page": 8,
+          "kind": "text",
+          "quote": "In this research, we assume that a null hypothesis can be rejected for a certain confidence level if at least one of the post-hoc procedures supports the rejection. The statistical analysis reveals that the proposed algorithm is superior in performance to LREG, kNN, MLP and SVM since both Holm and Holland suggest to reject the null hypotheses for a 95% confidence interval. In the case of the STCN-RF pair, both Holm and Holland can support the rejection of the null hypothesis in favor of our algorithm if we adopt a 90%",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "names_document",
+        "non_native"
+      ],
+      "note": "The sentence about the 90% level is split between pages 8 and 9, so the second quote stops at the page break. The paper has a second pairwise table (Table IV, associative memories) with other methods."
+    },
+    {
+      "id": 1044,
+      "status": "traced",
+      "doc_id": "ai-slicely-countably-determined-banach",
+      "evidence": [
+        {
+          "doc_id": "ai-slicely-countably-determined-banach",
+          "page": 16,
+          "kind": "text",
+          "quote": "Corollary 4.9. let X b e an in nite-dimensional r e al Bana h sp a e with the alternative Daugavet pr op erty. Then, X∗ ontains l1 . Pr o of. If X on tains l1 , then X∗ on tains a quotien t isomorphi to l∞ , so X∗ on tains l1 as a quotien t and the \u0010lifting\u0011 prop ert y of l1 [22, Prop osition 2.f.7℄ giv es us X∗⊇l1 . Otherwise, Corollary 4.8 giv es us that X is lush. But the dual of an in nite-dimensional real lush spa e on tains l1 [16 , Corollary 4.8℄.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-slicely-countably-determined-banach",
+          "page": 15,
+          "kind": "text",
+          "quote": "Corollary 4.8. L et X b e a Bana h sp a e with the alternative Daugavet pr op erty. If X do es not ontain l1 , then X is lush.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "The text layer of this PDF drops the letter 'c' and the fi/ffi ligatures and splits words ('Bana h spa e', 'in nite', 'on tains'); the quotes are as extracted. In the first quote the quotation marks around 'lifting' are the control characters U+0010 and U+0011 in the text layer, written here as JSON escapes. The result is also announced, without the argument, in the abstract and the introduction."
+    },
+    {
+      "id": 1045,
+      "status": "traced",
+      "doc_id": "ai-time-series-worth-64",
+      "evidence": [
+        {
+          "doc_id": "ai-time-series-worth-64",
+          "page": 4,
+          "kind": "text",
+          "quote": "Denote the patch length as P and the stride - the non overlapping region between two consecutive patches as S, then the patching process will generate the a sequence of patches x(i) p ∈RP ×N where N is the number of patches, N = ⌊(L−P ) S ⌋+ 2. Here, we pad S repeated numbers of the last value x(i) L ∈R to the end of the original sequence before patching.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-time-series-worth-64",
+          "page": 6,
+          "kind": "text",
+          "quote": "PatchTST/64 implies the number of input patches is 64, which uses the look-back window L = 512. PatchTST/42 means the number of input patches is 42, which has the default look-back window L = 336. Both of them use patch length P = 16 and stride S = 8.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "arithmetic",
+        "names_document"
+      ],
+      "note": "In the text layer the fraction of the formula is flattened ('N = ⌊(L−P ) S ⌋+ 2'). The '+ 2' comes from the padding the paper describes; without it one would count 89. The self-supervised setting of the paper uses non-overlapping patches of length 12 instead (512 steps give 42 patches); the question fixes P = 16 and S = 8."
+    },
+    {
+      "id": 1046,
+      "status": "traced",
+      "doc_id": "ai-transformer-memory-differentiable-search",
+      "evidence": [
+        {
+          "doc_id": "ai-transformer-memory-differentiable-search",
+          "page": 13,
+          "kind": "text",
+          "quote": "Analysis following this original work showed that, when training, a DSI model experiences forgetting of previously indexed batches as it indexes new batches, until it loops around again to the next epoch, and processes the same examples again. The indexing task we use in this paper was constructed by concatenating validation documents after the train documents, then applying a buffered shuffle while training the model (sampling the next training batch from a buffer every step). We used a shuffle buffer of size 5000, which is smaller than the size of the validation split for NQ100K and NQ320K.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-transformer-memory-differentiable-search",
+          "page": 14,
+          "kind": "text",
+          "quote": "As a result, DSI experiments in this paper experienced cycles of minimum and maximum forgetting, i.e. higher and lower validation scores, based on whether the model had just indexed the validation documents or indexed them one epoch ago, causing regular peaks and valleys in the validation performance. When picking a checkpoint with maximum validation performance, as we do in the main experiments of this paper, we are implicitly then picking the checkpoint with minimum forgetting.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "The explanation starts at the bottom of page 13 and ends at the top of page 14 (appendix 7.2.2), so it needs both passages."
+    },
+    {
+      "id": 1047,
+      "status": "traced",
+      "doc_id": "ai-transformers-effective-time-series",
+      "evidence": [
+        {
+          "doc_id": "ai-transformers-effective-time-series",
+          "page": 6,
+          "kind": "table",
+          "quote": "Methods Informer Att.-Linear Embed + Linear Linear Exchange 96 0.847 1.003 0.173 0.084 192 1.204 0.979 0.443 0.155 336 1.672 1.498 1.288 0.301 720 2.478 2.102 2.026 0.763 ETTh1 96 0.865 0.613 0.454 0.400 192 1.008 0.759 0.686 0.438 336 1.107 0.921 0.821 0.479 720 1.181 0.902 1.051 0.515 Table 4. The MSE comparisons of gradually transforming Informer to a Linear from the left to right columns. Att.-Linear is a structure that replaces each attention layer with a linear layer."
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "The running text says that the performance of Informer 'grows with the gradual simplification'; this cell of Table 4 is the one exception for the first step. A later step also has an exception (ETTh1 at 720: Embed + Linear 1.051 against Att.-Linear 0.902), which is why the question names the first step."
+    },
+    {
+      "id": 1048,
+      "status": "traced",
+      "doc_id": "ai-vmamba-visual-state-space",
+      "evidence": [
+        {
+          "doc_id": "ai-vmamba-visual-state-space",
+          "page": 25,
+          "kind": "table",
+          "quote": "Model Image Param. FLOPs TP. Train TP. Top-1 Top-1 acc. (%) Size (M) (G) (img/s) (img/s) acc. (%) (w/ linear tuning) SSM-Based VMamba-Tiny 2242 30M 4.91G 1490 418 82.60 82.64 2882 30M 8.11G 947 303 82.95 83.03 3842 30M 14.41G 566 187 82.41 82.77 5122 30M 25.63G 340 121 80.92 81.88 6402 30M 40.04G 214 75 78.60 80.62 7682 30M 57.66G 149 53 74.66 79.22",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-vmamba-visual-state-space",
+          "page": 25,
+          "kind": "table",
+          "quote": "DeiT-Small 2242 22M 4.61G 1573 1306 80.69 80.40 2882 22M 7.99G 914 1124 80.80 80.63 3842 22M 15.52G 502 697 78.87 79.54 5122 22M 31.80G 261 387 74.21 76.91 6402 23M 58.17G 149 244 68.04 73.31 7682 23M 98.70G 90 156 60.98 69.62",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "arithmetic",
+        "names_document"
+      ],
+      "note": "Both rows of Table 9 are needed. Each row has two accuracy columns, without tuning and with linear tuning, and the question asks for the first; image sizes come out as '2242', '7682' (the squares are flattened). The main text (page 7) rounds VMamba-Tiny's 768×768 value to 74.7%."
+    },
+    {
+      "id": 1049,
+      "status": "traced",
+      "doc_id": "ai-vmamba-visual-state-space",
+      "evidence": [
+        {
+          "doc_id": "ai-vmamba-visual-state-space",
+          "page": 21,
+          "kind": "text",
+          "quote": "Notably, since Unidi-Scan, Bidi-Scan, and Cross-Scan are all implemented in Triton, they exhibit minimal differences in throughput. The results in Table 10 indicate that Cross-Scan demonstrates superior data modeling capacity, as reflected by its higher classification accuracy. This advantage likely stems from the two-dimensional prior introduced by the four-way scanning design. Nevertheless, the practical implementation of Cascade-Scan is significantly constrained by its relatively slow computational pace, primarily due to the inadequate compatibility between selective scanning and high-dimensional data, which is further affected by the multi-step scanning procedure."
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "The question describes the scanning orders instead of naming them (Cascade-Scan against Unidi-, Bidi- and Cross-Scan); Cascade-Scan is defined on page 9. The throughputs themselves are in Table 10 (page 26) and Figure 8 (page 10): 998 img/s against about 1,685 with DWConv."
+    },
+    {
+      "id": 1050,
+      "status": "traced",
+      "doc_id": "dones-accident-analysis-melcor-fusion",
+      "evidence": [
+        {
+          "doc_id": "dones-accident-analysis-melcor-fusion",
+          "page": 5,
+          "kind": "table",
+          "quote": "Table 2: Mobilized water predicted by MELCOR for the studied cases NOM_MIT MIT1 MIT2 FIV actuation time (s) 0.1 0.5 1.0 Mobilized water (FL011) Liquid (g) 20.0 1070.9 3462.7 Fog (g) 20.1 53.1 72.9 Vapor (g) 3.9 10.9 15.6 Total (g) 44.0 1134.9 3551.2"
+        }
+      ],
+      "traits": [
+        "arithmetic"
+      ],
+      "note": "The running text only says that the amount of water increases 'by two orders of magnitudes' in the slower cases; the factor has to be computed from the table."
+    },
+    {
+      "id": 1051,
+      "status": "traced",
+      "doc_id": "dones-beam-diagnostic-requirements-overview",
+      "evidence": [
+        {
+          "doc_id": "dones-beam-diagnostic-requirements-overview",
+          "page": 46,
+          "kind": "figure",
+          "quote": "As can be seen in Fig. 34(a) at about 150 MeV there is a steep increase in the shower intensity. This energy corresponds to the π threshold, i.e., the threshold to produce the lightest shower particle. Below this energy it is more suitable to measure the secondary electron emission current of an electrically isolated wire, see the signal comparison Fig. 34(b)."
+        },
+        {
+          "doc_id": "dones-specific-instrumentation-diagnostics-high",
+          "page": 22,
+          "kind": "text",
+          "quote": "(4) Secondary electron emission current created by beam particles entering and leaving the conducting wire (see also Section 3). This method is often used in low-energy beams where the scattered particles cannot penetrate the vacuum pipe wall."
+        },
+        {
+          "doc_id": "dones-beam-instrumentation-diagnostics",
+          "page": 33,
+          "kind": "text",
+          "quote": "The beam signal for the vertical axis can be deduced from the current given by the emitted secondary electrons, like for a SEM-grid. This is done in particular for low energy protons and heavy ions."
+        }
+      ],
+      "traits": [],
+      "note": "The same rule (shower detection above the pion threshold at about 150 MeV, secondary emission current of the wire below it) is given in two other general texts on beam instrumentation of the corpus; they are quoted as second and third passage, and any of the three answers the question."
+    },
+    {
+      "id": 1052,
+      "status": "traced",
+      "doc_id": "dones-beam-diagnostic-requirements-overview",
+      "evidence": [
+        {
+          "doc_id": "dones-beam-diagnostic-requirements-overview",
+          "page": 44,
+          "kind": "text",
+          "quote": "Furthermore, at injection energy a hadron synchrotron is often space-charge dominated so that the acceptance is fully occupied. In this case a beam excitation will lead immediately to particle losses and has to be avoided. DESY III for example was space charge dominated at injection energy. For this machine it was decided to have no continuous tune measurement in standard operation. Tune measurements were performed only in dedicated machine studies in order to find a suitable working point in the tune diagram",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-beam-diagnostic-requirements-overview",
+          "page": 43,
+          "kind": "text",
+          "quote": "The discussion is based on the experience with the first proton synchrotron DESY III in the HERA injector chain, see Fig. 32.",
+          "group": "a"
+        }
+      ],
+      "traits": [],
+      "note": "The document is a general lecture on beam diagnostics; the question is about the HERA injector chain it uses as its example, not about DONES. The first passage holds the answer; the second only says which machine the question means (DESY III), since the question does not name it."
+    },
+    {
+      "id": 1053,
+      "status": "traced",
+      "doc_id": "dones-beam-diagnostics-ifmif-dones",
+      "evidence": [
+        {
+          "doc_id": "dones-beam-diagnostics-ifmif-dones",
+          "page": 2,
+          "kind": "text",
+          "quote": "These devices must operate in both CW and pulsed modes, requiring a dynamic range exceeding 60 dB (from 125 mA during nominal operation down to 10–100 μA during early commissioning)."
+        }
+      ],
+      "traits": [],
+      "note": "The paper states only 'exceeding 60 dB'; the two decibel values are computed from the currents it gives, with the 20 log10 convention for a signal amplitude, which reproduces its 60 dB for 100 μA."
+    },
+    {
+      "id": 1054,
+      "status": "traced",
+      "doc_id": "dones-beam-diagnostics-multi-mw",
+      "evidence": [
+        {
+          "doc_id": "dones-beam-diagnostics-multi-mw",
+          "page": 2,
+          "kind": "figure",
+          "quote": "Figure 4 plots the accuracy of the energy measurement as function of the distance between pickups 1 and 2. A phase accuracy of 2° and a distance accuracy of 100 μm is assumed. With pickup separations above 0.5 m, the error is kept below 1 %, which represents 50 keV at 5 MeV beam energy and 400 keV at 40 MeV. To get smaller values at high energy, the diagnostics plate should be longer than in LIPAC. A length between BPM’s of 2.5-3 m is proposed for the Diagnostics Plate during the commissioning. With 3 m length, the error is kept below 50 keV for a phase accuracy of 2 % and a length accuracy of 100 μm."
+        }
+      ],
+      "traits": [
+        "non_native"
+      ],
+      "note": "The passage is the text that describes Figure 4; the values are stated in it. Its last sentence writes the phase accuracy as '2 %' where the second sentence has 2°."
+    },
+    {
+      "id": 1055,
+      "status": "traced",
+      "doc_id": "dones-beam-diagnostics-multi-mw-high",
+      "evidence": [
+        {
+          "doc_id": "dones-beam-diagnostics-multi-mw-high",
+          "page": 2,
+          "kind": "table",
+          "quote": "Table 1: List of Diagnostics Along the HEBT Device Quantity Transverse position and phase 20 Average current 8 Pulsed current 7 Beam losses >16 Profile Monitor box 13 Bunch shape 1",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-beam-diagnostics-multi-mw-high",
+          "page": 2,
+          "kind": "text",
+          "quote": "Three type of commercial current monitors are used along the HEBT. In the first part of the beamline, a new model of treatment of current transformers (CWCT [8]) provides the average current in CW mode in four locations. However, in the sections downstream, where the beampipe is bigger and the bunch is wider, this kind of monitor is not usable. For those regions, a typical DC current transformer has been installed in four areas. To monitor the beam during the commissioning phase in pulsed mode, seven standard AC current transformers will be installed.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "non_native"
+      ],
+      "note": "A 2025 paper of the corpus (dones-beam-diagnostics-ifmif-dones, page 4) describes a later layout of the HEBT main line with 2 CWCTs and 5 DCCTs (plus 6 ACCTs and 1 FCT); the question says 2019 for that reason. Within this paper Table 1 counts 13 profile monitor boxes while the text says twelve locations."
+    },
+    {
+      "id": 1056,
+      "status": "traced",
+      "doc_id": "dones-challenges-target-irradiation-diagnostics",
+      "evidence": [
+        {
+          "doc_id": "dones-challenges-target-irradiation-diagnostics",
+          "page": 2,
+          "kind": "text",
+          "quote": "Monitoring the beam position on target and its footprint shape, which largest possible size is approximately 50(V) × 200(H) mm with an horizontal extension up to 250 mm counting with the tails. The Li jet is 260 mm wide, leading to a 5 mm margin at both sides to avoid beam impact onto the Li channel walls."
+        }
+      ],
+      "traits": [
+        "non_native"
+      ],
+      "note": "Another document of the corpus gives a different value for the same margin: the 2023 overview of the diagnostics (dones-overview-ifmif-dones-diagnostics, page 8) takes the nominal 200 mm footprint without tails and arrives at 30 mm at both sides. The question asks for the margin with the tails."
+    },
+    {
+      "id": 1057,
+      "status": "traced",
+      "doc_id": "dones-commissioning-plan-ifmif-dones",
+      "evidence": [
+        {
+          "doc_id": "dones-commissioning-plan-ifmif-dones",
+          "page": 3,
+          "kind": "table",
+          "quote": "Table 1: Target beam parameters for each commissioning phase. Ipis the goal of peak beam current at the beam target, Tfthe final beam energy, Ppthe peak beam power during a macropulse, and Pavthe average beam power. Phase 1 2 3 4 Ip(mA) 140 125 125 125 DC (%) 100 20 100 100 Tf(MeV) 0.1 5 40 40 Pp(MW) 0.1 0.625 5 5 Pav(MW) 0.1 0.125 0.05 5 Beam target LPBD HPBD HPBD LS",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-commissioning-plan-ifmif-dones",
+          "page": 3,
+          "kind": "text",
+          "quote": "In Phase 3, the beam DC will be limited to 1 %, which is the maximum beam accepted by the HPBD at the final location for 5 MeV deuterons. Macropulses are limited up to 2 ms, which means a repetition rate of 5 Hz.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-overview-recent-advancements-ifmif",
+          "page": 3,
+          "kind": "text",
+          "quote": "Phase 3 commissioning on the superconducting radio frequency (SRF) operates the accelerator at 1 % DC at 40 MeV, resulting in a 50 kW beam depo sition in the HPBD."
+        }
+      ],
+      "traits": [
+        "non_native"
+      ],
+      "note": "The DC row of Table 1 prints 100 % for Phase 3; the text (1 %) and the table's own average power (0.05 MW) show that 1 % is meant. The sentence on the 1 % limit speaks of 5 MeV deuterons although Phase 3 runs at 40 MeV (Table 1). The 2024 overview of the neutronics activities states the same 50 kW, at 1 % and 40 MeV (third passage)."
+    },
+    {
+      "id": 1058,
+      "status": "traced",
+      "doc_id": "dones-concrete-structure-shielding-ifmif",
+      "evidence": [
+        {
+          "doc_id": "dones-concrete-structure-shielding-ifmif",
+          "page": 2,
+          "kind": "table",
+          "quote": "Table 2: Radiation Protection Working Areas Class RP Working Area Contamination Zone Effective Dose Rate Supervised Area CZ1 < 3 μSv/h Controlled Free Permanence CZ2 < 10 μSv/h Limited Permanence CZ3 < 1 mSv/h Specially Regulated CZ4 < 100 mSv/h Forbidden CZ5 ≥ 100 mSv/h",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-concrete-structure-shielding-ifmif",
+          "page": 2,
+          "kind": "table",
+          "quote": "Table 1: Qualitative Classification of Contamination Areas Contamination Zone (CZ) Surface contamination (Bq/cm2) Average in 300 cm2 Airborne contamination (%DACL)* CZ1 Not detectable No risk of airborne contamination CZ2 < 4 (β-ɣ < 0.4 (α) < 10 CZ3 < 40 (β-ɣ) < 4 (α) < 100 CZ4 < 400 (β-ɣ) < 40 (α) < 1000 CZ5 ≥ 400 (β-ɣ) ≥ 40 (α) ≥ 1000 *Derived Air Concentration Limit",
+          "group": "a"
+        }
+      ],
+      "traits": [],
+      "note": "The room and its two values are invented for the question; the two tables decide the class. The dose-rate classes are repeated in other documents of the corpus (for instance Table 2 of dones-development-radiation-sources-based and Figure 2 of dones-integration-safety-ifmif-dones, with other names for the classes); the link to the contamination zones is only here."
+    },
+    {
+      "id": 1059,
+      "status": "traced",
+      "doc_id": "dones-design-dones-lithium-target",
+      "evidence": [
+        {
+          "doc_id": "dones-design-dones-lithium-target",
+          "page": 4,
+          "kind": "text",
+          "quote": "A double Reducer “Shima” Nozzle (with contraction ratios of 3.2 and 2.5) is finally devoted to shape and accelerate the lithium jet to a thickness of 25 ± 1 mm and a velocity (in correspondence of the foot-print) of 15 m/s."
+        }
+      ],
+      "traits": [
+        "arithmetic"
+      ],
+      "note": "The inlet velocity is not stated in the document: it follows from continuity, as the volumetric flow in sample question 6 follows from a mass flow. No other document of the corpus gives the contraction ratios."
+    },
+    {
+      "id": 1060,
+      "status": "traced",
+      "doc_id": "dones-development-radiation-sources-based",
+      "evidence": [
+        {
+          "doc_id": "dones-development-radiation-sources-based",
+          "page": 5,
+          "kind": "table",
+          "quote": "Table 1 Simulation times of Be-7 cases. Case Time (minutes) Relative difference (regarding Be-7 line) Be-7 line 1644.84 0.0 % Be-7 bin 1676.97 1.95 % Be-7 CDGS 1714.59 4.24 %",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-development-radiation-sources-based",
+          "page": 5,
+          "kind": "text",
+          "quote": "Another important aspect of these simulations is the computation time needed for MCNP6 and cR2S-MCNP6 to run. Each case is simulated up to 109 histories in a single PC and single core (serial run) with an Intel Xeon 8160 CPU @ 2.10 GHz. Table 1 shows these results. Table 1 results show that the fastest case is Be-7 line while cases Be-7 bin and Be-7 CDGS are slightly slower. One of the reasons that makes Be7 line faster is that photon energy is constant compared with the other two.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-development-radiation-sources-based",
+          "page": 4,
+          "kind": "text",
+          "quote": "Three cases are considered. The first case, Be-7 line, represents the actual 0.477 MeV Be-7 photon emission while the second case, Be-7 bin, represents the photon emission approximation in the 24-group structure with the source defined in the [0.4, 0.6] MeV bin.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "arithmetic"
+      ],
+      "note": "The table names the cases 'Be-7 line', 'Be-7 bin' and 'Be-7 CDGS'; what they are is explained on page 4."
+    },
+    {
+      "id": 1061,
+      "status": "traced",
+      "doc_id": "dones-dose-assessment-several-accidental",
+      "evidence": [
+        {
+          "doc_id": "dones-dose-assessment-several-accidental",
+          "page": 5,
+          "kind": "text",
+          "quote": "If the PHX pipe ruptures, the allowed intervention time is reduced to 32 min. For the reference accident involving Li leakage from the H-trap, the maximum intervention time is 714 min. In the scenario of a C-trap accident, the maximum H*(10) dose rate reaches 130 mSv/h, exceeding the threshold for red zone classification (>100 mSv/h). Consequently, human access is prohibited, and remote handling systems must be implemented."
+        }
+      ],
+      "traits": [
+        "false_premise"
+      ],
+      "note": "False premise: the question assumes that personnel may enter. Dividing the 50 mSv limit by 130 mSv/h, as the paper does for the other scenarios, would give about 23 min, but no time is given for this case. The same conclusion is in the abstract (page 1) and in the discussion (page 9)."
+    },
+    {
+      "id": 1062,
+      "status": "traced",
+      "doc_id": "dones-enabling-multi-purpose-high",
+      "evidence": [
+        {
+          "doc_id": "dones-enabling-multi-purpose-high",
+          "page": 12,
+          "kind": "table",
+          "quote": "Driver Units Energy MeV Duty Cycle % Integrated Current mA-yr Power Use MW Cost Per Accelerator M$ Capital Cost of Integrated Beam-on-Target (M$/mA-yr) Total Facility Cost M$ RFQ/Linac IFMIF-lite 1 40 65+ 81-88 ~50 220-310++ 2.5-3.8 393589++ Cu Cyclotron C-FPNS 12 in facility 35-40 92 facility 50-100 5 (for 10) < 11, turnkey 1.32-2.64 < 300+ SC Cyclotron C-FPNS 12 in facility (10 in-use) 35-40 92 facility 50-100 2 (for 10) < 10, turnkey 1.2-2.4 < 250+"
+        }
+      ],
+      "traits": [],
+      "note": "The table gives the cost per mA-yr without saying how it is computed; units x unit cost / integrated current reproduces all three rows exactly. The text of the next page quotes a different measure, the cost per mA of installed current (1.5-3 M$/mA for a first copper cyclotron, 1.8-3.4 M$/mA for the RFQ/linac), which should not be mistaken for it. The table is extracted with its footnote marks ('65+', '220-310++'), and '393589++' is the total facility cost 393-589 M$ with the dash lost."
+    },
+    {
+      "id": 1063,
+      "status": "traced",
+      "doc_id": "dones-fafnir-strategy-risk-reduction",
+      "evidence": [
+        {
+          "doc_id": "dones-fafnir-strategy-risk-reduction",
+          "page": 3,
+          "kind": "text",
+          "quote": "A room-temperature drift tube linac is the most conservative choice although it has a significantly reduced aperture compared with superconducting options. As with the RFQ, CW operation leads to challenges in maintaining thermal stability but again reducing the accelerating gradient to 1.5MV/m with 50kWm-1 heat dissipation mitigates this problem. A 10-m long cavity would give an energy gain of ~15MeV with ~500kW of structure power and ~500kW of beam power.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-fafnir-strategy-risk-reduction",
+          "page": 2,
+          "kind": "text",
+          "quote": "The FAFNIR proposed accelerator is a D+ ion source with DC injector of ~90keV beam energy, an RFQ accelerating to ~3MeV and a linear accelerator continuing to 40MeV. At the proposed maximum current of ~30mA CW the beam power would be ~1.2MW.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "arithmetic",
+        "names_document"
+      ],
+      "note": "The question names FAFNIR, the facility this paper proposes. The paper gives the figures for one 10 m cavity; the total length and power are worked out from them."
+    },
+    {
+      "id": 1064,
+      "status": "traced",
+      "doc_id": "dones-global-flux-calculation-ifmif",
+      "evidence": [
+        {
+          "doc_id": "dones-global-flux-calculation-ifmif",
+          "page": 8,
+          "kind": "text",
+          "quote": "Consider the sweep distance along a rectangle as a unit distance, a relative distance δ (0≤δ ≤1) is calculated to the starting plane. Using a global factor λ , the new WW value W i 'of cell i value is adjusted exponentially by multiplying a factor to its original value W i: W i '=W iexp ⁡(λδ) Here the factor λ used for the rectangles are the number given in the Figure 5. The factors are chosen empirically by trying several times to get acceptable results.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-global-flux-calculation-ifmif",
+          "page": 7,
+          "kind": "text",
+          "quote": "It can be foreseen that, increasing the number of neutron histories will provide limited help to those region, and the WW mesh has to be adjusted in order to mitigate this issue. The WW mesh has been adjusted using a python script as discussed in [5]. As shown in Figure 5, the WW value of the regions inside the rectangles has been increased along the",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "arithmetic"
+      ],
+      "note": "The factors actually used for each region are printed only inside Figure 5; the factor of 4 in the question is an example. In the page text the formula carries an invisible character (U+2061) between 'exp' and the parenthesis, kept in the quote."
+    },
+    {
+      "id": 1065,
+      "status": "traced",
+      "doc_id": "dones-ifmif-dones-beam-target",
+      "evidence": [
+        {
+          "doc_id": "dones-ifmif-dones-beam-target",
+          "page": 3,
+          "kind": "text",
+          "quote": "To obtain experimental yields a setup that measures the OTR from liquid lithium is being built. Special interest is given to deduce the electrical permittivity of 300oC liquid lithium and reduce its uncertainty. The setup consists of an electron beam of 10.8 KeV continuous 1 mA, which has the same ββ= 0.203 and charge per particle as the IFMIFDONES one of 40 MeV D+. The electron beam impinges on a 300 oC liquid lithium hold in a crucible heated by an oven. The light emitted is collected in a photon detection system already designed and tested. The OTR yield per incident particle and per solid angle should be the same as in IFMIF-DONES."
+        }
+      ],
+      "traits": [],
+      "note": "The 2023 overview of the diagnostics (dones-overview-ifmif-dones-diagnostics, page 6) mentions the same planned experiment with an e-gun of 10.5 keV, without the reason. Symbols are doubled in the text layer of this preprint ('ββ= 0.203')."
+    },
+    {
+      "id": 1066,
+      "status": "traced",
+      "doc_id": "dones-ifmif-dones-gas-flow",
+      "evidence": [
+        {
+          "doc_id": "dones-ifmif-dones-gas-flow",
+          "page": 6,
+          "kind": "table",
+          "quote": "Table 4: Pump type, pumping speed and sticking factor for hydrogen at the different subsections of LIPAc and IFMIFDONES. Pump Pumping speed for hydrogen (l/s) Sticking factor LEBT TMP 1 TMP 2 2100 115 0.10 0.09 RFQ CP 1–10 IP 1– 4 2200 525 0.15 0.04 MEBT TMP 1–3 IP (+ TiSP) 510 875 (1800) 0.06 0.11 (0.22) SRFLINAC none pre-evacuated at 10-7 mbar 0.001 HEBT CP 1–2 CP 3 IP 1 (+ TiSP) IP 2 (+TiSP) 5000 1500 875 (1800) 260 (1250)",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-ifmif-dones-gas-flow",
+          "page": 6,
+          "kind": "text",
+          "quote": "Capture pumps like cryopumps (CP), ion pumps (IP) and titan sublimation pumps (TiSP) show a decreasing pumping speed with increasing molar mass. Here, the pumping speed is assumed to vary with the square root of molar mass whilst the sticking factor has been kept constant.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "arithmetic"
+      ],
+      "note": "Both passages are needed: the table for the hydrogen speed of the pump, the text for the rule. For turbomolecular pumps the same paper assumes identical speeds for hydrogen and deuterium, so the rule applies to capture pumps only."
+    },
+    {
+      "id": 1067,
+      "status": "traced",
+      "doc_id": "dones-ifmif-dones-project-design",
+      "evidence": [
+        {
+          "doc_id": "dones-ifmif-dones-project-design",
+          "page": 6,
+          "kind": "text",
+          "quote": "This is needed in order to achieve the high-level requirement for the global inherent availability (i.e., referred to the scheduled operation time) of the whole facility which is set at 75% to maximize the irradiation time while ensuring a suitable shutdown period (20 days/ year) for preventive maintenance. The target of 87% availability for the AS comes from the reasonable allocation of the said 75% global availability among the different systems of the Plant (Accelerator Systems: 87%; Lithium Systems: 94%; Test Systems: 96%; Plant Systems: 98%; Central Instrumentation and Control Systems: 98%)."
+        }
+      ],
+      "traits": [
+        "arithmetic"
+      ],
+      "note": "The passage does not say in so many words that the allocated availabilities multiply; their product, 0.754, is the 75% it starts from. Other documents of the corpus repeat single values (87% for the accelerator, 94% for the lithium systems) but not the whole allocation."
+    },
+    {
+      "id": 1068,
+      "status": "traced",
+      "doc_id": "dones-ifmif-dones-systems-engineering",
+      "evidence": [
+        {
+          "doc_id": "dones-ifmif-dones-systems-engineering",
+          "page": 5,
+          "kind": "text",
+          "quote": "Main steps consist of close collaboration of the Requirements and Interface Management Group (R&I Group) with the System Engineer who has in-depth knowledge of each System. The procedure consists of three stages with many revision loops. First, definition of the requirements matrix by the R&I Group and the System Engineer. After the definition of the matrix, the revision can start which is done by the R&I Group for consistency checking, then by the Safety Team, and as a last step, a multidisciplinary checking starts by the other correlated systems. If every requirement is defined and written in a clear way, then the matrix can be approved"
+        }
+      ],
+      "traits": [
+        "non_native"
+      ],
+      "note": ""
+    },
+    {
+      "id": 1069,
+      "status": "traced",
+      "doc_id": "dones-ifmif-lithium-loop-activation",
+      "evidence": [
+        {
+          "doc_id": "dones-ifmif-lithium-loop-activation",
+          "page": 3,
+          "kind": "table",
+          "quote": "Nuclide Deposit (Bq/m2) Base (Bq/m2) Coolant (Bq/m3) Nb 95 6.78 × 102 3.61 × 10−3 2.68 × 106 Mn 56 3.92 × 104 3.05 × 10−2 4.81 × 108 Co 58 8.51 × 104 7.58 × 101 3.17 × 108 Mn 54 1.02 × 105 3.65 × 102 3.02 × 108 V 52 2.82 × 102 9.86 × 10−8 9.70 × 107 Al 28 3.32 × 101 1.43 × 10−8 2.17 × 107 Co 56 5.86 × 103 5.73 2.16 × 107 Ni 57 5.40 × 103 1.42 × 10−2 2.56 × 107 Co 57 6.91 × 104 2.99 × 102 2.10 × 108 Nb 95m 1.26 × 102 6.19 × 10−5 5.53 × 105 Mn 52 1.54 × 103 6.23 × 10−2 6.56 × 106 Fe 53 7.43 × 101 2.47 × 10−6 1.13 × 107 Cr 51 9.20 × 104 2.46 × 101 3.69 × 108 Totals 4.01 × 105 7.70 × 102 1.87 × 109",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-ifmif-lithium-loop-activation",
+          "page": 4,
+          "kind": "text",
+          "quote": "The other corresponds to exposure from the entire Li inventory, assumed, for simplicity, to occupy a spherical volume (radius 1.3 m).",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-ifmif-lithium-loop-activation",
+          "page": 3,
+          "kind": "text",
+          "quote": "This inventory (as given by Table 1) remains constant throughout the loop, as we have noted.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "arithmetic",
+        "names_document"
+      ],
+      "note": "The total is not stated in the paper: it is the coolant activity concentration of Table 1 times the volume of the sphere. Only neutron activation of corrosion products is treated in this study; 7Be is not included, so the figure is not comparable with the 7Be inventories of the DONES papers. In the page text the exponents are flattened ('1.87 × 109' is 1.87 x 10^9), the micro sign is lost ('50 m over 30 years', 'Sv/h' in Table 2) and words run together in places."
+    },
+    {
+      "id": 1070,
+      "status": "traced",
+      "doc_id": "dones-initial-far-field-otr",
+      "evidence": [
+        {
+          "doc_id": "dones-initial-far-field-otr",
+          "page": 2,
+          "kind": "figure",
+          "quote": "By selecting and then inserting the linear polarizers into the light path, we obtained the horizontal and vertical polarization components as shown in Fig. 2 and Fig. 3, respectively. The two lobe structures are not quite the same size in Fig. 2, and there is a hint of a θx-θy tilt in the two lobes of Fig. 3. In both of the polarized cases the central minimum approaches the baseline, which is indicative of a sub-mrad divergence.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-initial-far-field-otr",
+          "page": 3,
+          "kind": "text",
+          "quote": "A deep central minimum is observed, which is consistent with a beam divergence below the 0.5-1.0 mrad level as expected.",
+          "group": "a"
+        }
+      ],
+      "traits": [],
+      "note": "The first passage is the description of Figs. 2 and 3; the summary of the paper (second passage) states the same conclusion with the numerical bound. The paper is about Fermilab's NuMI line, not about DONES."
+    },
+    {
+      "id": 1071,
+      "status": "traced",
+      "doc_id": "dones-integration-safety-ifmif-dones",
+      "evidence": [
+        {
+          "doc_id": "dones-integration-safety-ifmif-dones",
+          "page": 11,
+          "kind": "text",
+          "quote": "The scenario is a lithium fire in the Lithium Loop Cell, leading to a complete combustion of lithium affecting critical components and leading to complete loss of protection from confinement barriers. The radiological source term has three contributions: (i) Tritium originally dissolved in the lithium, 0.3 g (ii) Be-7 deposited in HX plus dissolved in the lithium, 90 mg, (iii) Activation Corrosion Products (typically, a percentage of the calculated inventory is assumed to release).",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-integration-safety-ifmif-dones",
+          "page": 11,
+          "kind": "text",
+          "quote": "For such a distance, a dose conversion factor for tritium is provisionally taken as 10 mSv/g-T(HTO) based on project internal estimates. This factor accounts for exposure pathways due to tritium inhalation and skin absorption at short term. No chronic long term dose by ingestion of contaminated foods has been estimated. For Be-7, the dose factor is higher than tritium, and it is provisionally taken as 400 mSv/g-Be7, based on reference [17]. Therefore, the total dose due to all",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-integration-safety-ifmif-dones",
+          "page": 12,
+          "kind": "text",
+          "quote": "tritium and Be-7 contributions is in the order of 40 mSv, dominated by the Be-7 release.",
+          "group": "a"
+        }
+      ],
+      "traits": [],
+      "note": "The sentence with the result runs over from page 11 to page 12. The most exposed individual is placed at the boundary of the facility, in the 100 m range (page 11). The paper presents these values as illustrative; the Japanese assessment in this batch (dones-radiological-safety-assessments-fusion) gives doses for lithium fires in another facility."
+    },
+    {
+      "id": 1072,
+      "status": "traced",
+      "doc_id": "dones-intermediate-energy-proton-irradiation",
+      "evidence": [
+        {
+          "doc_id": "dones-intermediate-energy-proton-irradiation",
+          "page": 11,
+          "kind": "text",
+          "quote": "reduction in the dose-rate achievable (e.g. doubling range decreases doserate to one-fourth). Increasing the incident proton energy is an option to further increase range, but that increased range will further decrease the achievable doserates, which is likely the limiting factor for the speed of experiments.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-intermediate-energy-proton-irradiation",
+          "page": 10,
+          "kind": "text",
+          "quote": "Despite these differences, each material allows irradiation to rates greater than 0.1 DPA/day in relatively thick samples (200 – 300 μm) and irradiation to rates as high as ∼1 DPA/day in thinner samples (∼100 μm).",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "arithmetic"
+      ],
+      "note": "The sentence that states the rule is split between pages 10 and 11 ('...it comes with an approximately quadratic' / 'reduction in the dose-rate achievable...'); the first passage is its second half, which carries the example. Words run together in places in the text layer of this preprint."
+    },
+    {
+      "id": 1073,
+      "status": "traced",
+      "doc_id": "dones-international-workshop-advanced-neutron",
+      "evidence": [
+        {
+          "doc_id": "dones-international-workshop-advanced-neutron",
+          "page": 4,
+          "kind": "text",
+          "quote": "The DTL concept exhibits clear technological showstoppers to conduct high current in CW mode from the typical few MeV output energies of an RFQ given the combination of a twofold drawbacks: 1) the short involved lengths of DTL hardware at low energies that sets a strong limitation on the focusing strength of magnets, which are unavoidably relying on velocity dependent Lorentz forces, and 2) the inherent limiting aperture of drift tubes leading to enhanced losses with high currents [17]. However, it is a reliable and practical solution for currents of few tens mA with duty cycles of typically 20% like BNCT concepts are aiming for."
+        }
+      ],
+      "traits": [
+        "names_document",
+        "non_native"
+      ],
+      "note": "The workshop is named because the corpus holds other views on drift tube linacs: the IFMIF/EVEDA overview gives only the first reason (inefficient quadrupole focusing at low β), and the FAFNIR paper calls a room-temperature drift tube linac the most conservative choice for its own, lower-current, CW machine."
+    },
+    {
+      "id": 1074,
+      "status": "traced",
+      "doc_id": "dones-maintenance-logistics-ifmif-dones",
+      "evidence": [
+        {
+          "doc_id": "dones-maintenance-logistics-ifmif-dones",
+          "page": 5,
+          "kind": "text",
+          "quote": "Performing a couple of assessment schemes finally result in advantages for installation of an external centralized storage area in the case of IFMIF-DONES, whilst dedicated parts and components could be stored in storage places near to their place of installation [8].",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-maintenance-logistics-ifmif-dones",
+          "page": 5,
+          "kind": "text",
+          "quote": "On one hand, it is preferable to store the spare parts as close as possible to the location where they will be required during the maintenance in order to speed up the maintenance activities. On the other hand, the use of a centralized storage area represents a solution that is more economical and easier to manage [8].",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "non_native"
+      ],
+      "note": "The first passage is the conclusion; the second only gives the trade-off behind it."
+    },
+    {
+      "id": 1075,
+      "status": "traced",
+      "doc_id": "dones-material-irradiation-capabilities-ifmif",
+      "evidence": [
+        {
+          "doc_id": "dones-material-irradiation-capabilities-ifmif",
+          "page": 6,
+          "kind": "text",
+          "quote": "For temperatures up to 550 °C, the irradiation of both materials can be performed in the standard HFTM capsules. This technology is limited by the upper use temperature of about 600 °C of the mineral insulated heaters of the capsules. Higher temperatures can be achieved by using the volumetric heating (up to 16.76 W/cm3 in W) of the specimens. In this case, cylindrical capsules with an additional insulation gap between the specimens and the heater can be used to create a temperature increase of over 200 °C between the heaters and the specimen, so that an irradiation at about 800 °C will be possible."
+        }
+      ],
+      "traits": [],
+      "note": "The paper on the thermal analysis of the same module in the corpus gives the specimen temperature range of the standard capsules as 250 to 550 °C, consistent with this one."
+    },
+    {
+      "id": 1076,
+      "status": "traced",
+      "doc_id": "dones-methodology-remote-handling-operations",
+      "evidence": [
+        {
+          "doc_id": "dones-methodology-remote-handling-operations",
+          "page": 5,
+          "kind": "text",
+          "quote": "Before the operations are executed in the real scenario, training of the operators with the procedures stablished and the selected equipment and tools has to be carried out. The environment for the training has to be similar to the real scenario using a virtual simulator (i.e: graphic simulator with VR glasses and control robotic panel), a mock-up or simulating the operation in the real environment (if possible)."
+        }
+      ],
+      "traits": [
+        "names_document",
+        "non_native"
+      ],
+      "note": "The title on the first text page of the preprint ('New Methodology to Improve Execution, Efficiency and Safety in Remote Maintenance Tasks') differs from the title on its cover page."
+    },
+    {
+      "id": 1077,
+      "status": "traced",
+      "doc_id": "dones-neutron-availability-complementary-experiments",
+      "evidence": [
+        {
+          "doc_id": "dones-neutron-availability-complementary-experiments",
+          "page": 3,
+          "kind": "text",
+          "quote": "The beam is very well collimated with a global divergence of less than 1 degree (see Figure 4). However, there is no beam structure and therefore, Time of Flight (ToF) technique cannot be used. This is compensated by a very high neutron flux in comparison to other facilities. A tabulation of the neutron flux at the entrance of the hall as a function of the energy and the angle of emission is available in the complementary material. With this configuration of beam tube, the neutron flux emerging in the hall amounts to a total of 2 1010 n/cm2/s with a majority (99.5%) of fast neutrons (En > 100 keV)",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-neutron-availability-complementary-experiments",
+          "page": 8,
+          "kind": "text",
+          "quote": "Unfortunately, in absence of deuteron beam structure, the neutron ToF technique cannot be used and consequently most of interesting nuclear physics experiments cannot be drawn.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "false_premise"
+      ],
+      "note": "False premise. The overview of the design evolution (dones-ifmif-dones-fusion-oriented, page 12) says that a single-bunched fraction of the deuteron beam on a conversion target could create a time-of-flight facility: a different option from the continuous collimated beam of the hall. That document also quotes about 1e14 m-2 s-1 (1e10 cm-2 s-1) for the flux in the hall, half the value given here."
+    },
+    {
+      "id": 1078,
+      "status": "traced",
+      "doc_id": "dones-neutronics-analyses-ifmif-dones",
+      "evidence": [
+        {
+          "doc_id": "dones-neutronics-analyses-ifmif-dones",
+          "page": 4,
+          "kind": "text",
+          "quote": "The peak heating value of 0.02-0.03 W/cm3 at the downstream is not located at the TC inner surface, but ~ 5-10 cm inside the concrete wall. It is noted that, as the neutron flux decrease due to the shielding, the neutron spectrum is also soften. Because iron is the main composition of the heavy concrete (~50 wt%), the softening of spectrum increase the neutron capture reactions, and produces more gamma photon at the thin layer of concrete near the inner surface. Since gamma photon contributes 80-90% of the total nuclear heating, the location of the peak heating value can be therefore explained."
+        }
+      ],
+      "traits": [],
+      "note": ""
+    },
+    {
+      "id": 1079,
+      "status": "traced",
+      "doc_id": "dones-neutronics-assessment-different-quench",
+      "evidence": [
+        {
+          "doc_id": "dones-neutronics-assessment-different-quench",
+          "page": 5,
+          "kind": "text",
+          "quote": "After 345days operation and 1day cooling, the contact dose rate of QT in Option1 is 348 μSv/hr, and that of flange in Option2 is 1124 μSv/hr. The dose level decreases rather slow after 1day of cooling. The nuclides contributing the major amount of dose are 56Mn(T1/2=2.6 hours), 182Ta(T1/2=114 days) and 60Co(T1/2=5.27 years). Considering <10 μSv/hr as the criteria [11], the handson maintenance is not possible to be achieved within the maintenance period, i.e. 20 days.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-neutronics-assessment-different-quench",
+          "page": 4,
+          "kind": "figure",
+          "quote": "(a) QT located in the LFR below the TC floor (Option1) (b) QT embedded in TC floor (Option2) Fig. 1. MCNP geometry of IFMIFDONES TC with different QT locations.",
+          "group": "a"
+        }
+      ],
+      "traits": [],
+      "note": "The first passage has the dose rates; the second, a figure caption, only says which option is which. The ratios in the answer are a convenience, not needed to answer. The text layer of this PDF has lost its hyphens ('1day', 'handson', 'IFMIFDONES'): the quotes are as extracted."
+    },
+    {
+      "id": 1080,
+      "status": "traced",
+      "doc_id": "dones-neutronics-ifmif-dones-irradiation",
+      "evidence": [
+        {
+          "doc_id": "dones-neutronics-ifmif-dones-irradiation",
+          "page": 7,
+          "kind": "figure",
+          "quote": "Fig. 12: Neutron dose rate [Sv/h] distribution around the TC during operation (left: horizontal cut, right: vertical cut). The applied color map corresponds to the radiological classification scheme adopted for IFMIF-DONES, based on the EC council directive 2013/59/EURATOM and an exposure time of 2000h/year. (White: < 0.5 Sv/h, unrestricted; blue: < 3 Sv/h, supervised; Controlled areas: green: < 10Sv/h, free permanence, yellow: < 1 mSv/h, limited permanence, orange: < 100 mSv/h, specially regulated, and > 100 mSv/h, red, prohibited)."
+        }
+      ],
+      "traits": [
+        "arithmetic"
+      ],
+      "note": "The passage is a figure caption. Other documents of the corpus give the same zone limits (green up to 10 μSv/h) but not the 2000 h/year. In the text layer of this PDF the micro sign is a private-use character (U+F06D, once preceded by U+F020); the quote keeps it as extracted."
+    },
+    {
+      "id": 1081,
+      "status": "traced",
+      "doc_id": "dones-numerical-study-conjugated-heat",
+      "evidence": [
+        {
+          "doc_id": "dones-numerical-study-conjugated-heat",
+          "page": 6,
+          "kind": "figure",
+          "quote": "Figure 3 represents the temperature distribution in the container structure. On the surfaces of long side stiffening plates of the compartments 4 and 5 there are small areas with the slight overshot of about 7° C over the maximal allowed temperature for compartment structure material. Affected are the walls between capsules.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-numerical-study-conjugated-heat",
+          "page": 6,
+          "kind": "text",
+          "quote": "The location of the hot spots corresponds with the position of the division walls between the mini-cooling channels. The reason is the insufficient cooling of the structure near the division walls. The reducing of the heat transfer is caused by the thickening of the boundary layer in the flow near the channel corners and thus reducing of the local mass flow rate. The intensity of secondary flows induced by channel corners with the magnitude of about 2% of the primary flow velocity is not sufficient for the enhancement of the heat transfer at the division walls.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-numerical-study-conjugated-heat",
+          "page": 4,
+          "kind": "text",
+          "quote": "The temperature of the container structure is limited by 150°C (maintain strength and reduce swelling)",
+          "group": "a"
+        }
+      ],
+      "traits": [],
+      "note": "The first passage is the text that describes Figure 3; the overshoot and its cause are stated in it, nothing has to be read off the figure. The same finding is repeated in the summary (page 7)."
+    },
+    {
+      "id": 1082,
+      "status": "traced",
+      "doc_id": "dones-optical-transition-radiation-monitor",
+      "evidence": [
+        {
+          "doc_id": "dones-optical-transition-radiation-monitor",
+          "page": 3,
+          "kind": "text",
+          "quote": "Given these considerations, mirror 1 is placed 110 cm from the foil (requiring an effective focal length of 110 cm) and has a diameter of 12 cm. Mirrors 2 and 3 have the same focal length and size as mirror 1. However mirror 4 has a shorter focal length of 30 cm (effective focal length of 60 cm). This reduces the size of the foil image at the camera by 45% to allow the image of the 5 cm diameter foil to fit within a 4 cm diameter fiber taper connected to the face of the camera. The fiber taper reduces the image diameter from 4 cm to 1.1 cm to fit onto the size of the camera sensor."
+        }
+      ],
+      "traits": [
+        "arithmetic"
+      ],
+      "note": "The caption of Fig. 17 (page 11) words the same demagnification the other way round, as an image 'reduced by 54%'."
+    },
+    {
+      "id": 1083,
+      "status": "traced",
+      "doc_id": "dones-overview-current-status-ifmif",
+      "evidence": [
+        {
+          "doc_id": "dones-overview-current-status-ifmif",
+          "page": 7,
+          "kind": "text",
+          "quote": "All pipes will be made of 316L stainless steel with an inner diameter of 20 mm and wall thickness of 1.5 mm. The internal corners of the TC internal surfaces is rounded off with a radius of 200 mm for convenient piping at the corner inside the TC wall. Cooling water is provided to the TC biological shielding at 30°C and 2 m/ s."
+        }
+      ],
+      "traits": [
+        "arithmetic",
+        "non_native"
+      ],
+      "note": "The flow per pipe is not stated in the paper; it follows from the pipe bore and the water velocity. The 2018 paper on the preliminary engineering design in the corpus (dones-eu-fusion-oriented-neutron, page 7) confirms that the 2 m/s is the velocity of the cooling water, but gives no pipe size; it also quotes a peak wall temperature of 84 °C where this paper has 44 °C."
+    },
+    {
+      "id": 1084,
+      "status": "traced",
+      "doc_id": "dones-overview-current-status-ifmif-dones",
+      "evidence": [
+        {
+          "doc_id": "dones-overview-current-status-ifmif-dones",
+          "page": 20,
+          "kind": "table",
+          "quote": "Table 11. SRF LINAC main parameters: CM is the cryomodule, β is the optimized deuteron speed at the cavities, Seq. the lattice sequence at each cryomodule, S are solenoids, C are cavities, NC the total number of cavities, NS the total number of solenoids and Tout the output deuteron energy. CM CM1 CM2 CM3, 4 & 5 β 0.116 0.116 0.179 Seq. 8× (1S+1C) 5× (1S+2C) 4× (1S+2C) + (1S+1C) + (1S+1C) NC 8 11 9 × 3 NS 8 6 5 × 3 Tout (MeV) 8.3 13.9 21.3, 30.3, 40"
+        },
+        {
+          "doc_id": "dones-european-approach-fusion-like",
+          "page": 14,
+          "kind": "table",
+          "quote": "Table 2. Cryomodules’ parameters of the optimized design of DONES SRF-Linac Cryomodule #1 #2 #3 #4 #5 HWR beta optimum Low 0.116 Low 0.116 High 0.179 High 0.179 High 0.179 Elementary sequence 1 solenoid + 1 cavity 1 solenoid + 2 cavities 1 solenoid + 2 cavities 1 solenoid + 2 cavities 1 solenoid + 2 cavities Number of sequence 8 5 4 4 4 Cryomodule End none 1 solenoid + 1 cavity 1 solenoid + 1 cavity 1 solenoid + 1 cavity 1 solenoid + 1 cavity Output energy (MeV) 8.3 13.9 21.3 30.3 40"
+        }
+      ],
+      "traits": [
+        "arithmetic"
+      ],
+      "note": "The second passage is the same layout in another document of the corpus, given as sequences rather than counts (8 x (1S+1C); 5 x (1S+2C) + (1S+1C); three times 4 x (1S+2C) + (1S+1C)), which leads to the same 46 and 29. The 46 cavities also agree with the '46 superconducting cavities' of page 4 and with the 19 + 27 HWR couplers of the RF system (page 25). The running text of section 2.1.5 (page 7) describes the second cryomodule as five periods of one solenoid and 'one resonators', which would give 6 cavities instead of 11: Table 11 is the consistent version. The 2016 paper on beam diagnostics and the earlier overviews in the corpus describe a linac of four cryomodules, so the question names the five-cryomodule layout."
+    },
+    {
+      "id": 1085,
+      "status": "traced",
+      "doc_id": "dones-overview-current-status-ifmif-dones",
+      "evidence": [
+        {
+          "doc_id": "dones-overview-current-status-ifmif-dones",
+          "page": 15,
+          "kind": "text",
+          "quote": "One of the particularities of the IFMIF-DONES accelerator is the lack of separation window between the TVC and the rest of the accelerator vacuum line. This is due to the high power and low energy of the beam, which would imply a huge power deposition in such a thin window, with no material that could withstand this load and no means of cooling it.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-overview-current-status-ifmif-dones",
+          "page": 15,
+          "kind": "text",
+          "quote": "To mitigate this, we rely on Fast Safety Isolation Valves (FSIVs) which, when closing, can isolate the TVC in 100 ms in case a LOVA is detected, acting as a safety confinement barrier.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-overview-ifmif-dones-diagnostics",
+          "page": 6,
+          "kind": "text",
+          "quote": "One of the particularities of the IFMIF-DONES Accelerator is that there cannot be a separation window with the Target Vacuum Chamber. This implies that contact of air and liquid Li could take place in case of failure of the Target Vacuum Chamber (TVC) or a destructive air leak upstream in the accelerator."
+        }
+      ],
+      "traits": [
+        "false_premise"
+      ],
+      "note": "False premise: the question assumes a beam window that the design does not have. The third passage is from another document of the corpus that states the same fact (no separation window, isolation by fast valves) without the reason or the 100 ms. The ESS paper of the corpus does describe a proton beam window, but for another facility."
+    },
+    {
+      "id": 1086,
+      "status": "traced",
+      "doc_id": "dones-potential-irradiation-cu-alloys",
+      "evidence": [
+        {
+          "doc_id": "dones-potential-irradiation-cu-alloys",
+          "page": 20,
+          "kind": "text",
+          "quote": "Respect to the case 2, in which both HFTMs are filled up of CuZrCr-Alloy samples, the He ratio similar to the fusion ones are found in the volume in which the damage dose rate fulfil the damage requirement, being those 6 appmHe/dpa, Table 3. Furthermore, the H ratio, Figure 17 b) is only a slightly higher, approximately a 25% higher, than the one expected in the divertor area of a future DEMO, (36 appmH/dpa, Table 3).",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-potential-irradiation-cu-alloys",
+          "page": 21,
+          "kind": "text",
+          "quote": "Regarding the case 3 in which the whole HFTMs are filled up of samples of Tungsten, the He ratio, Figure 18 a) the situation is not as favourable as for the CuCrZr-Alloys cases, because in the area in which the damage requirements are reached the He ratio is approximately the double than the one expected in the divertor area (5 He appm/dpa, Table 3).",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "false_premise"
+      ],
+      "note": "False premise: the factor of two in the helium ratio belongs to tungsten. Another document of the corpus (dones-material-irradiation-capabilities-ifmif, page 6) also finds the helium production of CuCrZr comparable with DEMO, but gives the hydrogen ratio as 48-50 appm H/dpa, about 36% higher, instead of about 25% higher. The paper spells the alloy both CuCrZr and CuZrCr."
+    },
+    {
+      "id": 1087,
+      "status": "traced",
+      "doc_id": "dones-potential-irradiation-cu-alloys",
+      "evidence": [
+        {
+          "doc_id": "dones-potential-irradiation-cu-alloys",
+          "page": 23,
+          "kind": "table",
+          "quote": "Table 5.- Volume with dpa values higher than the Fusion Roadmap requirements for Cu-Alloy, Tungsten and Stainless Steels for the cases evaluated. Cases assessed Cu -Alloy W Eurofer Volumes with Damage dose > 5 dpa/fpy [cm3] Volumes with Damage dose > 1 dpa/fpy [cm3] Volumes with Damage dose > 10 dpa/fpy [cm3] Volumes with Damage dose > 20 dpa/fpy [cm3] Case 4 (1fpy) 587 X 380 47 Case 5 (1fpy) X 101 382 47 Case 5 (2fpy) X 728 737 378",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-potential-irradiation-cu-alloys",
+          "page": 17,
+          "kind": "text",
+          "quote": "Case 5: The central part of the HFTM1, filled with samples of EUROFER, and the lateral rigs of the HFTM1 and the whole HFTM2 filled with tungsten, Figure 13.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-potential-irradiation-cu-alloys",
+          "page": 23,
+          "kind": "text",
+          "quote": "With an irradiation of 2 fpy the damage requirements are achieved up to the rear part of the HFTM2, what means that whether the tungsten samples do not take the central part of the HFTM1 it is necessary to extend irradiation time.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "arithmetic"
+      ],
+      "note": "The loading asked about is case 5 of the paper (page 17). Cases 6 and 7 also hold tungsten, with CuCrZr in part of the rigs, and give other volumes (Tables 6 and 7: 84 to 578 cm3 and 17 to 146 cm3)."
+    },
+    {
+      "id": 1088,
+      "status": "traced",
+      "doc_id": "dones-production-177lu-deuterons-ifmif",
+      "evidence": [
+        {
+          "doc_id": "dones-production-177lu-deuterons-ifmif",
+          "page": 6,
+          "kind": "text",
+          "quote": "Previous study shows that the intensity of the deuteron beam should be reduced from 125 mA to 1.25 mA. From here, a realistic model has been carried out in SolidWorks, taking zero contact resistance and inlet fluid velocity of 12 m/s, in order to find the optimal dimensions of the geometry that provide temperatures for both the backing of Cu and the 176Yb2O3 sample lower than its melting point, maximizing the activity produced.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-production-177lu-deuterons-ifmif",
+          "page": 6,
+          "kind": "text",
+          "quote": "The activity, after 24 hours of irradiation, is 86.11 GBq and the mass of 177Lu is 20.96 μg. The specific activity of the sample, without purification, is 1.20·10-4 GBq/μg.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "false_premise"
+      ],
+      "note": "False premise: the study uses 1.25 mA (also in its Table 3). The earlier analytical study by the same group (dones-production-177lu-ifmif-dones) reduces the current to 1.25 mA too, for another target design (0.7 mm backing, water at 5 m/s), and gives only specific activities (0.119 GBq/mg), not the 86.11 GBq."
+    },
+    {
+      "id": 1089,
+      "status": "traced",
+      "doc_id": "dones-radiological-safety-assessments-fusion",
+      "evidence": [
+        {
+          "doc_id": "dones-radiological-safety-assessments-fusion",
+          "page": 6,
+          "kind": "table",
+          "quote": "TABLE. 4. Public doses due to tritium and Be-7 released outside the FNS facility during normal operation and a hypothetical accident under the most severe meteorological conditions (wind speed of 1 m/s, atmospheric stability class F, and no precipitation for tritium and precipitation rate of 5 mm/h for Be-7), and the initiating event likelihood shown in Table 3. Normal Operation Hypothetical accident Tritium 3 × 10-3 μSv (< 10 μSv) DS failure 5 × 10-2 μSv (< 10 μSv) Li fire at CT/HT 65 μSv (10 μSv < 100 μSv, 10-3 < 10-2/year) Li fire at CT/HT & DS failure 6.5 mSv (2.5 mSv <, < 10-6/year)",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-radiological-safety-assessments-fusion",
+          "page": 5,
+          "kind": "text",
+          "quote": "The chemical form of tritium was assumed to be tritiated water with a high dose conversion coefficient for conservative. Only one DS with the Detritiation factor as 100 was assumed.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "non_native"
+      ],
+      "note": "The facility is the IFMIF-like fusion neutron source designed in Japan (A-FNS), not DONES; documents on DONES give other doses for lithium fires. The table writes the traps and the system as CT, HT and DS. It continues on page 7 with the Be-7 rows, and Table 3 on page 6 holds the likelihood classes."
+    },
+    {
+      "id": 1090,
+      "status": "traced",
+      "doc_id": "dones-rami-analysis-dones-lithium",
+      "evidence": [
+        {
+          "doc_id": "dones-rami-analysis-dones-lithium",
+          "page": 9,
+          "kind": "text",
+          "quote": "The 171 days of normal operation period was divided into two: 70% and 30%, which means two periods of 120 and 51 days respectively. This is necessary for the model to be able to launch the CM phase only if the failure occurs within the first 120 days of operation since the last stop. If the failure happens within the 51 days period, which are closer to the next scheduled maintenance, then the CM and the PM are activated at the same time (phase CM_PM3/20). In this way, the PM phase is slightly ahead of schedule in order to take advantage of the CM stop."
+        }
+      ],
+      "traits": [],
+      "note": "The passage gives the rule; the case of day 140 is not in the paper."
+    },
+    {
+      "id": 1091,
+      "status": "traced",
+      "doc_id": "dones-recent-advances-otr-beam",
+      "evidence": [
+        {
+          "doc_id": "dones-recent-advances-otr-beam",
+          "page": 4,
+          "kind": "text",
+          "quote": "The peak intensity in the image occurs at about 150 μm from the center of the image which corresponds to the half width of the wire scan distribution, in accord with the calculations of the transverse gradient shown in Fig. 2. Images obtained after the second bunch compressor at LCLS at 4.3 GeV shows a stronger COTR production (~105 IOTR) and an image intensity distribution that also agrees with theoretical prediction for σ < b. In this the COTR image is also ‘donut’-like similar to Fig. 3. However, in this case the effect is due to the PSF and is not the gradient of the beam distribution.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-recent-advances-otr-beam",
+          "page": 4,
+          "kind": "text",
+          "quote": "An actual OTR screen image observed at LCLS just after BC1 is shown in Fig. 3. along with a horizontal wire scan taken close to the screen. The COTR intensity in this image is about 100 times more intense than the IOTR observed before the DL. Figure 3: Left: COTR image 1; right: horizontal wire scan across the center of the beam; from [1]. A line scan across the beam image shows a null in the center of the profile. The wire scanner data shows a smooth nearly Gaussian distribution.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-recent-advances-otr-beam",
+          "page": 3,
+          "kind": "text",
+          "quote": "The COTR image intensity distribution depends on the ratio of the transverse beam size σ to the effective source size of a single electron b. There are two regimes: 1) σ < b; here, the COTR image is just the convolution of the PSF with the beam charge distribution or, in the extreme case when σ << b, is just equal to the PSF; and 2) σ > b; here, the COTR image is equal to the transverse gradient of the charge distribution.",
+          "group": "a"
+        }
+      ],
+      "traits": [],
+      "note": "The paper writes BC1 for the first bunch compressor, and '~105 IOTR' in the page text stands for about 10^5 times the incoherent OTR. The two regimes are defined on page 3."
+    },
+    {
+      "id": 1092,
+      "status": "traced",
+      "doc_id": "dones-safety-analysis-dones-primary",
+      "evidence": [
+        {
+          "doc_id": "dones-safety-analysis-dones-primary",
+          "page": 4,
+          "kind": "text",
+          "quote": "The green line in Fig. 4 represents the lithium mass rate value that activates the interlock for the beam off signal. Being this value equal to the 70% of the nominal value, assuming a linear dependence between the mass flow rate and the pump velocity, this threshold value should be achieved after the 30% of the coast-down time. It can be noted that these rough hand-calculations are confirmed by obtained results, due to the linear dependence between the two variables in the first instants of the transient.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-safety-analysis-dones-primary",
+          "page": 4,
+          "kind": "text",
+          "quote": "assumed that it happens 0.1 s after that the lithium mass flow rate detected by the flow-meter is lower than 35 kg/s, corresponding to the 70% of the nominal value [8].",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "arithmetic"
+      ],
+      "note": "The first passage holds the rule; the second only adds the 35 kg/s and the 0.1 s. For a 10 s coast-down the MELCOR analysis of the same accident (dones-accident-analysis-melcor-fusion, page 5) reaches the threshold after about 4.6 s, against 3 s here; the 5 s coast-down is studied only in this paper."
+    },
+    {
+      "id": 1093,
+      "status": "traced",
+      "doc_id": "dones-shielding-analyses-supporting-lithium",
+      "evidence": [
+        {
+          "doc_id": "dones-shielding-analyses-supporting-lithium",
+          "page": 6,
+          "kind": "figure",
+          "quote": "Figure 9 shows this comparison in high fidelity maps. One can see, that considering Be-7, the arbitrary level of 3 mSv/h could be reached with 20 cm thickness of ordinary concrete, while taking into account the radiation coming from ACP’s, the block of at least of 50 cm would keep the radiation level safe outside the DT shielding box. It can be concluded, that the suggested design of 1 m thickness of shielding would be more than sufficient to keep the dose rate less than 3 mSv/h."
+        }
+      ],
+      "traits": [],
+      "note": "The passage is the text that describes Figure 9; the thicknesses are stated in it and repeated in the summary (pages 7 and 8). The text layer of this paper writes every dose rate as 'mSv/h': the zone limits it quotes (0.5, 3, 10, then 1 and 100) show that the micro sign is lost in the first ones, so the reference level is 3 μSv/h and the answer avoids the unit. Written first from Table 1 of the same paper (where Fe-55 and Mn-54 end up in the loop) and dropped: the 2025 neutronics overview of the corpus (dones-status-dones-neutronics-source, Table 6) gives the same deposits with values smaller by two orders of magnitude."
+    },
+    {
+      "id": 1094,
+      "status": "traced",
+      "doc_id": "dones-soreq-applied-research-accelerator",
+      "evidence": [
+        {
+          "doc_id": "dones-soreq-applied-research-accelerator",
+          "page": 5,
+          "kind": "table",
+          "quote": "Table 2. Key changed parameters between the original and updated SARAF linac designs. Note that some SARAF-II technical HWR specifications were not finalized in the original design, so they are marked ‘NA’. Original Updated RFQ Rods Power kW 250 186 Voltage kV 65 56 Kilpatrick 1.54 1.52 Exit energy MeV/u 1.50 1.27 No. RF couplers # 1 2 HWR low beta (=0.09) Epeak MV/m 25 35 Bore dia. mm 30 36 Eacc(@Epeak) MV/m 8.6 7.0 Bpeak(@Epeak) mT 53 66 V(@Epeak) MV 0.845 0.95 Sensitivity Hz/mbar 60 7",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-soreq-applied-research-accelerator",
+          "page": 4,
+          "kind": "text",
+          "quote": "This design led to a measured RF frequency sensitivity of 60 Hz/mbar. Given the specified (and measured) helium pressure fluctuations of ±1.5 mbar, the HWR resonance frequency continuously varied up to ±90 Hz, outside of the cavity bandwidth of 130 Hz.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "arithmetic"
+      ],
+      "note": "Both passages are needed: the table gives the sensitivity of the updated resonators, the text the pressure fluctuation. In the text layer of this PDF the Greek letters of the table are private-use characters (U+F062, U+F030, U+F044); they are kept in the quote as extracted. The text of page 4 also gives the two new sensitivities (7 and 3.3 Hz/mbar)."
+    },
+    {
+      "id": 1095,
+      "status": "traced",
+      "doc_id": "dones-status-benchmarking-deuteron-induced",
+      "evidence": [
+        {
+          "doc_id": "dones-status-benchmarking-deuteron-induced",
+          "page": 6,
+          "kind": "table",
+          "quote": "Table 2. Major evaluated cross sections libraries for the deuteron interaction with Li isotopes and an origin of information there. Evaluation Release Year Origin of Evaluation; High Energy Limit d + 6Li d + 7Li FZK-05 2005 update, 50 MeV update, 50 MeV INPE-FZK-01 2001 new, 50 MeV, new, 50 MeV ENDF/B-VIII.0 2018 ENDF/B-VII.1; 5 MeV update: 20 MeV ENDF/B-VII.1 2011 LANL 2004; 5 MeV LANL 2006; 20 MeV TENDL-2019 2019 ENDF/B-VII.1; 5 MeV ENDF/B-VII.1; 20 MeV TENDL-2017 2017 ENDF/B-VII.1; 5 MeV ENDF/B-VII.1; 20 MeV TENDL-17(162g) 2017 TALYS-1.9; 1000 MeV TALYS-1.9; 1000 MeV FENDL-3.1 2011 TALYS-1.4; 200 MeV TALYS-1.4; 200 MeV JEFF-3.3 2018 ENDF/B-VII.1; 5 MeV ENDF/B-VII.1; 20 MeV",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-status-benchmarking-deuteron-induced",
+          "page": 16,
+          "kind": "text",
+          "quote": "It was shown that usage of FISPACT-II with TENDL-17(162g) will underestimate the tritium inventory in thick lithium media at deuteron energy 40 MeV (an operation energy of the projected IFMIF or IFMIF-DONES facilities) by factor 3.",
+          "group": "a"
+        }
+      ],
+      "traits": [],
+      "note": "The table is quoted without its last row (JENDL, no evaluation) to stay within the length limit. The 40 MeV of the IFMIF-DONES deuterons is given on page 16 of the same report."
+    },
+    {
+      "id": 1096,
+      "status": "traced",
+      "doc_id": "dones-status-dones-neutronics-source",
+      "evidence": [
+        {
+          "doc_id": "dones-status-dones-neutronics-source",
+          "page": 15,
+          "kind": "table",
+          "quote": "Table 2. Results of the estimated signal current and uncertainties (in brackets) in the SPND inside rigs 11 and 45 of the HFTM. Estimated current (nA) Rig Rig 11 Rig 45 (n, β−) 5.37(3) 42.75(11) (n, γ, e−) 2.34(13) 92(3) (γ, e−) 21.90(3) 523(8) Total 29.6(5) 659(11)",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-status-dones-neutronics-source",
+          "page": 15,
+          "kind": "text",
+          "quote": "From it, we can find that the neutron prompt (n, γ) signal contributes only 14% of the total signal, while most signals are from gamma, and neutron delay signals from (n, β−).",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "arithmetic"
+      ],
+      "note": "The share asked for is not stated: it has to be computed from the table. The second passage only shows how the paper reads the three rows: (n, γ, e−) is the prompt neutron signal (14% of the total, 92/659 for rig 45), (γ, e−) the gamma one, (n, β−) the delayed neutron one."
+    },
+    {
+      "id": 1097,
+      "status": "traced",
+      "doc_id": "dones-status-dones-neutronics-source",
+      "evidence": [
+        {
+          "doc_id": "dones-status-dones-neutronics-source",
+          "page": 33,
+          "kind": "table",
+          "quote": "Table 8. Technical and mechanical properties and hydrogen content of OC and HC. Concrete OC HC Consistency [cm] 17 19 Density [g cm−3] 2.55 3.94 Compress. strength 365 d [MPa] 96.65 95.5 Hydrogen content Chromatographic column [%] 0.35 0.322 [g cm−3] 0.0089 0.0121 TGA Intensity-based [%] 0.1 0.24 [g cm−3] 0.0025 0.0092 Temperature range [%] 0.34 0.21 [g cm−3] 0.0089 0.0082",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-status-dones-neutronics-source",
+          "page": 33,
+          "kind": "text",
+          "quote": "As a result, water and hydrogen content values vary a lot when different temperature ranges are taken. Therefore, such an estimation from TGA has high uncertainty. Therefore the results from the chromatographic column are recommended to be the reference for the next investigations and atomic composition calculation (table 9)",
+          "group": "a"
+        }
+      ],
+      "traits": [],
+      "note": "The table lists three determinations of the hydrogen content that do not agree (the intensity-based TGA gives the heavy concrete more hydrogen by weight too); the second passage says which one is the reference. The table's 0.0121 g/cm3 for HC is a little below 0.322% of 3.94 g/cm3 (0.0127); the answer quotes the table."
+    },
+    {
+      "id": 1098,
+      "status": "traced",
+      "doc_id": "dones-test-cell-configuration-ifmif",
+      "evidence": [
+        {
+          "doc_id": "dones-test-cell-configuration-ifmif",
+          "page": 4,
+          "kind": "figure",
+          "quote": "Fig. 3 shows the activation level of the upper part of the QT after one and thirty years of irradiation [9]. This result indicates that the QT is not hands-on maintainable even after one year of irradiation and 30 days of cooling. Considering that the maintenance of the QT is only in case of damage which may happen after many years of irradiation, the higher dose accumulation on the QT will be completely close the hands-on accessibility. Under this circumstance, the QT must be replaced. A QT transportation route and corresponding equipment for massive activated component must be predefined and reserved in the LS area and other relevant systems.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-test-cell-configuration-ifmif",
+          "page": 4,
+          "kind": "text",
+          "quote": "This maintenance scenario will strongly impact the design of the LS area as well as the IFMIF-DONES building.",
+          "group": "a"
+        }
+      ],
+      "traits": [],
+      "note": "The first passage is the text that describes Fig. 3; the conclusion is stated in it. This is the reference configuration of the 2016 paper (quench tank outside the test cell): in the later design papers of the corpus the quench tank is inside the test cell, so the question says which layout is meant. The neutronics paper it cites, also in the corpus (dones-neutronics-assessment-different-quench), reaches the same conclusion on hands-on maintenance for both locations, but does not discuss replacement or the transport route."
+    }
+  ]
+}

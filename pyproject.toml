@@ -1,0 +1,25 @@
+# Tool configuration only. This is not an installable package: a submission is
+# a zip with main.py at its root, built from one of the numbered folders.
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# The repository root, so tests can import tools/ without installing anything,
+# and the entry's folder, so they import its package as main.py does: dsqa.
+pythonpath = [".", "03_dsqa"]
+# importlib mode lets test files in different folders share a base name.
+# Slow tests run a real model and are opt-in: python -m pytest -m slow
+addopts = "-ra --strict-markers --strict-config --import-mode=importlib -m 'not slow'"
+markers = [
+    "slow: runs a real model; needs a GPU and downloaded weights",
+]
+
+[tool.ruff]
+# The evaluation image runs Python 3.10: later syntax is reported as an error.
+target-version = "py310"
+line-length = 100
+# The organizers' examples stay as they came, so upstream updates merge cleanly;
+# so does the copy of the RAG example the entry answers with (dsqa/example.py).
+extend-exclude = ["01_zero_shot", "02_rag", "03_dsqa/example_rag.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]

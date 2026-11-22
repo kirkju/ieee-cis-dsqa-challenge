@@ -1,0 +1,8 @@
+# Development-only tools, installed on top of requirements-participant.txt:
+#
+#   uv pip install -r requirements-dev.txt
+#
+# None of this exists in the evaluation environment, so nothing that ships in
+# a submission zip may import it.
+pytest==9.1.1
+ruff==0.16.10

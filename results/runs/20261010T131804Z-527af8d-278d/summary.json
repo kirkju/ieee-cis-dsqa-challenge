@@ -1,0 +1,114 @@
+{
+  "run_id": "20261010T131804Z-527af8d-278d",
+  "utc": "2026-10-10T13:18:04+00:00",
+  "git": {
+    "commit": "527af8d2d7dd7e425a6e7ac5516c798b8c8c5b94",
+    "branch": "feat/retrieval-lab",
+    "dirty": false
+  },
+  "system": "lab",
+  "config": {
+    "system": "lab",
+    "main_sha256": "395bc74862a6b9e3c16c84e29b197a2a2fed006dccf57a009f49a08e618f442b",
+    "docling": "2.127.0",
+    "sentence_transformers": "6.0.1",
+    "chunk_size": 800,
+    "chunk_overlap": 150,
+    "context_tokens": 10000,
+    "tokenizer": "allenai/Olmo-3.1-32B-Instruct",
+    "parser": "pymupdf_titled",
+    "chunker": "sections",
+    "chunk_tokens": 254,
+    "title": 1,
+    "references": 1,
+    "ranker": "rrf",
+    "packer": "prefix",
+    "whole": 70,
+    "beside": 0,
+    "budget": 10000,
+    "device": "cuda"
+  },
+  "matching": {
+    "shingle": 12,
+    "whole": 0.8,
+    "part": 0.5
+  },
+  "corpus": {
+    "documents": 150,
+    "pages": 2943,
+    "not_parsed": [],
+    "fingerprint": "c1cebbe069f2",
+    "differs_from_manifest": {
+      "not_in_the_folder": [
+        "dones-nuclear-assessment-ifmif-dones"
+      ]
+    }
+  },
+  "chunks": 14244,
+  "metrics": {
+    "questions": 50,
+    "with_evidence": 50,
+    "passages": 82,
+    "parsed": 50,
+    "chunked": 50,
+    "one_chunk": 32,
+    "top_1": 8,
+    "top_5": 20,
+    "top_10": 29,
+    "top_20": 37,
+    "top_50": 43,
+    "in_context": 44,
+    "in_context_part": 2,
+    "document_in_context": 50,
+    "passages_in_context": 70,
+    "ai_papers_in_context": 23,
+    "ai_papers_with_evidence": 25,
+    "dones_in_context": 21,
+    "dones_with_evidence": 25,
+    "balanced": 0.88,
+    "context_chunks": 47.9,
+    "context_tokens": 9887.2
+  },
+  "by_domain": {
+    "AI Papers": {
+      "with_evidence": 25,
+      "in_context": 23
+    },
+    "DONES": {
+      "with_evidence": 25,
+      "in_context": 21
+    }
+  },
+  "by_question_type": {
+    "causal": {
+      "with_evidence": 12,
+      "in_context": 9
+    },
+    "comparative": {
+      "with_evidence": 7,
+      "in_context": 5
+    },
+    "factual": {
+      "with_evidence": 19,
+      "in_context": 18
+    },
+    "predictive": {
+      "with_evidence": 6,
+      "in_context": 6
+    },
+    "procedural": {
+      "with_evidence": 6,
+      "in_context": 6
+    }
+  },
+  "timings": {
+    "parse_s": 11.1655,
+    "parse_s_per_page": 0.0038,
+    "parsed_now": 0,
+    "chunk_s": 14.8131,
+    "index_s": 0.9326,
+    "retrieve_s_per_question": 0.0627,
+    "total_s": 25.2188
+  },
+  "problems": []
+}

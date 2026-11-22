@@ -1,0 +1,688 @@
+[
+  {
+    "id": 1001,
+    "domain": "AI Papers",
+    "question": "In the chapter \"Addressing Accuracy Issues of Fuzzy Cognitive Map-Based Classifiers\", why the classic FCM classifier obtains in so many datasets a null Cohen's kappa?",
+    "question_type": "causal",
+    "answer": "Because in most cases the classic FCM model converges to a unique fixed point, which causes the classifier to recognise a single decision class; that is why its kappa score is often zero. The chapter gives this as the third of three reasons why the classic FCM classifier performs worse than the logistic regression model, next to the limited generalization capability of the classic FCM formalism, whose weights and activation values are bounded in an interval, and the number of learnable parameters being strictly conditioned by the number of problem features. The LTCN-based classifier, in contrast, does not seem affected by unique fixed-point attractors."
+  },
+  {
+    "id": 1002,
+    "domain": "AI Papers",
+    "question": "In \"Amortized Planning with Large-Scale Transformers: A Case Study on Chess\", how is the searchless agent kept from wavering between several winning moves once the game is already decided?",
+    "question_type": "procedural",
+    "answer": "They add a check at play time: when the predicted scores of all of the agent's top five moves lie above a win percentage of 99%, and Stockfish confirms this condition, the agent plays Stockfish's top move among those five, which keeps its strategy consistent across time steps. The workaround is needed because the agent, even in a position of overwhelming win percentage, sometimes fails to take the virtually guaranteed win and may draw or even lose, since small chances of a mistake accumulate in longer games."
+  },
+  {
+    "id": 1003,
+    "domain": "AI Papers",
+    "question": "In 'Attention Is All You Need', how did the authors arrive at the amount of compute they report for training the big model? Reproduce the calculation.",
+    "question_type": "procedural",
+    "answer": "By multiplying the training time, the number of GPUs used and an estimate of the sustained single-precision floating-point capacity of each GPU. The big model trained for 3.5 days on 8 P100 GPUs, for which the authors take 9.5 TFLOPS: $3.5 \\times 86{,}400\\,\\text{s} \\times 8 \\times 9.5 \\times 10^{12}\\,\\text{FLOP/s} \\approx 2.3 \\times 10^{19}$ floating point operations, the value listed for Transformer (big) in the comparison table."
+  },
+  {
+    "id": 1004,
+    "domain": "AI Papers",
+    "question": "In Autoformer's ablation of how much of the observed series the decoder is given (forecasting 336 steps from 96), how long is the decoder's input sequence with half of that history and with all of it, and what does the longer one cost in memory for what gain in MSE?",
+    "question_type": "factual",
+    "answer": "384 steps with half of the past and 432 with all of it; the longer input costs 328 MB more memory for an MSE that is 0.006 lower. With $I = 96$ and $O = 336$, the half-past input is $I/2 + O = 48 + 336 = 384$ steps and the full-past input is $I + O = 96 + 336 = 432$ steps. Table 8 gives a memory cost of 3271 MB and an MSE of 0.339 for the former and 3599 MB and 0.333 for the latter: $3599 - 3271 = 328$ MB more (about 10%) for $0.339 - 0.333 = 0.006$ less MSE."
+  },
+  {
+    "id": 1005,
+    "domain": "AI Papers",
+    "question": "In 'Autoregressive Image Generation using Residual Quantization', once ImageNet images are encoded on an 8×8 grid, what restores reconstruction quality better: an eight times larger codebook, or four stacked codes per position with the same codebook? Give the reconstruction FID reached in each case.",
+    "question_type": "comparative",
+    "answer": "Stacking codes. With a single code per position (8×8×1, VQ-GAN) the reconstruction FID on ImageNet validation images is 17.95 for K = 16,384 and still 17.09 when the codebook is made eight times larger (K = 131,072). Keeping K = 16,384 and quantizing to depth 4 (RQ-VAE, 8×8×4) gives an rFID of 4.73, on a par with VQ-GAN on a 16×16 grid (4.90, or 4.32 as reproduced); depths 8 and 16 reach 2.69 and 1.83. The authors conclude that increasing the quantization depth D is more effective than increasing the codebook size K."
+  },
+  {
+    "id": 1006,
+    "domain": "AI Papers",
+    "question": "Following the rule SimCLRv2 uses to set its fine-tuning learning rate, what values would apply with a batch of 4096 images, for a standard ResNet-50 and for ResNet-152 (3×+SK)?",
+    "question_type": "predictive",
+    "answer": "0.32 for the standard ResNet-50 and 0.128 for ResNet-152 (3×+SK). SimCLRv2 sets the fine-tuning learning rate to $0.005 \\times \\sqrt{\\text{BatchSize}}$ for standard ResNets and $0.002 \\times \\sqrt{\\text{BatchSize}}$ for the larger variants (width multiplier larger than 1 and/or SK); with its batch size of 1024 this gives 0.16 and 0.064. For a batch of 4096, $\\sqrt{4096} = 64$, so the rates would be $0.005 \\times 64 = 0.32$ and $0.002 \\times 64 = 0.128$, twice the values used in the paper."
+  },
+  {
+    "id": 1007,
+    "domain": "AI Papers",
+    "question": "After how many epochs does BYOL's representation collapse when the prediction and the target are compared without any normalisation in the loss?",
+    "question_type": "factual",
+    "answer": "It does not collapse. In BYOL's ablation of the normalization applied in the loss, using no normalization at all makes the $\\ell_2$ norm of the projection grow rapidly during the first 100 epochs and then stabilise at around $3 \\cdot 10^6$ (Figure 7), but the model still performs reasonably well: 67.4% top-1 under linear evaluation at 300 epochs, against 72.5% with the default $\\ell_2$ normalization."
+  },
+  {
+    "id": 1008,
+    "domain": "AI Papers",
+    "question": "In the BYOL paper, why does multiplying the loss of the SimCLR baseline by a constant change anything in training?",
+    "question_type": "causal",
+    "answer": "Because of the optimizer. The models are trained with LARS, which is not completely invariant to the scale of the loss: it preconditions the gradient updates of all weights except the biases and the batch-normalization parameters. Updates of the preconditioned weights are unaffected by multiplying the loss by a constant, but the updates of the biases and batch-normalization parameters remain sensitive to it, so the factor $2\\alpha$ does matter."
+  },
+  {
+    "id": 1009,
+    "domain": "AI Papers",
+    "question": "In 'Byzantine-Robust Distributed Learning: Towards Optimal Statistical Rates', how many worker machines were actually adversarial in the gradient-descent experiment on logistic regression, and how many points of test accuracy did plain averaging lose to them?",
+    "question_type": "procedural",
+    "answer": "Two machines. The experiment used m = 40 worker machines with a Byzantine fraction α = 0.05, i.e. αm = 0.05 × 40 = 2 machines. With mean aggregation the test accuracy fell from 88.0% (α = 0) to 76.8%, a loss of 11.2 points; the median brought it back to 87.2% and the trimmed mean (β = 0.05) to 86.9%."
+  },
+  {
+    "id": 1010,
+    "domain": "AI Papers",
+    "question": "In Byzantine-robust distributed gradient descent, why can aggregation by coordinate-wise trimmed mean get by with weaker conditions on the distribution of the gradients than aggregation by coordinate-wise median?",
+    "question_type": "causal",
+    "answer": "It cannot; it is the other way round. The trimmed-mean analysis needs the stronger assumption: every partial derivative of the loss has to be sub-exponential, which implies that all its moments are bounded, whereas the median-based algorithm only requires bounded absolute skewness (hence bounded third moments). What the trimmed mean offers in exchange is better rates when each worker machine has a small local sample, meaningful even for n = O(1); it also needs an additional parameter β, which must be an upper bound on the fraction α of Byzantine machines."
+  },
+  {
+    "id": 1011,
+    "domain": "AI Papers",
+    "question": "When ResNet-18 is trained with plain SignGuard as the defence, which of the evaluated attacks still gets a sizeable share of its malicious gradients accepted, how large is that share, and what reason is given?",
+    "question_type": "factual",
+    "answer": "The sign-flipping attack: plain SignGuard still selects 39.08% of the malicious gradients (a selected rate of 0.3908 in Table II), while keeping only 68.70% of the honest ones. Under ByzMean, LIE, Min-Max and Min-Sum its selected rate for malicious gradients is 0. The reason given is that for ResNet-18 the proportions of positive and negative elements in a normal gradient are approximately equal, so the sign statistics of a reversed gradient look much like those of an honest one. SignGuard-Sim and SignGuard-Dist let through less under this attack: 9.81% and 24.40%."
+  },
+  {
+    "id": 1012,
+    "domain": "AI Papers",
+    "question": "In federated learning of a next-character LSTM on the works of Shakespeare, why does adding local computation pay off so much more when every client is one speaking role than on a balanced IID split of the same data?",
+    "question_type": "causal",
+    "answer": "The authors conjecture that it is largely because some roles have relatively large local datasets, which makes increased local training particularly valuable. On the unbalanced, non-IID data split by role, learning was in fact much easier: a 95× speedup against 13× for the balanced IID data."
+  },
+  {
+    "id": 1013,
+    "domain": "AI Papers",
+    "question": "According to \"Connecting the Dots in Trustworthy Artificial Intelligence\", which would be the situation under the AI Act of a company that takes an off-the-shelf chatbot and use it for a different thing than it was released for?",
+    "question_type": "predictive",
+    "answer": "It would no longer be treated as a mere user. The paper points out that the AI Act imposes obligations on providers, importers, distributors and users, and that users can be deemed providers in certain cases: a user who slightly modifies a ready-made AI product such as ChatGPT, or uses it for a different purpose, becomes responsible and accountable for the system's consequences, depending on the conditions that define high-risk AI systems (HRAIs)."
+  },
+  {
+    "id": 1014,
+    "domain": "AI Papers",
+    "question": "In \"Counterfactual Explanations without Opening the Black Box\", which causal model is used to generate the counterfactuals for the Pima diabetes classifier?",
+    "question_type": "factual",
+    "answer": "None: the premise is wrong. The counterfactuals in this paper do not make use of causal models; equivalently, they rest on the naive assumption that the variables are independent of one another. The authors give their reasons: an important use of a counterfactual explanation is to let the data subject audit the data for inaccuracies, and treating such errors as independent and drawn from a robust distribution such as the Laplacian (which corresponds to the L1 norm in their objective) is a sensible model for them; more importantly, accurate causal models are difficult to create and interpret."
+  },
+  {
+    "id": 1015,
+    "domain": "AI Papers",
+    "question": "In Wachter et al.'s \"Counterfactual Explanations without Opening the Black Box\", why do the first counterfactuals for the law-school data change the grade-point average much more than the admission test score?",
+    "question_type": "causal",
+    "answer": "It is an artefact of the distance function used to pick the closest counterfactual, not of the classifier. That first run used the unweighted squared Euclidean distance, which generally prefers changes that are as small as possible and spread uniformly across all variables; since the range of the GPA is much smaller than that of the exam scores, a change that looks small under this metric is a large one for the GPA. Normalising each component by its standard deviation corrects this: with the normalised L2 distance (Table 2) the GPA remains much more consistent and stays within an expected range of values."
+  },
+  {
+    "id": 1016,
+    "domain": "AI Papers",
+    "question": "In DALL-Eval's social bias analysis, how strongly were the images of DALL-E Small skewed towards men for the gender-neutral profession prompts?",
+    "question_type": "factual",
+    "answer": "They were not measured: DALL-E Small was left out of the social bias analysis. The authors only experimented with images from minDALL-E, Stable Diffusion and Karlo, because they found the visual quality of DALL-E Small's images to be highly distorted, so that they do not provide meaningful semantics. For the three models that were analysed, the average gender score for the gender-neutral profession prompts (on a scale where -1 is male and +1 is female) is -0.25 for minDALL-E, -0.22 for Karlo and -0.42 for Stable Diffusion."
+  },
+  {
+    "id": 1017,
+    "domain": "AI Papers",
+    "question": "In DALL-Eval, what value would the measure of overall bias, which compares the detected distribution with a uniform one, take for skin tone if the faces a model generates were spread evenly over exactly four of the ten Monk Skin Tone levels?",
+    "question_type": "predictive",
+    "answer": "0.12. DALL-Eval measures overall bias with the mean absolute deviation (MAD) from the unbiased uniform distribution, $\\frac{1}{N}\\sum_{i=1}^{N} |p_i - \\bar{p}|$, where for skin tone $N = 10$ and $\\bar{p} = 0.1$. A distribution spread evenly over four tones has $p_i = 0.25$ for four categories and $0$ for the other six, so $\\mathrm{MAD} = \\frac{4 \\times |0.25 - 0.1| + 6 \\times |0 - 0.1|}{10} = \\frac{0.6 + 0.6}{10} = 0.12$. This continues the values listed in the paper: MAD(1-hot) = 0.18, MAD(2-hot) = 0.16, MAD(3-hot) = 0.14, ..., MAD(10-hot = uniform) = 0."
+  },
+  {
+    "id": 1018,
+    "domain": "AI Papers",
+    "question": "In the DDPM paper, the CIFAR10 model compresses losslessly worse than other likelihood-based models and yet produces very good images. What explanation do the authors offer for this, and which numbers back it up?",
+    "question_type": "causal",
+    "answer": "They conclude that diffusion models have an inductive bias that makes them excellent lossy compressors: most of the bits encode detail that cannot be perceived. Treating the variational bound terms $L_1 + \\dots + L_T$ as rate and $L_0$ as distortion, the CIFAR10 model with the highest quality samples has a rate of 1.78 bits/dim and a distortion of 1.97 bits/dim, and that distortion amounts to a root mean squared error of only 0.95 on a scale from 0 to 255. More than half of the lossless codelength (1.97 of $1.78 + 1.97 = 3.75$ bits/dim, about 52.5%) therefore describes imperceptible distortions."
+  },
+  {
+    "id": 1019,
+    "domain": "AI Papers",
+    "question": "In 'Easily Accessible Text-to-Image Generation Amplifies Demographic Stereotypes at Large Scale', why do the authors think DALL-E's images for job-related prompts show varied skin tones and gender presentation even though other stereotypes survive in its output?",
+    "question_type": "causal",
+    "answer": "They attribute it to DALL-E's 'guardrails', which ensure that the generated images exhibit a diverse range of skin tones. The authors posit that occupational biases are among the most well-studied in computer science bias scholarship and have therefore been explicitly considered by DALL-E's creators. Subtler biases, biases studied more fully in other disciplines, and biases on dimensions beyond gender and race persist."
+  },
+  {
+    "id": 1020,
+    "domain": "AI Papers",
+    "question": "For quasi-nonlinear fuzzy cognitive maps, how much looser are the estimated limits on the activation values when only the structure of the connections is known, compared with knowing the connection weights as well?",
+    "question_type": "comparative",
+    "answer": "On average about four times looser. In the paper's simulations the overall relative average gap between the estimated bounds and the activations actually produced is 0.21 when the weight information is not used, i.e. with the network topology alone, and using the weight information reduces it to 0.05 across all configurations. The authors conclude that the estimated bounds closely match the actual outcomes, especially when the weight information is considered."
+  },
+  {
+    "id": 1021,
+    "domain": "AI Papers",
+    "question": "In the XAI overview by Barredo Arrieta et al. (Concepts, Taxonomies, Opportunities and Challenges toward Responsible AI), why are symbolic methods considered better placed than connectionist ones to deliver what a good explanation requires?",
+    "question_type": "causal",
+    "answer": "Because, although symbolic methods are popularly considered less efficient than the more precise but opaque connectionist ones, they respect the conditions of a good explanation listed in the paper. They can be constrictive, i.e. say why the model made decision X rather than decision Y, thanks to their ability to refer to established reasoning rules; they can process data directly in a qualitative way (causal links matter more than probabilities for a satisfying explanation) by using a knowledge base formalized, for example, by an ontology; and being selective, i.e. focusing only on the main causes of a decision, is more straightforward for them than for connectionist models. In addition, a good explanation has to influence the mental model of the user, which represents external reality using symbols, so the symbolic learning paradigm is seen as appropriate to produce an explanation."
+  },
+  {
+    "id": 1022,
+    "domain": "AI Papers",
+    "question": "In the overview 'Explainable Artificial Intelligence (XAI): Concepts, Taxonomies, Opportunities and Challenges toward Responsible AI', which post-hoc techniques are said to be usually needed to explain a Bayesian model?",
+    "question_type": "factual",
+    "answer": "None. In the paper's table of ML models, Bayesian models are placed among the transparent models and their entry in the post-hoc analysis column is 'Not needed'; the text says that they 'fall below the ceiling of Transparent models', being simulatable, decomposable and algorithmically transparent. The table only states when each level applies: the model is simulatable if the statistical relationships and the variables themselves are directly understandable by the target audience, decomposable when the relationships involve so many variables that they must be decomposed in marginals, and merely algorithmically transparent when the relationships cannot be interpreted even if decomposed and the model can only be analysed with mathematical tools."
+  },
+  {
+    "id": 1023,
+    "domain": "AI Papers",
+    "question": "In SimSiam, what linear accuracy is left when the model collapses because batch normalization is removed from the MLP heads?",
+    "question_type": "factual",
+    "answer": "It does not collapse: the premise is wrong. Removing all BN layers from the projection and prediction MLP heads leaves a linear evaluation accuracy of 34.6% on ImageNet, against 68.1% for the default configuration (100-epoch pre-training). The accuracy is low, but the authors state that this variant does not cause collapse and attribute the drop to optimization difficulty. Adding BN to the hidden layers alone already raises the accuracy to 67.4%."
+  },
+  {
+    "id": 1024,
+    "domain": "AI Papers",
+    "question": "In 'Feature Generating Networks for Zero-Shot Learning', when pictures of unseen classes were synthesized instead of CNN features, on which dataset did generalized zero-shot accuracy end up below that of using no synthetic data at all, and what reason do the authors give?",
+    "question_type": "causal",
+    "answer": "On CUB. When images of unseen classes are generated, the harmonic mean on CUB drops to 31.9%, against 45.1% with no generated data, whereas on FLO it rises from 21.9% to 49.0%. The authors' explanation is that generating birds is a much harder task than generating flowers: many generated images look accurate as birds or flowers, but they lack the discriminative details needed to be classified correctly and are not class-consistent."
+  },
+  {
+    "id": 1025,
+    "domain": "AI Papers",
+    "question": "In FLTrust, why the server does not count also its own update as one more fully trusted contribution when it aggregates, and how much worse becomes the variant of the ablation that does so?",
+    "question_type": "causal",
+    "answer": "Because that variant may harm the global model, and in the ablation it does. On MNIST-0.5 the variant that also averages in the server model update with a trust score of 1 (FLTrust-withServer) has a testing error rate of 0.07 without attack against 0.05 for FLTrust, 0.08 to 0.10 under the LF, Krum and Trim attacks against 0.05 to 0.06, and 0.94 against 0.06 under the adaptive attack. The reason given is that the root dataset is small and may not have the same distribution as the training data, yet the server model update derived from it would carry a trust score of 1, which reduces the contributions of the benign clients' local model updates."
+  },
+  {
+    "id": 1026,
+    "domain": "AI Papers",
+    "question": "In the Latent Diffusion Models paper, why does only one of the two kinds of first-stage latent space need to be divided by a scale factor for convolutional sampling at higher resolution to work well, and which one is it?",
+    "question_type": "comparative",
+    "answer": "The KL-regularized latent space has to be rescaled; the VQ-regularized one does not. What decides it is the signal-to-noise ratio that the scale of the latents induces. When an LDM is trained directly in the latent space of a KL-regularized autoencoder this ratio is very high, so the model allocates a lot of semantic detail early in the reverse denoising process; dividing the latents by their component-wise standard deviation decreases the SNR. The VQ-regularized space already has a variance close to 1, so it does not have to be rescaled."
+  },
+  {
+    "id": 1027,
+    "domain": "AI Papers",
+    "question": "The Latent Diffusion Models paper gives the training compute of its CelebA-HQ model in V100-days. How many days on the GPU the authors actually used does that correspond to?",
+    "question_type": "procedural",
+    "answer": "About 6.5 days on a single NVIDIA A100. Table 18 lists the CelebA-HQ LDM-4 at 14.4 V100-days. The authors trained all their models on a single A100 and converted A100-days into V100-days by assuming a ×2.2 speed-up of the A100 over the V100, so the actual training time was $14.4 / 2.2 \\approx 6.5$ A100-days."
+  },
+  {
+    "id": 1028,
+    "domain": "AI Papers",
+    "question": "In HiPPO paper, why the reconstruction of a function with the LegT update becomes so bad when its window is set only a bit shorter than the sequence?",
+    "question_type": "causal",
+    "answer": "Because with a window shorter than the sequence the final measure no longer covers the whole history. The paper explains that when θ, the length of the LegT window, is too small, the final measure μ(t) 'is not supported everywhere', so the projection problem 'does not care' that the reconstructed function is highly inaccurate near x = 0. Making θ too small by only 0.5% of the total sequence length already causes huge approximation errors, and the authors note that this is what the HiPPO framework predicts."
+  },
+  {
+    "id": 1029,
+    "domain": "AI Papers",
+    "question": "In the HiPPO experiments on permuted MNIST, which mistake costs the LegT variant more validation accuracy: a sliding window ten times shorter than the ideal one, or ten times longer? By how many points in each case?",
+    "question_type": "comparative",
+    "answer": "The window that is too short. With θ = 200 LegT reaches 98.00% validation accuracy; with θ = 2000 it still reaches 97.90%, i.e. 98.00 − 97.90 = 0.10 points lower, but with θ = 20 it falls to 91.75%, a loss of 98.00 − 91.75 = 6.25 points. HiPPO-LegS scores 98.34% in the same table."
+  },
+  {
+    "id": 1030,
+    "domain": "AI Papers",
+    "question": "In the LIME paper's study with human subjects, how do the two competing religion classifiers compare on the newsgroups test split and on the newly gathered web pages?",
+    "question_type": "comparative",
+    "answer": "They rank in opposite order. The SVM trained on the original 20 newsgroups data scores 94.0% on the original test split but only 57.3% on the religion dataset built from downloaded websites (819 pages per class); the version trained on the 'cleaned' data, from which many features that do not generalize were manually removed, scores lower on the test split (88.6%) but higher on the religion dataset (69.0%). Judged by test accuracy alone, the worse classifier would be selected."
+  },
+  {
+    "id": 1031,
+    "domain": "AI Papers",
+    "question": "In MoCo v2, each of the two ingredients borrowed from SimCLR is also tried alone. Which one helps ImageNet linear classification more, which one helps VOC detection more, and what do the authors conclude?",
+    "question_type": "comparative",
+    "answer": "The MLP head alone helps ImageNet linear classification more, and the extra augmentation alone helps detection more. From the MoCo v1 baseline of 60.6%, the MLP head alone reaches 66.2% top-1 and the extra augmentation alone 63.4%; on VOC detection, however, augmentation alone gives AP50/AP/AP75 of 82.2/56.8/63.2, above the 82.0/56.4/62.6 of the MLP head alone. The authors conclude that linear classification accuracy is not monotonically related to transfer performance in detection."
+  },
+  {
+    "id": 1032,
+    "domain": "AI Papers",
+    "question": "In Informer's ablation of its decoder, how does the forecasting error of the variant that decodes dynamically, step by step, compare with that of the generative-style decoder at a 480-point horizon without prediction offset?",
+    "question_type": "comparative",
+    "answer": "It is about twice as large. At prediction length 480 with offset +0, the dynamic-decoding variant (Informer§) has an MSE of 0.392 against 0.198 for the generative-style decoder (Informer‡), a ratio of $0.392 / 0.198 \\approx 1.98$; its MAE is 0.484 against 0.390. At length 336 without offset the two are close (MSE 0.201 against 0.207), and for every non-zero prediction offset the dynamic-decoding variant fails with unacceptable metric results."
+  },
+  {
+    "id": 1033,
+    "domain": "AI Papers",
+    "question": "In iTransformer paper, why PatchTST is not doing well on the PEMS datasets according to the authors?",
+    "question_type": "causal",
+    "answer": "They attribute it to the nature of the data combined with patching: the PEMS series fluctuate extremely, and the patching mechanism of PatchTST may lose focus on the specific locality needed to handle such rapid fluctuation. By contrast iTransformer, which aggregates the variations of each whole series into its series representation, is said to cope better with this situation."
+  },
+  {
+    "id": 1034,
+    "domain": "AI Papers",
+    "question": "Which pass mark does the Levels of AGI paper set for generality, that is, how large a fraction of the benchmark must a model clear to count as general rather than narrow at one of its performance levels?",
+    "question_type": "factual",
+    "answer": "It does not fix one. The authors say they hesitate to specify the number or percentage of tasks that a system must pass at a given level of performance to be declared a General AI at that level; a rule such as 'at least 90% of an AGI benchmark' is mentioned only as an example of what they decline to set. They expect the required share to be a very high percentage but probably not 100%, since broad but imperfect generality is impactful (individual humans also lack consistent performance across all possible tasks), and they call the question of what portion of benchmark tasks demonstrates generality an open research question."
+  },
+  {
+    "id": 1035,
+    "domain": "AI Papers",
+    "question": "For $\\alpha \\in (0,1)$ let $X_\\alpha$ be the space $L_1[0,1]$ equipped with the rearrangement invariant norm $p_\\alpha(f) = \\frac{1}{\\alpha} \\sup \\left\\{ \\int_A |f| \\, d\\mu : \\mu(A) \\le \\alpha \\right\\}$, which has the almost Daugavet property. Why does $X_\\alpha$ get arbitrarily far from $L_1[0,1]$ in the Banach-Mazur distance as $\\alpha \\to 0$?",
+    "question_type": "causal",
+    "answer": "Because $X_\\alpha$ contains a subspace isometric to $\\ell_\\infty^{(m)}$, where $m$ is the entire part of $1/\\alpha$; this subspace is spanned by the indicator functions $\\mathbf{1}_{[0,\\alpha]}, \\mathbf{1}_{[\\alpha,2\\alpha]}, \\ldots, \\mathbf{1}_{[(m-1)\\alpha, m\\alpha]}$. The authors note that this remark is enough to prove that $\\mathrm{dist}(X_\\alpha, L_1[0,1]) \\to \\infty$ as $\\alpha \\to 0$: the dimension $m$ of the $\\ell_\\infty$-subspace grows without bound as $\\alpha$ shrinks, so the Banach-Mazur distance to $L_1[0,1]$ can be made arbitrarily large."
+  },
+  {
+    "id": 1036,
+    "domain": "AI Papers",
+    "question": "In MuZero, how random is the choice of moves in Atari self-play once the network has gone through 600,000 updates, compared with the very beginning of training?",
+    "question_type": "predictive",
+    "answer": "At that point actions are sampled from the visit count distribution with a temperature T = 0.5, against T = 1 at the beginning. The temperature is decayed with the number of training steps: 1 for the first 500k steps, 0.5 for the next 250k (so from 500k to 750k) and 0.25 for the remaining 250k, which makes action selection greedier as training progresses."
+  },
+  {
+    "id": 1037,
+    "domain": "AI Papers",
+    "question": "In AlphaZero ('Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm'), how many self-play games per hour of training did the chess run get through on average, and how does that compare with the Go run?",
+    "question_type": "procedural",
+    "answer": "About 4.9 million games per hour for chess, against about 0.62 million per hour for Go, roughly eight times fewer. Chess: 44 million training games in 9 h of training, 44/9 ≈ 4.9 million games per hour (about 1,360 per second). Go: 21 million games in 34 h, 21/34 ≈ 0.62 million per hour (about 170 per second). Shogi lies in between with 24 million games in 12 h, i.e. 2 million per hour."
+  },
+  {
+    "id": 1038,
+    "domain": "AI Papers",
+    "question": "According to 'Measuring Implicit Bias Using SHAP Feature Importance and Fuzzy Cognitive Maps', which three unprotected attributes of the German Credit data are most strongly tied to the applicant's age, and how strong is each association?",
+    "question_type": "factual",
+    "answer": "Employment since (F7), residence since (F11) and housing (F15), with association values of 0.37, 0.27 and 0.21 with age (F13). These are the three largest values in the age column of Table 1 among the unprotected features; the next one, property (F12), has 0.17. Their global SHAP values are small (0.012, 0.009 and 0.017)."
+  },
+  {
+    "id": 1039,
+    "domain": "AI Papers",
+    "question": "In the fuzzy cognitive map model for implicit bias with a re-scaled transfer function, what activation does a concept initialised at 0.5 get in an iteration where the raw activation vector is zero, with φ = 0.8, and why is the rule defined this way?",
+    "question_type": "predictive",
+    "answer": "It gets 0.1. When the denominator of the nonlinear component is zero, as it is for a zero raw activation vector, and $\\varphi \\neq 0$, the model sets the neuron's activation to $(1 - \\varphi)\\, a_i^{(0)}$, here $(1 - 0.8) \\times 0.5 = 0.1$. The authors give two reasons for this rule: to avoid indetermination in the denominator, and to prevent neurons that receive no information flow at all from being arbitrarily activated by the transfer function, as happens with the sigmoid, which produces 0.5 when its argument is zero and so leads to misleading simulation results."
+  },
+  {
+    "id": 1040,
+    "domain": "AI Papers",
+    "question": "In \"Numerical index of Banach spaces and duality\", the main counterexample is $X = \\{(x, y, z) \\in c \\oplus_\\infty c \\oplus_\\infty c : \\lim x + \\lim y + \\lim z = 0\\}$, for which $n(X) = 1$ and $n(X^*) < 1$. Can this space $X$ have the Radon-Nikodým property?",
+    "question_type": "predictive",
+    "answer": "No. Proposition 4.1 of the paper states that if a Banach space $X$ has the Radon-Nikodým property (RNP) and $n(X) = 1$, then $n(X^*) = 1$. The space of the counterexample has $n(X) = 1$ but $n(X^*) < 1$, so if it had the RNP the proposition would give $n(X^*) = 1$, a contradiction. Hence $X$ does not have the RNP."
+  },
+  {
+    "id": 1041,
+    "domain": "AI Papers",
+    "question": "In the study of how the numerical index of a Banach space changes under equivalent renormings, can every real Banach space of dimension greater than one be renormed so that its numerical index is exactly 1/4?",
+    "question_type": "predictive",
+    "answer": "Yes. If N(X) denotes the set of values of the numerical index that can be obtained by equivalent renormings of X, then $N(X) \\supset [0, 1/3[$ for every real Banach space X with dim(X) > 1 (and $N(X) \\supset [e^{-1}, 1/2[$ in the complex case). Since 1/4 lies in $[0, 1/3[$, every real space of dimension greater than one has an equivalent norm with numerical index 1/4."
+  },
+  {
+    "id": 1042,
+    "domain": "AI Papers",
+    "question": "In the LRU paper ('Resurrecting Recurrent Neural Networks for Long Sequences'), which one of the two late additions to the model was sufficient on its own to learn PathX: rescaling the input fed to each hidden state, or narrowing the range of the initial eigenvalue phases?",
+    "question_type": "factual",
+    "answer": "Neither was sufficient on its own: both were needed. With the $\\gamma$ normalization alone, the train loss is lower at initialization and train accuracy increases, but the model still fails to generalize at all; and the authors were unable to learn when they restricted the phase at initialization without also introducing the $\\gamma$ normalization. Only with both, the phase at initialization being restricted to $[0, \\pi/10]$, did the LRU reach 94.2% on PathX."
+  },
+  {
+    "id": 1043,
+    "domain": "AI Papers",
+    "question": "In the paper of Short-term Cognitive Networks, against which of the regression models used for comparison the advantage of STCN is not statistically significant at 95% of confidence?",
+    "question_type": "factual",
+    "answer": "Against random forest (RF). In the pairwise analysis with STCN as the control method (Table III), the Holm- and Holland-adjusted p-values for RF are both 0.079676 (0.398380 with Bonferroni), above 0.05, so the null hypothesis can be rejected in favour of STCN only if a 90% confidence level is adopted. For LREG, kNN, MLP and SVM both Holm and Holland support rejection at 95%; the authors accept a rejection when at least one post-hoc procedure supports it, which is why SVM counts as significant despite its Bonferroni value of 0.066945."
+  },
+  {
+    "id": 1044,
+    "domain": "AI Papers",
+    "question": "In 'Slicely Countably Determined Banach spaces', why must $\\ell_1$ embed in the dual $X^*$ whenever X is a real Banach space of infinite dimension that has the alternative Daugavet property?",
+    "question_type": "causal",
+    "answer": "The proof splits into two cases. If X itself contains $\\ell_1$, then $X^*$ contains a quotient isomorphic to $\\ell_\\infty$, hence it has $\\ell_1$ as a quotient, and the lifting property of $\\ell_1$ gives $X^* \\supseteq \\ell_1$. If X does not contain $\\ell_1$, the paper's Corollary 4.8 (a Banach space with the alternative Daugavet property that does not contain $\\ell_1$ is lush) shows that X is lush, and the dual of an infinite-dimensional real lush space contains $\\ell_1$. In either case $X^*$ contains $\\ell_1$."
+  },
+  {
+    "id": 1045,
+    "domain": "AI Papers",
+    "question": "In PatchTST ('A Time Series is Worth 64 Words'), how many input tokens would one channel yield for a look-back window of 720 time steps with the usual patch length of 16 and stride of 8?",
+    "question_type": "predictive",
+    "answer": "90 patches. The series is padded at its end with S repeated copies of the last value, and the number of patches is $N = \\lfloor (L-P)/S \\rfloor + 2$. With L = 720, P = 16 and S = 8: $N = \\lfloor 704/8 \\rfloor + 2 = 88 + 2 = 90$. The same formula gives the two variants of the paper: 64 patches for L = 512 and 42 for L = 336."
+  },
+  {
+    "id": 1046,
+    "domain": "AI Papers",
+    "question": "In the DSI paper ('Transformer Memory as a Differentiable Search Index'), what explains the regular rise and fall of the retrieval validation scores during training?",
+    "question_type": "causal",
+    "answer": "Forgetting, combined with the way the indexing data were ordered. While training, a DSI model forgets previously indexed batches as it indexes new ones, until the next epoch brings the same examples back. The indexing task was built by concatenating the validation documents after the training documents and applying a buffered shuffle with a buffer of 5000, which is smaller than the validation split of NQ100K and NQ320K. As a result the validation scores were higher or lower depending on whether the model had just indexed the validation documents or had indexed them one epoch ago, giving regular peaks and valleys; picking the checkpoint with maximum validation performance implicitly picks the one with minimum forgetting."
+  },
+  {
+    "id": 1047,
+    "domain": "AI Papers",
+    "question": "In 'Are Transformers Effective for Time Series Forecasting?', the authors turn Informer step by step into a single linear layer. In which setting of that experiment does the first step, swapping the attention layers for linear ones, make the forecast worse?",
+    "question_type": "factual",
+    "answer": "On Exchange-Rate at the 96-step horizon: replacing each attention layer of Informer by a linear layer (Att.-Linear) raises the MSE from 0.847 to 1.003. In the other seven settings of the table (Exchange-Rate at 192, 336 and 720 steps and ETTh1 at 96, 192, 336 and 720 steps) Att.-Linear has the lower error, for example 0.979 instead of 1.204 at 192 steps on Exchange-Rate and 0.613 instead of 0.865 at 96 steps on ETTh1."
+  },
+  {
+    "id": 1048,
+    "domain": "AI Papers",
+    "question": "In VMamba's test with inputs larger than the training size, how many points of top-1 accuracy does VMamba-Tiny lose from 224×224 to 768×768 without any tuning, and how does that compare with DeiT-Small?",
+    "question_type": "comparative",
+    "answer": "VMamba-Tiny loses 7.94 points and DeiT-Small 19.71, about two and a half times as much. In Table 9, without any tuning, VMamba-Tiny goes from 82.60% at $224^2$ to 74.66% at $768^2$: $82.60 - 74.66 = 7.94$ points. DeiT-Small goes from 80.69% to 60.98%: $80.69 - 60.98 = 19.71$ points, and $19.71 / 7.94 \\approx 2.5$."
+  },
+  {
+    "id": 1049,
+    "domain": "AI Papers",
+    "question": "In VMamba, why is scanning rows and then columns one after the other so much slower than the one-, two- and four-direction scans, which all run about equally fast?",
+    "question_type": "causal",
+    "answer": "The three orders with the same speed, Unidi-Scan, Bidi-Scan and the proposed Cross-Scan, are all implemented in Triton, so their throughputs differ only minimally. Cascade-Scan, which scans the data row-wise and then column-wise in succession, is held back by its relatively slow computational pace, which the authors attribute primarily to the inadequate compatibility between selective scanning and high-dimensional data, further affected by its multi-step scanning procedure."
+  },
+  {
+    "id": 1050,
+    "domain": "DONES",
+    "question": "If water enters the beam duct of the DONES accelerator, by what factor does the amount passing the fast isolation valve towards the target grow when the valve closes in 1 s instead of 100 ms?",
+    "question_type": "procedural",
+    "answer": "By a factor of about 80. MELCOR predicts 44.0 g of water (20.0 g liquid, 20.1 g fog, 3.9 g vapour) passing the valve when it closes in 0.1 s, and 3551.2 g (3462.7 g of it liquid) when it takes 1.0 s: $3551.2/44.0 \\approx 81$. With a closing time of 0.5 s the amount is 1134.9 g, about 26 times the nominal one."
+  },
+  {
+    "id": 1051,
+    "domain": "DONES",
+    "question": "For a wire scanner on a 40 MeV proton beam, is it suitable to obtain the profile from the secondary particles detected outside the beam pipe, as at high-energy machines?",
+    "question_type": "predictive",
+    "answer": "No. At 40 MeV the profile should be read from the secondary electron emission current of the wire itself, which is mounted electrically isolated. The intensity of the secondary particle shower depends strongly on the beam energy and rises steeply only at about 150 MeV, the pion production threshold (the pion is the lightest shower particle). Below this energy the scattered particles hardly get through the vacuum pipe wall, so measuring the secondary emission current of the wire is the more suitable method."
+  },
+  {
+    "id": 1052,
+    "domain": "DONES",
+    "question": "Why did the first synchrotron of HERA's proton injector chain run without permanent monitoring of its tune?",
+    "question_type": "causal",
+    "answer": "Because that machine, DESY III, was space-charge dominated at injection energy. In that condition the acceptance is fully occupied, so the beam excitation that a tune measurement needs leads immediately to particle losses and has to be avoided. It was therefore decided to have no continuous tune measurement in standard operation: the tune was measured only in dedicated machine studies, to find a suitable working point."
+  },
+  {
+    "id": 1053,
+    "domain": "DONES",
+    "question": "The beam position monitors of the IFMIF-DONES accelerator must work from the full CW beam down to the weak beams of early commissioning. What range of signal levels, in decibels, does this mean?",
+    "question_type": "procedural",
+    "answer": "More than 60 dB. The beam current goes from 125 mA in nominal operation down to 10-100 μA in early commissioning. Expressed in decibels, the current ratio $125\\ \\text{mA}/100\\ \\mu\\text{A} = 1250$ is $20\\log_{10}(1250) \\approx 62$ dB, and $125\\ \\text{mA}/10\\ \\mu\\text{A} = 12500$ is $20\\log_{10}(12500) \\approx 82$ dB. The monitors therefore need a dynamic range exceeding 60 dB, about 80 dB for the weakest beams, in both CW and pulsed modes."
+  },
+  {
+    "id": 1054,
+    "domain": "DONES",
+    "question": "With which precision can be measured the mean energy of the DONES beam from the phase difference between two pickups, and which distance between them is proposed for the diagnostics plate?",
+    "question_type": "factual",
+    "answer": "Assuming a phase accuracy of 2° and a distance accuracy of 100 μm, a separation between the pickups of more than 0.5 m keeps the energy error below 1 %, which is 50 keV at 5 MeV and 400 keV at 40 MeV. To get smaller errors at high energy the diagnostics plate has to be longer than in LIPAc: a length of 2.5-3 m between BPMs is proposed for the commissioning, and with 3 m the error stays below 50 keV."
+  },
+  {
+    "id": 1055,
+    "domain": "DONES",
+    "question": "In the layout of diagnostics proposed in 2019 for the high energy beam transport line of DONES, how many monitors are foreseen for measure the average beam current, and why they are of two different types?",
+    "question_type": "factual",
+    "answer": "Eight. Four are current transformers of the CWCT type, placed in the first part of the line, where they give the average current in CW mode. In the sections downstream the beam pipe is bigger and the bunch is wider, so that kind of monitor is not usable, and four ordinary DC current transformers are installed there instead. (Seven AC current transformers are added for the pulsed mode used during commissioning.)"
+  },
+  {
+    "id": 1056,
+    "domain": "DONES",
+    "question": "How much free space rests between the deuteron beam, counting also its tails, and the borders of the lithium jet in IFMIF-DONES?",
+    "question_type": "factual",
+    "answer": "Only 5 mm on each side. The lithium jet is 260 mm wide; the beam footprint is nominally about 200 mm wide (and 50 mm high), but its horizontal extension reaches up to 250 mm when the tails are counted, which leaves $(260 - 250)/2 = 5$ mm at each side to avoid the beam hitting the walls of the lithium channel."
+  },
+  {
+    "id": 1057,
+    "domain": "DONES",
+    "question": "Which will be the average power of the deuteron beam arriving to the beam dump during the third phase of commissioning of the IFMIF-DONES accelerator?",
+    "question_type": "factual",
+    "answer": "About 50 kW (0.05 MW). In Phase 3 the nominal 125 mA is accelerated to 40 MeV, so the peak power during a macropulse is $125\\,\\text{mA} \\times 40\\,\\text{MV} = 5$ MW, but the duty cycle is limited to 1%, the maximum that the high-power beam dump accepts (macropulses of up to 2 ms at a repetition rate of 5 Hz): $5\\,\\text{MW} \\times 0.01 = 0.05$ MW."
+  },
+  {
+    "id": 1058,
+    "domain": "DONES",
+    "question": "A room of the IFMIF-DONES main building is expected to have an effective dose rate of 30 mSv/h and a beta-gamma surface contamination of 200 Bq/cm². How would it be classified?",
+    "question_type": "predictive",
+    "answer": "As a Specially Regulated controlled area, contamination zone CZ4. A dose rate of 30 mSv/h is above the 1 mSv/h limit of Limited Permanence areas and below the 100 mSv/h from which an area is Forbidden, which is the Specially Regulated class (< 100 mSv/h). A β-γ surface contamination of 200 Bq/cm² is above the 40 Bq/cm² limit of CZ3 and below the 400 Bq/cm² limit of CZ4, the contamination zone that goes with that class."
+  },
+  {
+    "id": 1059,
+    "domain": "DONES",
+    "question": "By what overall factor does the two-stage nozzle of the DONES target assembly narrow the lithium flow, and what velocity does that imply at its inlet?",
+    "question_type": "procedural",
+    "answer": "By a factor of 8, which implies about 1.9 m/s at the inlet. The double reducer nozzle has contraction ratios of 3.2 and 2.5, so the total contraction is $3.2 \\times 2.5 = 8$. The jet leaves the nozzle 25 mm thick at 15 m/s; since the velocity of the (incompressible) lithium is inversely proportional to the flow section, upstream of the nozzle it is $15/8 \\approx 1.9$ m/s."
+  },
+  {
+    "id": 1060,
+    "domain": "DONES",
+    "question": "For the Be-7 gamma source of the DONES lithium loop, how much longer did the photon transport run take with the CAD-generated CDGS source than with the hand-written SDEF source using the single 0.477 MeV line?",
+    "question_type": "procedural",
+    "answer": "About 70 minutes longer, that is 4.24%. For $10^{9}$ histories on a single core, the run took 1714.59 min with the CDGS source and 1644.84 min with the Be-7 line source: $1714.59 - 1644.84 = 69.75$ min, and $69.75/1644.84 = 4.24\\%$. (The SDEF case with the source defined in the 0.4-0.6 MeV bin took 1676.97 min, 1.95% more than the line case.) The line case is the fastest partly because its photon energy is constant."
+  },
+  {
+    "id": 1061,
+    "domain": "DONES",
+    "question": "For how long may a worker stay in the cold trap room of IFMIF-DONES after an accidental lithium leak from the cold trap?",
+    "question_type": "factual",
+    "answer": "Not at all. In the cold trap accident the maximum ambient dose equivalent rate H*(10) reaches 130 mSv/h, above the 100 mSv/h threshold that classifies the room as a red zone, so human access is prohibited and the intervention has to be done with remote handling systems. Intervention times are allowed only in the other scenarios, from 32 min after a rupture of the primary heat exchanger (PHX) pipe to 714 min after a leak from the hot trap (H-trap)."
+  },
+  {
+    "id": 1062,
+    "domain": "DONES",
+    "question": "For a fusion prototypic neutron source driven by twelve copper compact cyclotrons (C-FPNS), how much accelerator investment is estimated per mA-year of beam delivered to the target?",
+    "question_type": "factual",
+    "answer": "About 1.32 to 2.64 M$ per mA-year of beam on target. The comparison table costs twelve copper cyclotrons at less than 11 M$ each (turnkey), with the facility delivering an integrated current of 50 to 100 mA-yr at a 92 % duty cycle; the figure is consistent with 12 x 11 = 132 M$ spread over 100 to 50 mA-yr (132/100 = 1.32 and 132/50 = 2.64 M$/mA-yr). The same table gives 2.5 to 3.8 M$/mA-yr for the single RFQ/linac of IFMIF-lite (220 to 310 M$ for 81 to 88 mA-yr at 65 % duty cycle) and 1.2 to 2.4 M$/mA-yr for twelve superconducting cyclotrons at less than 10 M$ each."
+  },
+  {
+    "id": 1063,
+    "domain": "DONES",
+    "question": "If FAFNIR's linac were built as a normal-conducting DTL at the reduced gradient its designers consider, roughly how long would the section after the RFQ have to be?",
+    "question_type": "procedural",
+    "answer": "About 25 m. The RFQ brings the deuterons to ~3 MeV and the linac continues to 40 MeV, an energy gain of 37 MeV. For the room-temperature drift tube linac, the conservative option, the accelerating gradient is reduced to 1.5 MV/m with a heat dissipation of 50 kW/m (a 10 m cavity gives ~15 MeV with ~500 kW in the structure). The linac then needs $37/1.5 \\approx 24.7$ m, about two and a half such cavities. Its structure would dissipate $24.7 \\times 50\\,\\text{kW} \\approx 1.2$ MW, about the same as the ~1.2 MW of beam power at 30 mA."
+  },
+  {
+    "id": 1064,
+    "domain": "DONES",
+    "question": "In the shielding calculation of the DONES test cell, the ADVANTG weight windows were corrected by hand in the regions that gave no results. With a global factor of 4, by how much is the weight window of a cell halfway along the sweep multiplied?",
+    "question_type": "procedural",
+    "answer": "By about 7.4. The weight-window value of each cell in such a region was increased exponentially with its relative distance $\\delta$ ($0 \\le \\delta \\le 1$) from the starting plane of the sweep, using a global factor $\\lambda$ chosen empirically for the region: $$W_i' = W_i \\exp(\\lambda\\delta)$$ For $\\lambda = 4$ and a cell halfway along the sweep, $\\delta = 0.5$, the multiplier is $e^{4 \\times 0.5} = e^{2} \\approx 7.4$ (it reaches $e^{4} \\approx 54.6$ at the end of the sweep, $\\delta = 1$)."
+  },
+  {
+    "id": 1065,
+    "domain": "DONES",
+    "question": "Why can electrons of about 10 keV stand in for the 40 MeV deuterons in the experiment that measures transition radiation from liquid lithium for IFMIF-DONES?",
+    "question_type": "causal",
+    "answer": "Because a 10.8 keV electron has the same velocity ($\\beta = 0.203$) and the same charge per particle as a 40 MeV deuteron of IFMIF-DONES. With the electron beam impinging on liquid lithium at 300 °C, the OTR yield per incident particle and per solid angle should therefore be the same as in IFMIF-DONES, which allows the experimental yield, and the electrical permittivity of liquid lithium, to be obtained with a simple 1 mA continuous electron beam."
+  },
+  {
+    "id": 1066,
+    "domain": "DONES",
+    "question": "What pumping speed for deuterium does the gas-flow simulation of the IFMIF-DONES beamline assume for its largest cryopumps in the high-energy transport line?",
+    "question_type": "procedural",
+    "answer": "About 3540 l/s. The pumps are specified only for hydrogen: the largest cryopumps of the HEBT (CP 1–2) are listed with 5000 l/s. For capture pumps (cryopumps, ion pumps and titanium sublimation pumps) the model keeps the sticking factor constant and lets the pumping speed decrease with the square root of the molar mass, so for D$_2$ (4 g/mol) instead of H$_2$ (2 g/mol): $5000/\\sqrt{4/2} = 5000/\\sqrt{2} \\approx 3540$ l/s."
+  },
+  {
+    "id": 1067,
+    "domain": "DONES",
+    "question": "What inherent availability would IFMIF-DONES have if its accelerator only reached 80% while the other systems met the availabilities allocated to them?",
+    "question_type": "procedural",
+    "answer": "About 69%, which is below the 75% required. The global inherent availability of 75% is allocated among the systems as: Accelerator Systems 87%, Lithium Systems 94%, Test Systems 96%, Plant Systems 98%, Central Instrumentation and Control Systems 98%, whose product is $0.87 \\times 0.94 \\times 0.96 \\times 0.98 \\times 0.98 \\approx 0.754$. With the accelerator at 80% instead: $0.80 \\times 0.94 \\times 0.96 \\times 0.98 \\times 0.98 \\approx 0.693$."
+  },
+  {
+    "id": 1068,
+    "domain": "DONES",
+    "question": "In the DONES project, which checks has to pass the set of requirements of a system, and by whom, before it is approved?",
+    "question_type": "procedural",
+    "answer": "The requirements of each system are collected in a matrix that goes through three stages, with many revision loops. First, the matrix is defined by the Requirements and Interface Management Group (R&I Group) together with the System Engineer who knows the system in depth. Second, it is revised: by the R&I Group for consistency, then by the Safety Team, and finally in a multidisciplinary check by the other correlated systems. Third, once every requirement is defined and written in a clear way, the matrix can be approved."
+  },
+  {
+    "id": 1069,
+    "domain": "DONES",
+    "question": "In the TRACT analysis of the IFMIF lithium loop activation, what total activity of activated corrosion products is carried by the whole lithium inventory at shutdown, if the inventory volume assumed for the dose calculation is used?",
+    "question_type": "procedural",
+    "answer": "About $1.7\\times10^{10}$ Bq. The coolant activity at shutdown, summed over the thirteen nuclides, is $1.87\\times10^{9}$ Bq/m³ (Table 1), and this inventory is constant throughout the loop. For the dose calculation the entire lithium inventory is taken as a sphere of radius 1.3 m, i.e.\n\n$$V = \\tfrac{4}{3}\\pi (1.3\\ \\text{m})^3 \\approx 9.2\\ \\text{m}^3$$\n\nso the total is $1.87\\times10^{9}\\ \\text{Bq/m}^3 \\times 9.2\\ \\text{m}^3 \\approx 1.7\\times10^{10}$ Bq (about 17 GBq)."
+  },
+  {
+    "id": 1070,
+    "domain": "DONES",
+    "question": "What did the first images of the angular pattern of transition radiation from 120 GeV protons at Fermilab show about the beam divergence, and from which feature?",
+    "question_type": "factual",
+    "answer": "That the beam divergence is sub-mrad, below the 0.5–1.0 mrad level, as expected. The evidence is the deep central minimum of the two-lobe pattern: in both polarization components, horizontal and vertical, the central minimum approaches the baseline."
+  },
+  {
+    "id": 1071,
+    "domain": "DONES",
+    "question": "If a fire burned all the lithium in the DONES Lithium Loop Cell and the confinement barriers were lost, what dose would a member of the public at the site boundary receive, and which nuclide would dominate it?",
+    "question_type": "factual",
+    "answer": "About 40 mSv, dominated by Be-7. The source term of this beyond-design-basis scenario is 0.3 g of tritium dissolved in the lithium and 90 mg of Be-7 (deposited in the heat exchanger plus dissolved in the lithium); the estimate counts only these two contributions. With the provisional dose conversion factors of 10 mSv per gram of tritium (HTO) and 400 mSv per gram of Be-7: tritium $0.3\\,\\text{g} \\times 10\\,\\text{mSv/g} = 3$ mSv; Be-7 $0.09\\,\\text{g} \\times 400\\,\\text{mSv/g} = 36$ mSv; total $\\approx 39$ mSv, i.e. of the order of 40 mSv, more than 90% of it from Be-7."
+  },
+  {
+    "id": 1072,
+    "domain": "DONES",
+    "question": "When bulk specimens are irradiated with 12 MeV protons, how does the damage rate that can be reached change if the specimen is three times thicker, for the same temperature uniformity?",
+    "question_type": "predictive",
+    "answer": "It falls by roughly a factor of nine. The achievable dose rate decreases approximately with the square of the range to be irradiated (doubling the range cuts the dose rate to one fourth), so a specimen three times thicker allows about $1/3^2 = 1/9$ of the dose rate. This agrees with the regimes found accessible for 12 MeV protons: about 1 DPA/day in samples of about 100 μm, but only somewhat more than 0.1 DPA/day in samples of 200–300 μm."
+  },
+  {
+    "id": 1073,
+    "domain": "DONES",
+    "question": "According to the IWANS workshop on advanced neutron sources, why a drift tube linac is not considered suitable to accelerate a high current CW beam after the RFQ, and for which kind of machines it is still a practical solution?",
+    "question_type": "causal",
+    "answer": "Because of two drawbacks that combine at the few-MeV energy at which the beam leaves an RFQ: (1) at such low energies the DTL hardware is short, which strongly limits the focusing strength of the magnets, since these rely on the velocity-dependent Lorentz force; and (2) the aperture of the drift tubes is inherently limited, which leads to enhanced losses at high current. A DTL remains a reliable and practical solution for currents of a few tens of mA with duty cycles of typically 20 %, such as the BNCT concepts aim for."
+  },
+  {
+    "id": 1074,
+    "domain": "DONES",
+    "question": "Where should be kept the spares of IFMIF-DONES acording to the logistics studies made for its maintenance?",
+    "question_type": "factual",
+    "answer": "Mainly in an external centralized storage area; only dedicated parts and components would be kept in storage places near their place of installation. Keeping the spares as close as possible to where they are needed speeds up the maintenance, whereas a centralized storage area is more economical and easier to manage; the assessment schemes carried out came out in favour of the external centralized storage for IFMIF-DONES."
+  },
+  {
+    "id": 1075,
+    "domain": "DONES",
+    "question": "How could tungsten samples be irradiated in the IFMIF-DONES high flux test module at temperatures well above the limit of the capsule heaters, and what temperature could be reached?",
+    "question_type": "procedural",
+    "answer": "By using the nuclear heating of the specimens themselves. The standard capsules serve up to 550 °C, because their mineral insulated heaters can only be used up to about 600 °C. Higher temperatures are obtained with the volumetric heating of the specimens (up to 16.76 W/cm³ in tungsten) in cylindrical capsules that have an additional insulation gap between the specimens and the heater: the gap creates a temperature increase of more than 200 °C from the heaters to the specimens, so that an irradiation at about 800 °C becomes possible."
+  },
+  {
+    "id": 1076,
+    "domain": "DONES",
+    "question": "According to the methodology proposed for remote handling operations in IFMIF-DONES, where can be trained the operators before they carry out the task for real?",
+    "question_type": "factual",
+    "answer": "In an environment similar to the real scenario, which can be a virtual simulator (for example a graphic simulator with VR glasses and a robot control panel), a mock-up or, if possible, a simulation of the operation in the real environment itself. The training is done with the established procedures and with the equipment and tools selected for the task, before the operation is executed for real."
+  },
+  {
+    "id": 1077,
+    "domain": "DONES",
+    "question": "What energy resolution can time-of-flight measurements achieve with the neutron beam brought into the complementary experiments hall of IFMIF-DONES?",
+    "question_type": "factual",
+    "answer": "None: the time-of-flight technique cannot be used there. The beam delivered to the hall is very well collimated (global divergence below 1 degree), but it has no time structure, because the deuteron beam has none, so ToF is not applicable and most of the interesting nuclear physics experiments are ruled out. This is compensated by a very high neutron flux, about $2\\times10^{10}\\,\\text{n/cm}^2/\\text{s}$ in total, 99.5% of it fast neutrons."
+  },
+  {
+    "id": 1078,
+    "domain": "DONES",
+    "question": "In the bio-shield of the DONES test cell, the nuclear heating of the concrete does not reach its maximum right at the face exposed to the neutrons. Where is the maximum, and why?",
+    "question_type": "causal",
+    "answer": "About 5-10 cm inside the concrete of the downstream wall, where the heating peaks at 0.02-0.03 W/cm³. As the neutron flux is attenuated by the shield its spectrum also softens; since iron is the main constituent of the heavy concrete (~50 wt%), the softer spectrum increases the neutron capture reactions and produces more gamma photons in a thin layer of concrete near the inner surface. Gamma photons contribute 80-90% of the total nuclear heating, which explains why the peak lies slightly inside the wall."
+  },
+  {
+    "id": 1079,
+    "domain": "DONES",
+    "question": "One day after shutdown, how do the contact dose rates compare between the two locations studied for the DONES quench tank, and does either allow hands-on maintenance?",
+    "question_type": "comparative",
+    "answer": "With the tank embedded in the test cell floor (Option 2) the contact dose rate is 1124 μSv/h at its flange, about 3.2 times the 348 μSv/h found at the tank when it is placed below the floor (Option 1): $1124/348 \\approx 3.2$. Neither allows hands-on maintenance: both values, for 345 days of operation and one day of cooling, are far above the criterion of 10 μSv/h (about 112 and 35 times), and the dose decreases slowly afterwards (56Mn, 182Ta, 60Co), so it stays too high during the whole 20-day maintenance period."
+  },
+  {
+    "id": 1080,
+    "domain": "DONES",
+    "question": "How many mSv per year does the upper dose-rate limit of the green zone of IFMIF-DONES represent for a person working there full time?",
+    "question_type": "procedural",
+    "answer": "20 mSv per year. The radiological classification scheme adopted for IFMIF-DONES is based on an exposure time of 2000 h/year, and the green zone (controlled area, free permanence) extends up to 10 μSv/h: $10\\ \\mu\\text{Sv/h} \\times 2000\\ \\text{h} = 20\\ \\text{mSv}$. By the same reckoning the limit of the supervised (blue) zone, 3 μSv/h, corresponds to 6 mSv per year and that of the unrestricted (white) zone, 0.5 μSv/h, to 1 mSv per year."
+  },
+  {
+    "id": 1081,
+    "domain": "DONES",
+    "question": "In the thermal-hydraulic simulation of the DONES high flux test module the container structure locally gets hotter than allowed. By how much, and what causes these hot spots?",
+    "question_type": "causal",
+    "answer": "By about 7 °C above the maximum allowed temperature of the compartment structure (150 °C), in small areas on the long-side stiffening plates of compartments 4 and 5, on the walls between capsules. The hot spots lie where the division walls between the mini cooling channels are, and they are due to insufficient cooling of the structure near those walls: the boundary layer thickens in the flow near the channel corners, which reduces the local mass flow rate and with it the heat transfer, and the secondary flows induced by the corners, about 2 % of the primary flow velocity, are too weak to enhance the heat transfer there."
+  },
+  {
+    "id": 1082,
+    "domain": "DONES",
+    "question": "How large is the image of the whole foil of the T2K OTR monitor when it reaches the fibre taper in front of the camera, and how large is it on the camera sensor?",
+    "question_type": "procedural",
+    "answer": "About 2.7 cm in diameter at the fibre taper and about 0.75 cm on the sensor. The first three mirrors have an effective focal length of 110 cm and the fourth one of 60 cm, so the image is demagnified by $60/110 \\approx 0.55$, the 45 % reduction quoted: the 5 cm diameter foil becomes $5\\ \\text{cm}\\times0.55 \\approx 2.7$ cm, which fits within the 4 cm fibre taper. The taper then reduces the image diameter from 4 cm to 1.1 cm, a factor 0.275, so the foil image on the sensor is about $2.7\\ \\text{cm}\\times0.275 \\approx 0.75$ cm across."
+  },
+  {
+    "id": 1083,
+    "domain": "DONES",
+    "question": "What will be volumetric flow of water through each cooling pipe embedded in the concrete walls of the IFMIF DONES test cell?",
+    "question_type": "procedural",
+    "answer": "About 0.63 litres per second per pipe (roughly 38 L/min). The pipes have an inner diameter of 20 mm, so the flow area is $A = \\pi (0.010\\ \\text{m})^2 = 3.14\\times10^{-4}\\ \\text{m}^2$, and the cooling water is supplied at 2 m/s (30 °C):\n\n$$\\dot{V} = A\\,v = 3.14\\times10^{-4}\\ \\text{m}^2 \\times 2\\ \\text{m/s} \\approx 6.3\\times10^{-4}\\ \\text{m}^3/\\text{s} \\approx 0.63\\ \\text{L/s}$$"
+  },
+  {
+    "id": 1084,
+    "domain": "DONES",
+    "question": "How many superconducting cavities and how many solenoids does the IFMIF-DONES SRF linac contain in its five-cryomodule layout, and how are they split between the low-β and the high-β cryomodules?",
+    "question_type": "procedural",
+    "answer": "46 cavities and 29 solenoids. The two low-β cryomodules hold 8 cavities and 8 solenoids (CM1) and 11 cavities and 6 solenoids (CM2), i.e. 19 cavities and 14 solenoids; each of the three high-β cryomodules (CM3, CM4 and CM5) holds 9 cavities and 5 solenoids, i.e. 27 cavities and 15 solenoids. In total $8 + 11 + 3\\times9 = 46$ cavities and $8 + 6 + 3\\times5 = 29$ solenoids."
+  },
+  {
+    "id": 1085,
+    "domain": "DONES",
+    "question": "What material is the beam window that separates the IFMIF-DONES accelerator vacuum from the lithium target chamber made of, and how is it cooled?",
+    "question_type": "factual",
+    "answer": "There is no such window. A particularity of the IFMIF-DONES accelerator is that nothing separates the target vacuum chamber from the rest of the accelerator vacuum line: with a beam of such high power and low energy, a thin window would absorb a huge power, and there is no material that could withstand that load and no means of cooling it. In case of a loss-of-vacuum accident the target chamber is instead isolated by Fast Safety Isolation Valves, which close in 100 ms and act as the safety confinement barrier."
+  },
+  {
+    "id": 1086,
+    "domain": "DONES",
+    "question": "How many times higher than in a DEMO divertor is the helium production per dpa in CuCrZr samples irradiated in the DONES high flux test module?",
+    "question_type": "factual",
+    "answer": "It is not higher. For CuCrZr samples the helium-to-dpa ratio in the volume that meets the damage requirement is similar to the fusion value, about 6 appm He/dpa. What is slightly higher is the hydrogen ratio, approximately 25% above the 36 appm H/dpa expected in the divertor of a future DEMO (that is, about 45 appm H/dpa). A helium ratio of about twice the divertor value (5 appm He/dpa) is found for tungsten, not for the copper alloy."
+  },
+  {
+    "id": 1087,
+    "domain": "DONES",
+    "question": "Suppose EUROFER occupies the twelve central rigs of the DONES high flux test module and tungsten fills all its other rigs and those of a second module placed behind it. By what factor does the tungsten volume above 1 dpa grow when the irradiation lasts two full-power years instead of one?",
+    "question_type": "procedural",
+    "answer": "By a factor of about 7.2. With that loading (case 5 of the study) the tungsten volume receiving more than 1 dpa, the fusion roadmap requirement for tungsten, is $101\\,\\text{cm}^3$ after one full-power year and $728\\,\\text{cm}^3$ after two: $728/101 \\approx 7.2$, a gain of $627\\,\\text{cm}^3$. With 2 fpy the damage requirement is reached up to the rear part of the second module (HFTM2); when tungsten does not occupy the central part of the first module, the irradiation time has to be extended."
+  },
+  {
+    "id": 1088,
+    "domain": "DONES",
+    "question": "What 177Lu activity is produced in one day when the full 125 mA deuteron beam of IFMIF-DONES hits the 176Yb2O3 sample mounted on its water-cooled copper backing?",
+    "question_type": "factual",
+    "answer": "The sample cannot take the full beam: so that neither the Yb2O3 layer nor the copper backing reaches its melting point, the deuteron current has to be reduced from 125 mA to 1.25 mA (1% of the nominal value). With 1.25 mA, 24 hours of irradiation give an activity of 86.11 GBq, which corresponds to 20.96 μg of 177Lu and a specific activity of the unpurified sample of $1.20\\times10^{-4}$ GBq/μg."
+  },
+  {
+    "id": 1089,
+    "domain": "DONES",
+    "question": "In the safety assessment of the Japanese IFMIF-like fusion neutron source, which dose would receive the public from tritium if a lithium fire at the cold trap or hydrogen trap happens while the detritiation system is failed?",
+    "question_type": "factual",
+    "answer": "6.5 mSv. That is 100 times the 65 μSv obtained for the same lithium fire with the detritiation system working, in line with the detritiation factor of 100 assumed for the single system. Because 6.5 mSv is above 2.5 mSv, the event falls in the most severe class, whose initiating-event likelihood has to stay below $10^{-6}$ per year; with the detritiation system working, 65 μSv lies in the 10-100 μSv band, which is tolerated at $10^{-3}$ to $10^{-2}$ per year."
+  },
+  {
+    "id": 1090,
+    "domain": "DONES",
+    "question": "In the availability model of the DONES lithium systems, what happens if a component fails 140 days after the last scheduled stop: is only the repair carried out?",
+    "question_type": "predictive",
+    "answer": "No. The 171 days of normal operation between two scheduled stops are split 70 %/30 % into periods of 120 and 51 days. A failure within the first 120 days launches only the corrective maintenance phase. A failure on day 140 falls in the last 51 days, closer to the next scheduled maintenance, so corrective and preventive maintenance are activated at the same time (phase CM_PM3/20): the preventive maintenance is brought slightly forward to take advantage of the corrective stop."
+  },
+  {
+    "id": 1091,
+    "domain": "DONES",
+    "question": "OTR screens at LCLS showed ring-shaped images with a dark centre downstream of each of its two bunch compressors. Do the two rings have the same origin?",
+    "question_type": "comparative",
+    "answer": "No. After the first compressor, where the beam is wider than the effective source size of a single electron ($\\sigma > b$), the coherent image follows the transverse gradient of the charge distribution: a null in the centre and a peak about 150 μm away, which is the half width of the profile measured with the wire scanner; the COTR there is about 100 times more intense than the incoherent OTR. After the second compressor, at 4.3 GeV ($\\sigma < b$), the image is again 'donut'-like, but in this case the shape is due to the point spread function and not to the gradient of the beam distribution, and the COTR is much stronger, about $10^{5}$ times the incoherent level."
+  },
+  {
+    "id": 1092,
+    "domain": "DONES",
+    "question": "If the lithium pump of DONES trips and its flow runs down linearly in 5 s, after how long does the flow reach the level that triggers the beam shutdown?",
+    "question_type": "procedural",
+    "answer": "After about 1.5 s. The beam-off interlock is activated when the lithium mass flow rate falls to 70% of its nominal value (35 kg/s). With a linear dependence between mass flow rate and pump velocity, this threshold is reached after 30% of the coast-down time: $0.3 \\times 5\\ \\text{s} = 1.5\\ \\text{s}$ (3 s for a 10 s coast-down, 0.9 s for a 3 s one). The RELAP5-3D results confirm this hand calculation; the beam is assumed to stop 0.1 s after the threshold is detected."
+  },
+  {
+    "id": 1093,
+    "domain": "DONES",
+    "question": "How thick must the concrete around the IFMIF-DONES lithium dump tank be to reach the reference dose rate if only Be-7 is counted, and how thick once the activated corrosion products are included?",
+    "question_type": "comparative",
+    "answer": "About 20 cm of ordinary concrete is enough when only Be-7 is considered, but at least 50 cm is needed once the radiation from the activated corrosion products is taken into account, two and a half times more. The suggested design has a shielding of 1 m, twice the thickness required with the corrosion products, and is therefore more than sufficient to keep the dose rate outside the dump tank shielding box below the reference level."
+  },
+  {
+    "id": 1094,
+    "domain": "DONES",
+    "question": "How much would the low-beta cavities of SARAF-II detune if the helium pressure were as unsteady as it was in SARAF-I?",
+    "question_type": "procedural",
+    "answer": "By about ±10.5 Hz. In SARAF-I the helium pressure fluctuated by ±1.5 mbar, which with the measured sensitivity of 60 Hz/mbar moved the resonance by up to ±90 Hz, outside the 130 Hz bandwidth of the cavity. The updated low-beta half-wave resonators have a sensitivity of 7 Hz/mbar, so the same fluctuation gives $7 \\times 1.5 = 10.5$ Hz, about 8.6 times less."
+  },
+  {
+    "id": 1095,
+    "domain": "DONES",
+    "question": "Up to which deuteron energy do the ENDF/B-VIII.0 evaluations for the two lithium isotopes go, and does that cover the beam energy of IFMIF-DONES?",
+    "question_type": "factual",
+    "answer": "Up to 5 MeV for d + 6Li (the file is the one of ENDF/B-VII.1) and up to 20 MeV for d + 7Li (updated in the 2018 release), so neither covers the 40 MeV deuterons of IFMIF-DONES. Of the libraries compared, only FZK-05 and INPE-FZK-01 (50 MeV), FENDL-3.1 (TALYS-1.4, 200 MeV) and the group-wise TENDL-17(162g) (TALYS-1.9, 1000 MeV) reach that energy."
+  },
+  {
+    "id": 1096,
+    "domain": "DONES",
+    "question": "For the self-powered neutron detectors foreseen in the high flux test module of DONES, what share of the expected signal comes from the gamma field rather than from neutrons?",
+    "question_type": "procedural",
+    "answer": "Most of it: about 74% in rig 11 and about 79% in rig 45, the two rigs evaluated. The estimated currents are, for rig 11 and rig 45 respectively, 5.37 and 42.75 nA from the delayed neutron signal (n, β−), 2.34 and 92 nA from the prompt neutron signal (n, γ, e−), and 21.90 and 523 nA from gammas (γ, e−), out of totals of 29.6 and 659 nA: $21.90/29.6 \\approx 0.74$ and $523/659 \\approx 0.79$. The prompt neutron signal is only about 14% of the total in rig 45 ($92/659$)."
+  },
+  {
+    "id": 1097,
+    "domain": "DONES",
+    "question": "Which of the two concretes developed for IFMIF-DONES, the ordinary or the heavy one, contains more hydrogen by weight, and which per unit volume, according to the reference measurement?",
+    "question_type": "comparative",
+    "answer": "By weight the ordinary concrete (OC) contains slightly more hydrogen, 0.35% against 0.322% for the heavy concrete (HC); per unit volume it is the heavy concrete, with 0.0121 g/cm$^3$ against 0.0089 g/cm$^3$, because it is much denser (3.94 against 2.55 g/cm$^3$). These are the values obtained with the chromatographic column, which are recommended as the reference because the estimates from thermogravimetric analysis (TGA) vary a lot with the temperature range taken."
+  },
+  {
+    "id": 1098,
+    "domain": "DONES",
+    "question": "Suppose that, in the IFMIF-DONES layout with the quench tank below the test cell floor, the tank is damaged after many years of operation. Could workers repair it directly after letting it cool down, and what would this mean for the plant?",
+    "question_type": "factual",
+    "answer": "No. The activation calculated for the quench tank shows that it is not hands-on maintainable even after one year of irradiation and 30 days of cooling, and since damage would only be expected after many years of irradiation, the higher accumulated dose closes hands-on access completely. The tank would have to be replaced, so a transportation route and the corresponding equipment for a massive activated component must be predefined and reserved in the lithium systems area, which strongly impacts the design of that area and of the IFMIF-DONES building."
+  }
+]

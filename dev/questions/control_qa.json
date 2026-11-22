@@ -1,0 +1,352 @@
+[
+  {
+    "id": 2001,
+    "domain": "AI Papers",
+    "question": "In backdoor attacks on federated learning where one malicious participant scales up its update to overwrite the global model, why does the next-word predictor not show the dip right after the attack that the image classifier's backdoor shows?",
+    "question_type": "causal",
+    "answer": "Because of where the backdoor sits in that model. Word embeddings make up 94% of the weights of the word-prediction model, and participants update only the embeddings of the words that occur in their own local data. Especially when the trigger sentence is rare, the weights associated with it are therefore rarely updated by the other participants and remain at the local extreme point found by the attacker, so the backdoor accuracy does not drop."
+  },
+  {
+    "id": 2002,
+    "domain": "AI Papers",
+    "question": "How much top-1 accuracy does Barlow Twins gain in ImageNet linear evaluation when a predictor network and a stop-gradient are added to it, as in BYOL and SimSiam?",
+    "question_type": "factual",
+    "answer": "None: it loses accuracy. In the paper's test of asymmetric settings the symmetric baseline reaches 71.4% top-1 (90.2% top-5); adding a stop-gradient alone gives 70.5%, a predictor alone 70.2%, and both together 61.3% top-1 (83.5% top-5), i.e. 71.4 − 61.3 = 10.1 points below the baseline. The authors state that these asymmetries decrease the performance of the network."
+  },
+  {
+    "id": 2003,
+    "domain": "AI Papers",
+    "question": "Why can the Hardy space $H^1$ not have numerical index 1, and neither the space $C(\\mathbb{T})/A(\\mathbb{D})$ of which it is the dual?",
+    "question_type": "causal",
+    "answer": "Because $H^1$ is smooth and it is the dual of $X = C(\\mathbb{T})/A(\\mathbb{D})$. If a Banach space of dimension greater than one has the alternative Daugavet property, its dual is neither smooth nor strictly convex; hence X does not have the alternative Daugavet property, and neither does $X^* = H^1$. Since what is incompatible with the alternative Daugavet property is also incompatible with numerical index 1, $n(X) < 1$ and $n(H^1) < 1$."
+  },
+  {
+    "id": 2004,
+    "domain": "AI Papers",
+    "question": "In the paper of S4 (Efficiently Modeling Long Sequences with Structured State Spaces), the good accuracy is due mainly to the special structure imposed to the state matrix or to how this matrix is initialized? Which ablation shows it?",
+    "question_type": "causal",
+    "answer": "Mainly to how the matrix is initialized. In the ablation, random NPLR matrices still do not perform well (Fig. 4a), which the authors take as validation that S4's effectiveness comes primarily from the HiPPO initialization and not from the NPLR parameterization. With the HiPPO initialization, i.e. the full S4 method, and 0.1 dropout the model reaches 84.27% test accuracy with just 100K parameters."
+  },
+  {
+    "id": 2005,
+    "domain": "AI Papers",
+    "question": "How does DiCE ('Explaining Machine Learning Classifiers through Diverse Counterfactual Explanations') cut down the number of features that a generated counterfactual changes, given that its loss function does not optimize this directly?",
+    "question_type": "procedural",
+    "answer": "With a post-hoc step applied after the optimization: it greedily restores the continuous features of the counterfactual to their values in the original input $x$ until the predicted class $f(c)$ changes. Only continuous features whose difference from the original value is below a threshold are considered. Because the MAD can be fairly large for features with large variance, the threshold chosen for each feature is the minimum of the MAD and the bottom 10% percentile of the absolute difference between non-identical values from the median."
+  },
+  {
+    "id": 2006,
+    "domain": "AI Papers",
+    "question": "In FACE, suppose counterfactuals are served from a graph that was already built and stored, and a loan applicant then says that moving to another city is not an option for her. Does the graph have to be constructed again, and in which situation would it?",
+    "question_type": "predictive",
+    "answer": "No. A new restriction of this kind only requires removing the corresponding edges from the existing base graph, which yields a personalised graph. An entirely new graph has to be built only when the explainee wants a personalised cost function for the feature changes, for example if changing a job should cost twice as much as changing marital status."
+  },
+  {
+    "id": 2007,
+    "domain": "AI Papers",
+    "question": "Of the two Hebbian learning algorithms offered by the FCMpy package, which one can add causal links that the experts never drew, and how does its update schedule differ from the other's?",
+    "question_type": "comparative",
+    "answer": "AHL. Along with optimizing existing edges, AHL creates new connections between the concepts, which may be undesirable if the modeller only intends to tweak the weights rather than create connections that the experts have not endorsed. Its updates are asynchronous: following a sequence of activation patterns specified by the user, at each step a new 'activated node' and its incoming edges are updated while everything else stays unchanged. In the NHL algorithm, all node values and weights are updated simultaneously at each time step."
+  },
+  {
+    "id": 2008,
+    "domain": "AI Papers",
+    "question": "In Bulyan ('The Hidden Vulnerability of Distributed Learning in Byzantium'), if the master receives 25 gradients per round, how many Byzantine workers can it tolerate at most, and how many gradients are then selected and how many values averaged per coordinate?",
+    "question_type": "predictive",
+    "answer": "At most f = 5. Bulyan requires n ≥ 4f + 3, so with n = 25, f ≤ (25 − 3)/4 = 5.5, i.e. f = 5. The first phase recursively selects θ = n − 2f = 25 − 10 = 15 gradients, and each coordinate of the output is the average of the β = θ − 2f = 15 − 10 = 5 values closest to the median of that coordinate among the 15 selected gradients."
+  },
+  {
+    "id": 2009,
+    "domain": "AI Papers",
+    "question": "In ConvTran, at which point of the attention computation are the eRPE position weights added, and why do the authors think this works better?",
+    "question_type": "causal",
+    "answer": "They are added after the softmax has been applied to the attention matrix (Equation 14), not before it. The authors found empirically that attention models perform better this way and presume the reason is that the position values stay sharper when they do not pass through the softmax; sharper position embeddings put more emphasis on the informative relative positions for classification, unlike existing models, in which the softmax is applied to the relative position embeddings as well."
+  },
+  {
+    "id": 2010,
+    "domain": "AI Papers",
+    "question": "In the paper of Growing Spheres, how much sparse are the explanations for the news popularity classifier? Which part of the test articles gets explained by changing at most five features, and how many features are needed at maximum?",
+    "question_type": "factual",
+    "answer": "30% of the test observations have explanations that use 5 features or fewer, according to the reading the authors give of their sparsity distribution plot. The maximum over the whole test set is 17 changed coordinates, and 80% of the observations only need to move in 9 directions or fewer, which is 15% of the 58 features."
+  },
+  {
+    "id": 2011,
+    "domain": "AI Papers",
+    "question": "In MoCo's ablation of the momentum coefficient used to update the key encoder, how much ImageNet linear-classification accuracy is lost when the coefficient drops from the best value of the sweep to 0.9, and what happens with no momentum at all?",
+    "question_type": "factual",
+    "answer": "3.8 points. The best value of the sweep is m = 0.999, with 59.0% accuracy (ResNet-50, K = 4096); at m = 0.9 the accuracy is 55.2%, so $59.0 - 55.2 = 3.8$ points are lost. With no momentum (m = 0) training fails: the loss oscillates and does not converge. Values of m from 0.99 to 0.9999 perform reasonably well (57.8%, 59.0% and 58.9%), which the authors read as showing that a slowly progressing key encoder is beneficial."
+  },
+  {
+    "id": 2012,
+    "domain": "AI Papers",
+    "question": "For the inclusion operator $G\\colon c_0 \\to c$, is the numerical index with respect to $G$ the same as the one obtained for its adjoint $G^*$? What are the two values?",
+    "question_type": "comparative",
+    "answer": "They are as far apart as possible: $n_G(c_0, c) = 1$, whereas $n_{G^*}(c^*, c_0^*) = 0$. The inclusion $G$ is a spear operator, so its numerical index is 1, while its adjoint $G^*\\colon \\ell_1 \\oplus_1 \\mathbb{K} \\to \\ell_1$, $(x, \\lambda) \\mapsto x$, is not even a vertex of $\\mathcal{L}(c^*, c_0^*)$ and therefore has numerical index 0. So the two indices do not coincide for this operator."
+  },
+  {
+    "id": 2013,
+    "domain": "AI Papers",
+    "question": "In 'On the numerical index with respect to an operator', what values can the numerical index take for a norm-one operator between the two-dimensional and the three-dimensional complex Hilbert spaces?",
+    "question_type": "predictive",
+    "answer": "Only the value 0. For complex Hilbert spaces $H_1, H_2$ of dimension greater than one, the paper shows that $\\mathcal{N}(\\mathcal{L}(H_1, H_2)) \\subseteq \\{0, 1/2\\}$ and that the value $1/2$ is taken if and only if $H_1$ and $H_2$ are isometrically isomorphic. A two-dimensional and a three-dimensional Hilbert space are not isometrically isomorphic, so $1/2$ is not attained and every norm-one operator between them has numerical index 0."
+  },
+  {
+    "id": 2014,
+    "domain": "AI Papers",
+    "question": "In OneRec, why is the model far less certain about the first token of an item's semantic ID than about the last, and how large is the difference?",
+    "question_type": "causal",
+    "answer": "Because of autoregressive decoding: the prediction for the first layer inherits higher uncertainty from the preceding decoding steps, while later layers benefit from the accumulated context, which constrains the decision space. In the paper's analysis of the output distributions the entropy is 6.00 for the first layer, 3.71 on average for the second and 0.048 for the third, so the distributions become progressively more concentrated."
+  },
+  {
+    "id": 2015,
+    "domain": "AI Papers",
+    "question": "According to 'On the Opportunities and Risks of Foundation Models', how fast are the largest language models growing compared with the capacity of GPU hardware, and how wide a gap would those two trends open up over four years?",
+    "question_type": "predictive",
+    "answer": "State-of-the-art language models grow roughly $10\\times$ a year, while the computational capacity of hardware grows roughly $10\\times$ in four years (Fig. 19). Over four years the models would therefore grow by about $10^4 = 10{,}000\\times$ against $10\\times$ for the hardware, so the gap widens by a factor of about $10^4 / 10 = 1{,}000$, i.e. three orders of magnitude. The report uses this mismatch to motivate parallelism across a large number of accelerators and co-design of algorithms, models, software and hardware."
+  },
+  {
+    "id": 2016,
+    "domain": "AI Papers",
+    "question": "In the report 'On the Opportunities and Risks of Foundation Models', for how many downstream tasks must a single pretrained BERT Base be reused before its energy bill falls below that of building a separate transformer for every task?",
+    "question_type": "factual",
+    "answer": "About 80 tasks. In the report's hypothetical example of amortized fine-tuning (Fig. 27), if BERT is used for fewer than roughly 80 tasks the up-front energy cost of pre-training is not recovered; beyond that point BERT is more energy efficient than a model trained from scratch for each task. The estimate takes the up-front cost of training BERT from Strubell et al. (2019) and the cost of fine-tuning on a downstream task from Chaudhary et al. (2020), and compares them with the linearly increasing cost of training a transformer from scratch."
+  },
+  {
+    "id": 2017,
+    "domain": "AI Papers",
+    "question": "In TIGER paper (Recommender Systems with Generative Retrieval), the P5 baseline is not executed with its original data pre-processing. Which is the reason of this, and what the authors changed?",
+    "question_type": "causal",
+    "answer": "Because P5's original pre-processing leaks information about the test items. It is applied before the training and testing splits are created and gives the items sequentially increasing integer IDs, so that many sequences have the form $a, a+1, a+2, \\dots$; as P5 uses a SentencePiece tokenizer, the test and train items of a user session may then share sub-word tokens, which leaks information during inference. To remove the leak, the TIGER authors assign random integer IDs to the items instead, and only then create the splits for training and evaluation."
+  },
+  {
+    "id": 2018,
+    "domain": "AI Papers",
+    "question": "In Stable Bias, taking the fifth of professions with more Black workers according to the US labor statistics, which percentage of the images of each of the three systems studied (Stable Diffusion v1.4, Stable Diffusion v2 and Dall·E 2) fall in the clusters linked to the 'Black' prompts?",
+    "question_type": "factual",
+    "answer": "For that top quintile the Bureau of Labor Statistics figure is 22.1% Black workers, while the share of images assigned to the clusters featuring the 'Black' phrase is 16.8% (±0.66) for Stable Diffusion v1.4, 16.1% (±0.57) for Stable Diffusion v2 and 4.5% (±0.46) for Dall·E 2. All three systems stay below the labour figure, Dall·E 2 by far the most."
+  },
+  {
+    "id": 2019,
+    "domain": "AI Papers",
+    "question": "In the Stable Bias paper's examples of 'laboratory technician' portraits sorted by identity cluster, one of the three systems has no image at all in one of the four clusters shown. Which system and which cluster, and which prompt terms characterise that cluster?",
+    "question_type": "factual",
+    "answer": "Dall·E 2 has no image in cluster 1: none of its generations for the laboratory technician prompt is assigned to that cluster (the figure shows clusters 4, 15, 1 and 3). In the paper's table of identity clusters, region 1 has 'woman' and 'non-binary' as top gender phrases and 'Black', 'Afr.American', 'Multiracial' and 'unspecified' as top ethnicity phrases, with a share of 2.7%."
+  },
+  {
+    "id": 2020,
+    "domain": "AI Papers",
+    "question": "In the Mamba-2 paper ('Transformers are SSMs'), why would splitting an original Mamba block across two GPUs cost more inter-GPU communication than splitting a Transformer block, and what was changed in Mamba-2 to avoid it?",
+    "question_type": "causal",
+    "answer": "With tensor parallelism the original Mamba block needs two all-reduces where an attention or MLP block of a Transformer needs one, which doubles the time spent in communication. The reason is that in Mamba the SSM parameters $\\Delta, B, C$ are functions of the convolved activations $x_c$, which are split between the GPUs: an extra all-reduce is needed to get the whole of $x_c$ before $\\Delta, B, C$ can be computed, in addition to the all-reduce at the end, after the output projection. In Mamba-2 the projection that produces $\\Delta, B, C$ takes the block input $u$ directly instead of $x_c$, so these projection matrices can be split across GPUs and one all-reduce per block is enough, as for attention or MLP blocks."
+  },
+  {
+    "id": 2021,
+    "domain": "AI Papers",
+    "question": "In the Mamba-2 paper's sweep over how many attention blocks to mix into an otherwise pure SSD language model, which count gives the lowest perplexity, and what fraction of the network's depth is that?",
+    "question_type": "procedural",
+    "answer": "Six attention blocks, i.e. 12.5% of the layers. Table 2 reports a perplexity of 8.26 with 6 attention blocks, the minimum of the sweep (8.60 with none, which is pure Mamba-2; 8.28 with 5; 8.27 with 7; 8.50 with 24; 8.68 for Transformer++). The model has 48 layers, so the share is $6/48 = 0.125 = 12.5\\%$, consistent with the authors' remark that a ratio of around 10% of attention layers performs best."
+  },
+  {
+    "id": 2022,
+    "domain": "AI Papers",
+    "question": "In the SHAP paper ('A Unified Approach to Interpreting Model Predictions'), which two models are explained in the comparison of Kernel SHAP, Shapley sampling values and LIME as model evaluations increase, and how is the variability of the estimates shown?",
+    "question_type": "factual",
+    "answer": "Two decision trees, each explained for a single input: (A) one that uses all 10 input features and (B) one that uses only 3 of 100 input features. The figure follows the importance estimate of one feature as the number of evaluations of the original model increases, and shows the 10th and 90th percentiles of 200 replicate estimates at each sample size. Kernel SHAP is run with a debiased lasso and LIME with its open source implementation."
+  },
+  {
+    "id": 2023,
+    "domain": "AI Papers",
+    "question": "In SwAV's small-batch comparison (256 images on 4 GPUs), each SwAV epoch is slower than a MoCo v2 epoch. Going by the figures given there, roughly how many hours would MoCo v2's 800-epoch run take?",
+    "question_type": "predictive",
+    "answer": "Roughly 290 hours, almost three times SwAV's run. SwAV (with 2×160 + 4×96 crops) needs 102 hours for 200 epochs, i.e. $102 / 200 = 0.51$ h per epoch, and it is around 1.4× slower per epoch than MoCo v2, so a MoCo v2 epoch takes about $0.51 / 1.4 \\approx 0.364$ h. Its 800 epochs then take about $800 \\times 0.364 \\approx 291$ hours (equivalently $102 \\times 4 / 1.4$), about 2.9 times SwAV's 102 hours, and for a lower accuracy (71.1% against 72%)."
+  },
+  {
+    "id": 2024,
+    "domain": "AI Papers",
+    "question": "In the paper of Vision Mamba (Vim), in which position of the patch sequence is placed the token used for classification, and which accuracies report the authors for this choice and for placing it at the begining of the sequence?",
+    "question_type": "factual",
+    "answer": "In the middle of the patch sequence. In the ablation of the classification design the middle class token gives the best ImageNet top-1 accuracy, 76.1%, against 75.2% for a class token at the head of the sequence (two class tokens reach 74.3%, mean pooling 73.9% and max pooling 73.4%). According to the authors, the middle class token can fully exploit the recurrent nature of the SSM and the central-object prior in ImageNet."
+  },
+  {
+    "id": 2025,
+    "domain": "AI Papers",
+    "question": "In zero-shot learning, when the published methods were re-evaluated under a same protocol, the accuracy that SAE reports on AWA1 could not be reached. Which is the explanation of this gap?",
+    "question_type": "causal",
+    "answer": "SAE reported 84.7% on AWA1, but the re-evaluation obtained only 80.7% on the standard split, and two differences explain it. First, the re-evaluation measures per-class accuracy, while SAE reports per-image accuracy, which is typically higher when the dataset is class-imbalanced, as AWA1 is; SAE's reported accuracy decreases to 82.0% if per-class accuracy is applied. Second, the authors of SAE confirmed that they had improved GoogleNet by adding Batch Normalization and averaging 5 randomly cropped images to obtain better image features, and improved visual features lead to improved zero-shot results."
+  },
+  {
+    "id": 2026,
+    "domain": "DONES",
+    "question": "With the 1 MW proton beam proposed for a fusion prototypic neutron source at LANSCE, which tank of the drift tube linac is left with the smallest RF power reserve, and how do the four tanks compare?",
+    "question_type": "comparative",
+    "answer": "Tank 1. With the FPNS beam its total RF power (nominal power plus beam loading) is 0.409 MW against a peak power limit of 0.425 MW, about 96 % of the limit, which leaves only 0.016 MW (16 kW). Tanks 2, 3 and 4 need 3.278, 2.812 and 3.195 MW against a limit of 3.60 MW each, i.e. about 91 %, 78 % and 89 % of the limit, leaving 0.32, 0.79 and 0.41 MW. All four tanks stay within their limits, Tank 1 by the narrowest margin and Tank 3 by the widest."
+  },
+  {
+    "id": 2027,
+    "domain": "DONES",
+    "question": "In the MELCOR study of lithium spills into the DONES test cell, which break releases more lithium, the one at the exit of the target's reducer nozzle or the 10 cm² one in the bottom of the quench tank, and why is the other spill so small?",
+    "question_type": "comparative",
+    "answer": "The break at the bottom of the quench tank releases more than three times as much. It empties the tank in about 630 s and spills around 600 kg of lithium into the test cell (about 13% of the lithium inventory of the primary loop), whereas the double-ended guillotine break at the outlet of the reducer nozzle spills less than 4% of the inventory, leaving a pool only 16.4 mm high. The nozzle break sits in the upper part of the primary loop, so only the column of lithium above the break and the lithium dragged by the inertia of the fluid comes out; the electromagnetic pump has no inertia."
+  },
+  {
+    "id": 2028,
+    "domain": "DONES",
+    "question": "Between the RHIC-type and the LHC-type ionization chambers used as beam loss monitors, which reacts faster, and how is that achieved despite its larger gas volume?",
+    "question_type": "comparative",
+    "answer": "The planar LHC-type chamber, by about a factor of ten: its reaction time is $\\approx 0.3\\,\\mu\\text{s}$, against $\\approx 3\\,\\mu\\text{s}$ for the co-axial RHIC-type chamber, although its active gas volume is 1.5 l instead of 0.11 l. This is achieved by shortening the drift of the gas ions and electrons: instead of two coaxial cylinders (inner Ø 6.3 mm, outer Ø 38 mm) it uses 61 parallel electrodes only 5.7 mm apart, alternately biased and read out, at 1.5 kV instead of 1 kV. Since the detection threshold of an ionization chamber is proportional to its gas volume, a fast reaction with a large volume requires this short drift time."
+  },
+  {
+    "id": 2029,
+    "domain": "DONES",
+    "question": "In the uncooled Faraday cup that holds back its secondary electrons with samarium-cobalt magnets, what gyration radius would an electron emitted with 10 eV of transverse energy have?",
+    "question_type": "procedural",
+    "answer": "About 0.17-0.18 mm. The Co-Sm magnet arrangement of that cup gives a homogeneous field of $B \\approx 60$ mT. In such a field the secondary electrons spiral around the field lines with the cyclotron radius $r_c = \\sqrt{2 m_e E_{kin,\\perp}}/(eB)$, which is about 1 mm for $E_{kin,\\perp} = 10$ eV at 10 mT. Since $r_c \\propto 1/B$, at 60 mT it is $1\\,\\text{mm} \\times 10/60 \\approx 0.17$ mm. Evaluating the formula directly gives the same: $$r_c = \\frac{\\sqrt{2 \\times 9.11\\times10^{-31}\\,\\text{kg} \\times 1.60\\times10^{-18}\\,\\text{J}}}{1.60\\times10^{-19}\\,\\text{C} \\times 0.06\\,\\text{T}} \\approx 1.8\\times10^{-4}\\,\\text{m}$$"
+  },
+  {
+    "id": 2030,
+    "domain": "DONES",
+    "question": "The lithium jet enters the DONES quench tank at 15 m/s. According to the free-jet estimate, how fast is it still moving when it reaches the tank wall?",
+    "question_type": "factual",
+    "answer": "Between about 5 and 8 m/s on the jet centreline in the impingement zone, according to the diagram of the centreline velocity decrease of a free planar jet, whose two curves bound the evolution of the velocity. The kinetic energy of the jet is therefore not completely dissipated over the depth of the quench tank, and the high-speed flow will generate swirling and splashing of the lithium free surface."
+  },
+  {
+    "id": 2031,
+    "domain": "DONES",
+    "question": "Which ceramic solid electrolyte serves as the membrane of the electrochemical hydrogen sensor developed for the liquid lithium of IFMIF-DONES?",
+    "question_type": "factual",
+    "answer": "None. A single-material membrane of that kind (in electrochemical sensors mostly a ceramic solid electrolyte) does not exist so far for use in liquid lithium. Its functions (permeation of one chemical species, electrical insulation and mechanical stability) are instead provided by several compatible components: a metallic skin with strong stability and a high permeation rate, for which niobium is the favoured material, and a dielectric matrix that supports the hydrogen permeation, a hydrogen conducting electrolyte of calcium chloride with a small addition (5-15 %) of calcium hydride."
+  },
+  {
+    "id": 2032,
+    "domain": "DONES",
+    "question": "Why it does not help to put more concrete between the test cell and the target interface room of IFMIF-DONES to bring down the radiation level in that room?",
+    "question_type": "causal",
+    "answer": "Because the dose in the TIR does not come through the wall but along the beam ducts. In all the shielding configurations investigated, the prompt dose rate upstream of the test cell is very high (well above the 100 mSv/h limit in the TIR) due to radiation streaming through the beam ducts, so increasing the thickness of the TC/TIR wall has no effect. The reduced thickness of 3 m was therefore confirmed for this wall, and local shielding of the beam duct crossing the TIR is being explored."
+  },
+  {
+    "id": 2033,
+    "domain": "DONES",
+    "question": "How much beam power could the lithium film of the LiLiT target carry away at a flow velocity of 4 m/s if its temperature is allowed to rise by 100 °C?",
+    "question_type": "procedural",
+    "answer": "About 24 kW. The power conveyed by the flow is $q_{conv} = \\rho\\, v\\, C_p\\, A\\, \\Delta T$. With the density of liquid lithium $\\rho = 0.51\\,\\text{g/cm}^3 = 510\\,\\text{kg/m}^3$, $C_p = 4350\\,\\text{J/(kg K)}$, the film cross section $A = 18\\,\\text{mm} \\times 1.5\\,\\text{mm} = 2.7\\times10^{-5}\\,\\text{m}^2$, $v = 4$ m/s and $\\Delta T = 100$ K: $$q_{conv} = 510 \\times 4 \\times 4350 \\times 2.7\\times10^{-5} \\times 100 \\approx 2.4\\times10^{4}\\,\\text{W}$$ This is four times the ~6 kW that the authors quote for a velocity of the order of 1 m/s."
+  },
+  {
+    "id": 2034,
+    "domain": "DONES",
+    "question": "Why could the nozzle of the LiLiT lithium target be developed with water tests instead of liquid lithium?",
+    "question_type": "causal",
+    "answer": "Because water at 20 °C has almost the same kinematic viscosity as lithium at 225 °C ($1.01\\times10^{-6}$ against $1.04\\times10^{-6}\\,\\text{m}^2/\\text{s}$), so that for similar flow geometries the water flow and the lithium flow have almost identical Reynolds numbers; in these tests the water film was stable and smooth at velocities up to 26 m/s. A perspex nozzle scaled up by a factor 6 was tested as well in order to reproduce not only the Reynolds number but also the Weber number, which accounts for the surface tension of the liquid: there a water flow of 1 m/s, analogous to a lithium flow of about 7 m/s, was smooth and stable."
+  },
+  {
+    "id": 2035,
+    "domain": "DONES",
+    "question": "At the J-PARC spallation neutron source, by roughly what factor should the octupole beam flattening reduce the pitting damage to the mercury target vessel?",
+    "question_type": "predictive",
+    "answer": "By roughly a factor of four. The extent of the pitting damage is proportional to the fourth power of the peak current density of the proton beam, and the non-linear optics with octupole magnets is calculated to reduce the peak density by 30% compared with linear optics. The damage should therefore fall to $0.7^{4} \\approx 0.24$ of its previous value, a reduction of about 76% (a factor of $1/0.24 \\approx 4.2$)."
+  },
+  {
+    "id": 2036,
+    "domain": "DONES",
+    "question": "A hotter lithium loop would help to keep 7Be from depositing outside the cold trap in IFMIF-DONES. What prevents operating the lithium above about 300 °C?",
+    "question_type": "causal",
+    "answer": "The boiling margin at the free surface of the lithium jet. At the pressure of the target vacuum chamber, $10^{-3}$ Pa, the saturation temperature of lithium on the free surface is 342.14 °C, and the power deposited by the beam raises the surface temperature of the jet by about 30 °C. The lithium therefore cannot be operated above 300 °C without 'superficial boiling' and strong surface evaporation. The limit can only be raised by increasing the pressure in the vacuum chamber, which increases the saturation temperature."
+  },
+  {
+    "id": 2037,
+    "domain": "DONES",
+    "question": "For testing how target materials withstand the thermal shock of real beam pulses, which facility is nowadays the only one open to users, and which restrictions has it for doing fatigue tests of many cycles?",
+    "question_type": "factual",
+    "answer": "The HiRadMat beamline at CERN. It is currently the only user facility that provides the required pulse intensity, but an experiment is limited to about 100 consecutive pulses, far from the more than $1\\times10^{7}$ loading cycles of a high-cycle fatigue study; in addition its beam time depends on the LHC operation schedule, and the specimens are left with residual activity. This is why intense proton, electron or laser sources are being explored as alternatives, the last two loading the specimens without activating them."
+  },
+  {
+    "id": 2038,
+    "domain": "DONES",
+    "question": "For the emittance slit in the ESS medium energy beam transport, to what length must the beam pulse be shortened so that the graphite survives, and what slit inclination is then sufficient?",
+    "question_type": "factual",
+    "answer": "To 50 μs, with the slit tilted at 30°. The mechanical limit of graphite is around 1600 K and the temperature estimate shows that the slit cannot handle a 100 μs beam pulse; with the pulse reduced to 50 μs, an angle of 30° is enough to keep the thermal load below the limits of graphite. Tilting the slit with respect to the beam axis spreads the energy deposition of the 3 MeV beam over a larger surface; angles of 45°, 30° and 15° were compared."
+  },
+  {
+    "id": 2039,
+    "domain": "DONES",
+    "question": "How do the demands on the DONES device that must stop the beam before people in neighbouring areas are overexposed differ from those on its other beam-loss detectors?",
+    "question_type": "comparative",
+    "answer": "The Prompt Radiation Monitor, which has to trigger a safety shutdown of the beam before the prompt radiation in adjacent rooms exceeds radio-protection limits, will be a Safety Class Component and is therefore subject to stricter reliability requirements than the beam loss monitors that feed the Machine Protection System. In exchange it may react more slowly, in the order of hundreds of milliseconds, whereas beam loss monitoring requires a response time of around 10 μs."
+  },
+  {
+    "id": 2040,
+    "domain": "DONES",
+    "question": "Why must the main lithium pump of IFMIF-DONES keep delivering lithium for several seconds after it fails, and how is this achieved?",
+    "question_type": "causal",
+    "answer": "Because if the lithium jet is reduced before the beam has been shut down, the deuteron beam reaches the backplate. The jet is 25 mm thick, enough to stop the beam completely, but the Bragg peak lies at a depth of about 20 mm, only about 5 mm from the backplate, and according to numerical simulations the backplate may melt within 20-150 ms once the beam penetrates towards it. To leave the time needed to stop the beam, the electromagnetic pump is equipped with a flywheel, whose inertia keeps supplying lithium for several seconds after a failure."
+  },
+  {
+    "id": 2041,
+    "domain": "DONES",
+    "question": "Which cutting technique was ruled out for separating the removable section of the IFMIF-DONES test cell liner from the permanent one, and why?",
+    "question_type": "factual",
+    "answer": "Water-lubricated mechanical cutting, because lithium could be present. All the other techniques investigated for releasing the removable liner section (RLS) from the permanent liner section (PLS) are deemed practicable."
+  },
+  {
+    "id": 2042,
+    "domain": "DONES",
+    "question": "If the beam footprint on the DONES lithium target is halved to 10 x 5 cm2, does the target assembly still pass all the structural design checks made along its most loaded paths? If not, which check fails and by how much?",
+    "question_type": "factual",
+    "answer": "Not all of them. With the halved footprint (Scenario 2) the SDC-IC criteria are verified everywhere except the one against immediate plastic flow localisation, (P+Q)m/Se, along path 3: the ratio there is 1.029, about 3 % above the admissible value of 1. The other ratios of that scenario stay below 1 (0.682, 0.743 and 0.291 for the same criterion on paths 1, 2 and 4, and about 0.02 or less for the two other criteria). With the full 20 x 5 cm2 footprint (Scenario 1) every criterion is met, the largest ratio being 0.759."
+  },
+  {
+    "id": 2043,
+    "domain": "DONES",
+    "question": "What temperature does a 0.1 mm ytterbium layer reach in the 177Lu production target proposed for IFMIF-DONES under the full 125 mA deuteron beam?",
+    "question_type": "factual",
+    "answer": "The full 125 mA cannot be used: it gives temperatures above the melting point for the feasible configurations, so the intensity was reduced to 1.25 mA. With 40 MeV deuterons at 1.25 mA, a 0.1 mm ytterbium layer reaches 762 K and its copper backing 752 K, below the melting points of ytterbium (1096 K) and copper (1358 K)."
+  },
+  {
+    "id": 2044,
+    "domain": "DONES",
+    "question": "For the optical system that should image the ESS proton beam window, how does the numerical aperture reached in the preliminary ZEMAX design compare with the one needed to transmit 1 % of the light, and what transmission does the design give?",
+    "question_type": "comparative",
+    "answer": "The preliminary design reaches an object-side effective NA of only 0.00995, about 14 times smaller than the NA above 0.14 that a transmission of 1 % would require ($0.14/0.00995 \\approx 14$). Its geometric transmission is correspondingly $5\\times10^{-5}$, about 200 times below the 1 % aimed at ($0.01/(5\\times10^{-5}) = 200$). The design does satisfy the other expectations: magnification 0.085 (within 0.05-0.2), a depth of field of 5 mm (more than 1 mm) and a resolution of 30 μm (better than 1 mm), with an NA between the 0.004 and the 0.022 that these two require."
+  },
+  {
+    "id": 2045,
+    "domain": "DONES",
+    "question": "What beam power does the liquid lithium target of FAFNIR have to withstand once the facility is upgraded to its full beam current?",
+    "question_type": "factual",
+    "answer": "FAFNIR has no liquid lithium target: it is a stripping source based on the C(d,n) reaction, in which the 40 MeV deuteron beam strikes a rotating solid carbon target (the 10 MW liquid lithium target is that of IFMIF). In the prospective upgrade phase, with the full 30 mA, the carbon target has to take 1.2 MW; the phase based on existing technology takes 100 kW (2.5 mA) and the near-term one 200 kW (5 mA)."
+  },
+  {
+    "id": 2046,
+    "domain": "DONES",
+    "question": "What pressure rise does the argon generated by the sodium filling cause in the HFTM irradiation capsules of IFMIF-DONES?",
+    "question_type": "factual",
+    "answer": "None: pure sodium does not produce argon or other insoluble gases, and that is why it was chosen as filling material. The argon was a problem of the previous filler, NaK-78, whose potassium generates several argon isotopes: several cm$^3$ at standard temperature and pressure, which would raise the pressure in the capsule by about 30 bar and form bubbles that counteract the purpose of a heat-conducting filler."
+  },
+  {
+    "id": 2047,
+    "domain": "DONES",
+    "question": "Which of the common screen materials used to view hadron beams gives by far the most light, and how many times more than chromium-doped alumina?",
+    "question_type": "factual",
+    "answer": "Thallium-doped caesium iodide, CsI:Tl. In the table of screen sensitivities for hadron beams its relative sensitivity is about 200, with Al2O3:Cr (chromium-doped alumina) taken as 1, so it gives roughly 200 times more light. The next most sensitive material of the table, P43, reaches only about 1.5, and the least sensitive, quartz, about 0.005. CsI:Tl has a decay time (to 10 %) of 900 ns, against more than 20 ms for Al2O3:Cr, and emits around 550 nm."
+  },
+  {
+    "id": 2048,
+    "domain": "DONES",
+    "question": "At the SNS mercury target, how bright would the helium between the proton beam window and the target be, compared with the luminescent coating used to image the beam, if the whole helium column contributed?",
+    "question_type": "procedural",
+    "answer": "About 3% as bright as the coating, comparing photon yields. The table gives the helium scintillation for a 10 mm thick slab of gas: $3\\times10^{-3}$ photons/proton/steradian. Helium fills the 2 m long flight path between the proton beam window and the target face, i.e. 200 such slabs: $200 \\times 3\\times10^{-3} = 0.6$ photons/proton/steradian. The Cr:Al2O3 coating yields $2\\times10^{1}$ photons/proton/steradian, so the helium would add $0.6/20 = 0.03$ of the coating signal: the noticeable background from a thick section of helium that the authors warn about."
+  },
+  {
+    "id": 2049,
+    "domain": "DONES",
+    "question": "An OTR screen is viewed by a lens with a clear aperture of 25 mm placed 400 mm from the screen. From which Lorentz factor of the beam upwards can the camera be centred on the direction of specular reflection and still collect the whole radiation cone?",
+    "question_type": "procedural",
+    "answer": "From $\\gamma \\approx 32$ upwards. The acceptance angle at the centre of the screen is $\\theta = D/(2s) = 25/(2\\times400) \\approx 0.031$ rad. The OTR cone has an opening angle of $1/\\gamma$, so the whole cone enters the lens when $\\gamma > \\gamma_{min} = 1/\\theta = 1/0.03125 = 32$. For beams with a lower $\\gamma$ the camera has to be centred on one of the lobes of the emission instead. (The worked example of the text, $D = 36$ mm at $s = 300$ mm, gives $\\theta = 0.06$ rad and $\\gamma_{min} = 17$.)"
+  },
+  {
+    "id": 2050,
+    "domain": "DONES",
+    "question": "Which of the phosphors typically coated on beam observation screens loses its light the fastest, and how long does the tail of its decay, down to one percent, last?",
+    "question_type": "factual",
+    "answer": "P 47, cerium- and terbium-doped yttrium silicate (Y2SiO5:Ce,Tb). Its light intensity falls from 90 % to 10 % in 100 ns, and the tail from 10 % to 1 % takes 2.9 μs. The other phosphors listed are slower: P 46 (Y3Al5O12:Ce) needs 300 ns and 90 μs, P 43 (Gd2O2S:Tb) 1 ms and 1.6 ms, and P 11 and P 20 several milliseconds and tens of milliseconds."
+  }
+]

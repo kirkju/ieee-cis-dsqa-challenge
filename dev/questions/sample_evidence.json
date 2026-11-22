@@ -1,0 +1,403 @@
+{
+  "questions": "sample/sample_qa.json",
+  "items": [
+    {
+      "id": 1,
+      "status": "untraced",
+      "evidence": [],
+      "note": "Its source was not found. No document read holds together the three things the answer rests on: what a destructive diagnostic is, OTR as an effect at the boundary of two media, and scintillation from energy deposited by a proton beam. The DONES papers on beam diagnostics speak of fluorescence, interceptive devices and deuterons instead. General texts on beam instrumentation in the corpus state parts of it and are not annotated."
+    },
+    {
+      "id": 2,
+      "status": "untraced",
+      "evidence": [],
+      "note": "Its source was not found. No document read holds together the three things the answer rests on: what a destructive diagnostic is, OTR as an effect at the boundary of two media, and scintillation from energy deposited by a proton beam. The DONES papers on beam diagnostics speak of fluorescence, interceptive devices and deuterons instead. General texts on beam instrumentation in the corpus state parts of it and are not annotated."
+    },
+    {
+      "id": 3,
+      "status": "traced",
+      "doc_id": "dones-radiation-dose-assessment-7be",
+      "evidence": [
+        {
+          "doc_id": "dones-radiation-dose-assessment-7be",
+          "page": 4,
+          "kind": "table",
+          "quote": "Table 5 Decay gamma energies and intensities of 7Be and ACPs. Activation product T1/2 Energy (Mev) Intensity 7Be 53.22 d"
+        }
+      ],
+      "note": "Table 5 gives 53.22 d. The running text of the same paper gives 53.3 d, and the reference answer to question 5 gives 53.1 d. The decay constant is computed from the value rounded to 53 d. This paper has three figures, so question 4 is not from it; if the paper behind question 4 has the same table, question 3 may come from there instead."
+    },
+    {
+      "id": 4,
+      "status": "untraced",
+      "evidence": [],
+      "note": "Its source was not found: no document that could be opened has a Fig. 8 with the evolution of the radionuclides in the heat exchanger under a 'basic corrosion model'. A paywalled candidate that could not be read: Tidikas et al., Fusion Eng. Des. 220 (2025) 115358. The answer is read off a figure."
+    },
+    {
+      "id": 5,
+      "status": "unavailable",
+      "doc_id": "dones-nuclear-assessment-ifmif-dones",
+      "evidence": [],
+      "note": "Paywalled, no preprint. The figures of the reference answer (the deuteron flux, the 250 cm3, the split of the tritium) were not seen in any document. Later papers in the corpus repeat the 150 mg of Be-7 and the two production paths, citing this one; they are not annotated."
+    },
+    {
+      "id": 6,
+      "status": "untraced",
+      "evidence": [
+        {
+          "doc_id": "dones-lithium-systems-ifmif-dones",
+          "page": 9,
+          "kind": "table",
+          "quote": "Table 2. Thermal design parameters for Heat Exchangers. Units HX1 HX2 HX3 Shell side medium — Lithium Dowtherm-Q Water Tube side medium — Dowtherm-HT Dowtherm-HT Dowtherm-Q Shell side inlet temp. ◦C 318 60 28.8 Shell side outlet temp. ◦C 300 85 38.8 Tube side inlet temp. ◦C 185 220 85 Tube side outlet temp. ◦C 220 185 60 Shell side mass flow kg s−1 49.7"
+        },
+        {
+          "doc_id": "dones-accident-analysis-melcor-fusion",
+          "page": 4,
+          "kind": "table",
+          "quote": "Table 1: Steady-state results obtained with MELCOR compared with the reference design parameters Parameter MELCOR Reference Pressure target (Pa) ̴ 100 1E-3 Total circuit pressure loss (Pa) 2.5E5 2.4E5 Total Li mass flow rate (kg/s) 49.6 49.7 Velocity at nozzle exit (m/s) 14.9 15 Li temperature in HX (°C) 249.8 250.0 Li temperature in QT (°C) 274.0 274.0"
+        }
+      ],
+      "note": "Its source is not established. Two passages hold the 49.7 kg/s the answer starts from. Table 2 of the 2025 paper on the lithium systems gives it for HX1, shell side, lithium, but with the lithium at 318 and 300 degrees C. Table 1 of the 2018 paper on accident analysis with MELCOR gives it as the reference design value with the lithium at 250 degrees C in the heat exchanger and 274 in the quench tank, the temperatures the answer takes the density at (250 to 273). The question was probably written from a document of that earlier design with a 'Table 2' of the heat exchanger; a paywalled candidate is Dezsi et al., Fusion Eng. Des. 146 (2019) 430. The volumetric flow is in neither table: it has to be computed."
+    },
+    {
+      "id": 7,
+      "status": "traced",
+      "doc_id": "dones-lithium-loop-purification-system",
+      "evidence": [
+        {
+          "doc_id": "dones-lithium-loop-purification-system",
+          "page": 4,
+          "kind": "text",
+          "quote": "Therefore, the N purification is made utilizing the getters allocated in the lithium storage tank, Dump Tank (DT), of the PHRS, which will be operated in static condition on the whole Li inventory, before the first start-up of the plant and after the stops for maintenance. The getter material has not been finally defined yet, but it will be chosen among Titanium, Titanium alloys or Niobium. In order to provide sufficient reactivity, the trap is operated at 500-600 °C nominal temperature: because of this high value, the trap will be realized in SA-240 316H."
+        },
+        {
+          "doc_id": "dones-european-approach-fusion-like",
+          "page": 27,
+          "kind": "text",
+          "quote": "The N hot trap, allocated in the lithium storage tank, Dump Tank (DT), will be operated in static condition on the whole Li inventory, before the first start-up of the plant and after the stops for maintenance. The getter material has not been surely defined yet, but it will be chosen among Titanium, Titanium alloys or Niobium. In order to provide sufficient reactivity, the trap is operated at 500-600 °C nominal temperature: because of this high value, the trap will be realized in SA-240 316H."
+        }
+      ],
+      "note": "The sentence with the temperature is word for word in two documents, the 2018 preprint on the lithium loop and the overview article that reuses it; which one the question was written from cannot be told. The question has a false premise (an on-line trap). Neither document uses the word off-line: the trap is said to work on the whole inventory in the dump tank, before start-up and after maintenance, while the other impurities are removed online."
+    },
+    {
+      "id": 8,
+      "status": "traced",
+      "doc_id": "dones-lithium-systems-ifmif-dones",
+      "evidence": [
+        {
+          "doc_id": "dones-lithium-systems-ifmif-dones",
+          "page": 13,
+          "kind": "table",
+          "quote": "Table 4. Main design requirements of ICS. Item Value Notes Flow rate 2.015 l s−1 Purification branch = 1.95 l s−1; Monitoring branch = 0.065 l s−1"
+        },
+        {
+          "doc_id": "dones-lithium-systems-ifmif-dones",
+          "page": 9,
+          "kind": "table",
+          "quote": "Table 1. Main design requirements of PLO. ITEM VALUE NOTE Constant Flow rate 97.5 l s−1 Nominal value in the main Li loop"
+        },
+        {
+          "doc_id": "dones-lithium-systems-ifmif-dones",
+          "page": 8,
+          "kind": "text",
+          "quote": "About 2% of the Li flow is extracted by a dedicated electromagnetic pump and re-injected into the primary loop."
+        }
+      ],
+      "note": "Table 4 gives the three flows. The 2% of the reference answer is their ratio to the 97.5 l/s of Table 1, and is also stated on page 8. Earlier documents in the corpus give the flow through the impurity control system as 0.65 l/s."
+    },
+    {
+      "id": 9,
+      "status": "traced",
+      "doc_id": "dones-accomplishment-engineering-design-activities",
+      "evidence": [
+        {
+          "doc_id": "dones-accomplishment-engineering-design-activities",
+          "page": 4,
+          "kind": "text",
+          "quote": "The main building is a four-storey rectangular building which has a dimension of about 137 m long, 111 m wide, 40.5 m high (27 m high above the ground level)"
+        },
+        {
+          "doc_id": "dones-overview-ifmif-eveda-project",
+          "page": 6,
+          "kind": "text",
+          "quote": "The main building (see figure 3) is a four-storey rectangular building which has a dimension of about 137 m in length, 111 m in width, 40.5 m in height (27 m high above ground level)"
+        }
+      ],
+      "note": "The passage gives the three dimensions; the volume in the reference answer is their product, computed for the full height and for the 27 m above ground. The paper describes IFMIF, not DONES. The 2017 overview of the same project repeats the sentence in other words."
+    },
+    {
+      "id": 10,
+      "status": "traced",
+      "doc_id": "dones-overview-recent-advancements-ifmif",
+      "evidence": [
+        {
+          "doc_id": "dones-overview-recent-advancements-ifmif",
+          "page": 3,
+          "kind": "text",
+          "quote": "Depending on the workloads during maintenance (still in the definition phase) and dose rates, hands-on maintenance is assumed free for areas below 10 μSv/h, and remote handling is directly required for areas above 100 mSv/h."
+        },
+        {
+          "doc_id": "dones-remote-maintenance-ifmif-dones",
+          "page": 4,
+          "kind": "text",
+          "quote": "Based on the criteria defined by the DONES project, hands-on maintenance is assumed free for areas below 10 μSv h−1, and RH is directly required for areas above 100 mSv h−1"
+        }
+      ],
+      "note": "The reference answer is this sentence. The 2025 paper on remote maintenance repeats the two limits without the clause on workloads."
+    },
+    {
+      "id": 11,
+      "status": "traced",
+      "doc_id": "ai-onesearch-preliminary-exploration-unified",
+      "evidence": [
+        {
+          "doc_id": "ai-onesearch-preliminary-exploration-unified",
+          "page": 5,
+          "kind": "text",
+          "quote": "Furthermore, RQ-VAE has shown weaker performance compared to RQ-Kmeans [5, 17], as validated in Table 3. Therefore, we adopt RQ-Kmeans as the foundational tokenizer."
+        },
+        {
+          "doc_id": "ai-onesearch-preliminary-exploration-unified",
+          "page": 6,
+          "kind": "text",
+          "quote": "To further improve CUR and ICR, OneRec-V1 [5] proposed using full layers balanced k-means. However, for complex fine-grained attributes of items, forcing them into the same cluster in the early stages can lead to hierarchical clustering collapse. As shown in Table 2, theCURtotalfor the balanced k-means operation on full layers (4096-1024-512+) is much lower than the (\\+keywords) configuration. The CURdrastically decreased from 48.95% of CURL1+L2 to 1.64% inCURtotal, indicating that many similar items were assigned the same ID. Therefore, we propose applying balanced k-means only to the codebook of the third layer to achieve independent encoding of similar items."
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 12,
+      "status": "traced",
+      "doc_id": "ai-overlap-number-balls-model",
+      "evidence": [
+        {
+          "doc_id": "ai-overlap-number-balls-model",
+          "page": 8,
+          "kind": "text",
+          "quote": "In case there are immutable features, instead of the opposing balls and their centres, their projections on the subspace where said features are restricted to having the same values as the studied instance are used instead for this step (viable projections are inside their balls and maintain the ball’s class) so that all candidates will share those immutable values (line 5)."
+        },
+        {
+          "doc_id": "ai-overlap-number-balls-model",
+          "page": 11,
+          "kind": "text",
+          "quote": "Regarding the counterfactual explanation algorithms from the state of the art, CEM [8] (on its base and variational autoencoders versions), CLUE [2], CRUDS [10], DiCE [22], FACE [27] (on its knn and ε-graph versions), Growing Spheres [17], Wachter [33] and NICE [5], whose particularities were explained in Section 2.2, were included in the quantitative benchmarking."
+        }
+      ],
+      "note": "Only the preprint is available. It describes the projections and lists the methods compared, but it does not say that DiCE, FACE and Growing Spheres already handle immutable features, nor does it discuss an ablation: that part of the reference answer is not in it."
+    },
+    {
+      "id": 13,
+      "status": "traced",
+      "doc_id": "ai-properties-lush-spaces-applications",
+      "evidence": [
+        {
+          "doc_id": "ai-properties-lush-spaces-applications",
+          "page": 11,
+          "kind": "text",
+          "quote": "Therefore, {(xm, ym) : m ∈N} is dense in SY × SY and has every element repeated infinitely many times. Due to our construction, this means that item (ii) of Theorem 4.1 holds for any x, y from the fixed dense subset {(xm, ym) : m ∈N} of SY × SY for all n ∈N and with arbitrarily small epsilons. This means that Y is lush."
+        }
+      ],
+      "note": "The question quotes Theorem 4.1 but asks about the end of the proof of Theorem 4.2, which applies it. The passage is set in mathematical notation."
+    },
+    {
+      "id": 14,
+      "status": "traced",
+      "doc_id": "ai-revel-framework-measure-local",
+      "evidence": [
+        {
+          "doc_id": "ai-revel-framework-measure-local",
+          "page": 33,
+          "kind": "text",
+          "quote": "As lessons learned, we want to remark that having bounded metrics with well-defned limits gives us absolute information on every evaluation aspect and not only a comparative one. Tis is useful to dismiss explanations by themselves even if there is no baseline to compare with."
+        },
+        {
+          "doc_id": "ai-revel-framework-measure-local",
+          "page": 4,
+          "kind": "text",
+          "quote": "poorly calibrated measures where the worst or best score is not achieved only by the worst or best option, respectively, result in saturations that equalize part of the examples, removing relevant information. In addition, it is desirable that these measures have good mathematical properties such as smoothness so that there are no abnormalities in practical cases that were not considered."
+        },
+        {
+          "doc_id": "ai-revel-framework-measure-local",
+          "page": 5,
+          "kind": "text",
+          "quote": "We can easily abstract the loss function that evaluates our metric to consider vector distances among probability vectors: Local Concordance (g)  1 −|f(x) −g(x)| C , (7) where |·| is a defned norm (1-norm, 2-norm, inf-norm. . .) and C is the maximum distance between two possible probability vectors. Tis term exists and is reached because the probability space is complete and the norm is continuous. Moreover, C is computed as |u −v|, where u  (1, 0, . . . , 0) and v  (0, 1, 0, . . . , 0), regardless of the norm."
+        },
+        {
+          "doc_id": "ai-revel-framework-measure-local",
+          "page": 5,
+          "kind": "text",
+          "quote": "analogous LEAF proposal local concordance is defned as l(|f(x) −g(x)|), where l(k)  max(0, 1 −k) is the hinge loss function [16]. In contrast to our proposal, the use of the hinge function makes it nonsmooth. It also does not assure that only the maximum discordance reaches the worst value of the metric. In conclusion, the LEAF proposal has inconsistencies that our proposal overcomes."
+        }
+      ],
+      "note": "The text layer of this PDF drops ligatures: it reads 'Tis', 'defned', 'diferent'. A quote is matched against the text as it is extracted."
+    },
+    {
+      "id": 15,
+      "status": "traced",
+      "doc_id": "ai-winstat-family-trainable-positional",
+      "evidence": [
+        {
+          "doc_id": "ai-winstat-family-trainable-positional",
+          "page": 15,
+          "kind": "text",
+          "quote": "between w = 24 and w = 36, i.e., approximately one quarter to one third of the sequence length. We therefore adopt the rule-of-thumb w ∈[⌊L/4⌋, ⌊L/3⌋] when feasible. On very large or high-frequency datasets, we apply the heuristic subject to memory constraints. For instance, on TINA (sequence length L = 288) the 30-second sampling interval motivates broader context, but GPU memory constraints required us to cap the window at w = 60"
+        }
+      ],
+      "note": "The paper gives the rule and the TINA exception. Applying it to L = 512, and the advice on memory and batch size, are the expert's own."
+    },
+    {
+      "id": 16,
+      "status": "traced",
+      "doc_id": "ai-classic-fuzzy-cognitive-maps",
+      "evidence": [
+        {
+          "doc_id": "ai-classic-fuzzy-cognitive-maps",
+          "page": 6,
+          "kind": "text",
+          "quote": "Example: Let Ci and Cj be two decision neurons using a sigmoid activation function in an FCM-based classifier, such that [0.1, 0.3] and [0.6, 0.9] are their feasible activation spaces, respectively. If this happens, the activation value of Ci will never be greater than that of Cj. As a result, the decision class associated with the first neuron will never be produced by the classifier."
+        },
+        {
+          "doc_id": "ai-classic-fuzzy-cognitive-maps",
+          "page": 6,
+          "kind": "text",
+          "quote": "In our proposal, we calculate the relative activation values of decision neurons before making the label decision. As observed in Definition 2, we first normalize the activation values within the [0, 1] interval. Then, the decision neuron with the highest relative activation gives the class label, indicating it was activated the most in relation to its initial possible range defined by the estimated bounds."
+        },
+        {
+          "doc_id": "ai-classic-fuzzy-cognitive-maps",
+          "page": 9,
+          "kind": "text",
+          "quote": "variant is 0.54, which is modest. In contrast, the qFCM model reached an average F1 score of 0.69 while the qrFCM model reported an average F1 score of 0.74. These scores correspond to a 28% improvement for qFCM and a 37% improvement for qrFCM over the classic variant."
+        }
+      ],
+      "note": "Words run together in places in the text layer of this copy."
+    },
+    {
+      "id": 17,
+      "status": "traced",
+      "doc_id": "ai-unveiling-dynamic-behavior-fuzzy",
+      "evidence": [
+        {
+          "doc_id": "ai-unveiling-dynamic-behavior-fuzzy",
+          "page": 9,
+          "kind": "text",
+          "quote": "We obtained zero covering for almost every FCM with connectivity 0.2 or under (about 20% of the neuron pairs are connected, which means that every neural entity is connected to 1 in 5). We also have zero covering for almost every FCM-based model with 10 neurons or less."
+        },
+        {
+          "doc_id": "ai-unveiling-dynamic-behavior-fuzzy",
+          "page": 10,
+          "kind": "text",
+          "quote": "By calculating covering we can peek at the FCM’s behavior without running the inference process, so we could notify the expert about the limitations of the FCM model to reach good approximations. Now with stable FCMs and the knowledge of causal weights in the calculations, we obtain predictive information about the FCM’s behavior."
+        }
+      ],
+      "note": "Author version: the pages are numbered differently from the published article."
+    },
+    {
+      "id": 18,
+      "status": "untraced",
+      "evidence": [],
+      "note": "Its source was not found. Searched without a hit: the arXiv API, Crossref, OpenAlex, DataCite, OpenReview, CORE, HAL, Semantic Scholar and three web search engines. The reference answer cites 'p. 14', so it is a paginated manuscript; SSRN, the likely host, turns away scripted searches and has to be searched by hand."
+    },
+    {
+      "id": 19,
+      "status": "traced",
+      "doc_id": "ai-winstat-family-trainable-positional",
+      "evidence": [
+        {
+          "doc_id": "ai-winstat-family-trainable-positional",
+          "page": 10,
+          "kind": "text",
+          "quote": "the final representation is X f inal = ̃w0 · ̃X + ̃w1 · XPE + ̃w2 · XLPE + ̃w3 · XtAPE, (17) where ̃w = Softmax(w) ensures normalized, sum-one trainable weights."
+        }
+      ],
+      "note": "The paper says the weights are normalized with a softmax. It never mentions overflow, nor initializing the weights to 1/num_components: those are the expert's own."
+    },
+    {
+      "id": 20,
+      "status": "traced",
+      "doc_id": "ai-zerodiff-solidified-visual-semantic",
+      "evidence": [
+        {
+          "doc_id": "ai-zerodiff-solidified-visual-semantic",
+          "page": 7,
+          "kind": "text",
+          "quote": "At the testing stage, we cannot get real unseen class representations ru 0 and feed to G. Thus, we train another representation generator DRG R to learning the mapping between instance-level SC representations r0 from class-level semantic labels a."
+        }
+      ],
+      "note": "The reference answer is this sentence almost word for word."
+    },
+    {
+      "id": 21,
+      "status": "untraced",
+      "evidence": [],
+      "note": "Its source was not found. Searched without a hit: the arXiv API, Crossref, OpenAlex, DataCite, OpenReview, CORE, HAL, Semantic Scholar and three web search engines. It has no DOI under a title with 'chess' in it, so it is probably an unpublished manuscript. The paper it builds on, with the 270M model, is in the corpus as a distractor."
+    },
+    {
+      "id": 22,
+      "status": "traced",
+      "doc_id": "ai-simple-framework-contrastive-learning",
+      "evidence": [
+        {
+          "doc_id": "ai-simple-framework-contrastive-learning",
+          "page": 5,
+          "kind": "text",
+          "quote": "We observe that no single transformation suffices to learn good representations, even though the model can almost perfectly identify the positive pairs in the contrastive task"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 23,
+      "status": "traced",
+      "doc_id": "ai-improving-alpha-f-byzantine",
+      "evidence": [
+        {
+          "doc_id": "ai-improving-alpha-f-byzantine",
+          "page": 3,
+          "kind": "text",
+          "quote": "An aggregation rule  is said to be (α, f)-Byzantine resilient if, for any 1 ≤j1 ≤... ≤jf≤n, the vector: F= (V1, ... , B1, ... , Bf, ... , Vn) satisfies (i) ⟨EF, g⟩≥(1 −sin α)‖g‖2 and (ii) for r∈{2, 3, 4}, E‖F‖r is bounded by linear combinations"
+        },
+        {
+          "doc_id": "ai-improving-alpha-f-byzantine",
+          "page": 3,
+          "kind": "text",
+          "quote": "Byzantine resilient rules are not the sole robust aggregation strategies employed in practice. Other notable methods operating under different theoretical frameworks include Trimmed-mean [21], FLTrust [22], Signguard [14], and SDEA [23]. These methods, while demonstrating promising performance, operate within distinct theoretical frameworks, precluding their analysis under a common theoretical lens."
+        }
+      ],
+      "note": "The question does not name the paper. Only the published version lists the approaches outside the framework (Trimmed-mean, FLTrust, Signguard, SDEA)."
+    },
+    {
+      "id": 24,
+      "status": "traced",
+      "doc_id": "ai-general-purpose-artificial-intelligence",
+      "evidence": [
+        {
+          "doc_id": "ai-general-purpose-artificial-intelligence",
+          "page": 6,
+          "kind": "text",
+          "quote": "For a GPAIS to become advanced, we would expect them to respond more positively to new tasks, since they either have the information to perform the task in question or recognise that they do not know how to perform it. Advanced GPAIS would be expected to self-diagnose themselves, be aware of the confidence in their responses and ask (or look) for feedback and improve themselves within an active learning framework [34] (See Section 3.3). To do so, a supervision mechanism could be introduced, so that, it learns to distinguish between what is correct and what is not."
+        }
+      ],
+      "note": "Only the preprint is available."
+    },
+    {
+      "id": 25,
+      "status": "traced",
+      "doc_id": "ai-mamba-linear-time-sequence",
+      "evidence": [
+        {
+          "doc_id": "ai-mamba-linear-time-sequence",
+          "page": 5,
+          "kind": "text",
+          "quote": "From the convolutional view, it is known that global convolutions can solve the vanilla Copying task (Romero et al. 2021) because it only requires time-awareness, but that they have difficulty with the Selective Copying task because of lack of content-awareness (Figure 2). More concretely, the spacing between inputs-to-outputs is varying and cannot be modeled by static convolution kernels."
+        },
+        {
+          "doc_id": "ai-mamba-linear-time-sequence",
+          "page": 5,
+          "kind": "text",
+          "quote": "From the recurrent view, their constant dynamics (e.g. the (A, B) transitions in (2)) cannot let them select the correct information from their context, or affect the hidden state passed along the sequence in an input-dependent way."
+        }
+      ],
+      "note": "The reference answer gives only the convolutional view."
+    }
+  ]
+}

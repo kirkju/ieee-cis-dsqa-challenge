@@ -1,0 +1,1086 @@
+{
+  "questions": "dev/questions/control_qa.json",
+  "items": [
+    {
+      "id": 2001,
+      "status": "traced",
+      "doc_id": "ai-backdoor-federated-learning",
+      "evidence": [
+        {
+          "doc_id": "ai-backdoor-federated-learning",
+          "page": 8,
+          "kind": "text",
+          "quote": "The backdoor accuracy of word-prediction models does not drop. The reason is that word embeddings make up 94% of the model’s weights and participants update only the embeddings of the words that occur in their local data. Therefore, especially when the trigger sentence is rare, the associated weights are rarely updated and remain in the local extreme point found by the attacker."
+        }
+      ],
+      "traits": [],
+      "note": "The question names no paper, only the topic. The drop and recovery of the CIFAR models' backdoor accuracy is explained in the paragraph just before the quote."
+    },
+    {
+      "id": 2002,
+      "status": "traced",
+      "doc_id": "ai-barlow-twins-self-supervised",
+      "evidence": [
+        {
+          "doc_id": "ai-barlow-twins-self-supervised",
+          "page": 6,
+          "kind": "table",
+          "quote": "Following SIMSIAM and BYOL, we experiment with adding a predictor network composed of 2 fully connected layers of size 8192 to one of the network (with batch normalization followed by a ReLU nonlinearity in the hidden layer) and/or a stop-gradient mechanism on the other network. We find that these asymmetries slightly decrease the performance of our network (see Table 6). Table 6. Effect of asymmetric settings case stop-gradient predictor Top-1 Top-5 Baseline - - 71.4 90.2 (a) ✓ - 70.5 89.0 (b) - ✓ 70.2 89.0 (c) ✓ ✓ 61.3 83.5"
+        }
+      ],
+      "traits": [
+        "arithmetic",
+        "false_premise",
+        "names_document"
+      ],
+      "note": "False premise: the asymmetries lower accuracy instead of raising it (by 0.9 and 1.2 points alone, 10.1 together). These are the 300-epoch ablation models; the paper's headline 73.2% top-1 is for 1000 epochs."
+    },
+    {
+      "id": 2003,
+      "status": "traced",
+      "doc_id": "ai-convexity-smoothness-banach-spaces",
+      "evidence": [
+        {
+          "doc_id": "ai-convexity-smoothness-banach-spaces",
+          "page": 6,
+          "kind": "text",
+          "quote": "Example 2.2. Let X b e C(T)/A(D). Then, its dual X∗= H1 is smo oth (see [19 , Remark IV.1.17℄, for instan e), so X do es not ha v e the alternativ e Dauga v et prop ert y b y Theorem 2.1 and neither do es X∗= H1 . In parti ular, n(X) < 1 and n(X∗) < 1 .",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-convexity-smoothness-banach-spaces",
+          "page": 5,
+          "kind": "text",
+          "quote": "Theorem 2.1. L et X b e a Bana h sp a e with the alternative Daugavet pr op erty and dimension gr e ater than one. Then, X∗ is neither smo oth nor stri tly onvex.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-convexity-smoothness-banach-spaces",
+          "page": 5,
+          "kind": "text",
+          "quote": "The aim in this se tion is to sho w that there are some on v exit y and smo othness prop erties whi h are in ompatible with the alternativ e Dauga v et prop ert y and so, they are in ompatible with the n umeri al index 1 .",
+          "group": "a"
+        }
+      ],
+      "traits": [],
+      "note": "The question gives only the topic. The text layer of this PDF drops the letter 'c' and ligatures and splits words ('smo oth', 'stri tly onvex'); the quotes are as extracted."
+    },
+    {
+      "id": 2004,
+      "status": "traced",
+      "doc_id": "ai-efficiently-modeling-long-sequences",
+      "evidence": [
+        {
+          "doc_id": "ai-efficiently-modeling-long-sequences",
+          "page": 11,
+          "kind": "figure",
+          "quote": "Fig. 4a shows that random NPLR matrices still do not perform well, which validates that S4’s effectiveness primarily comes from the HiPPO initialization, not the NPLR parameterization. Finally, Fig. 4b considers the main ablations considered in this section (with trainable SSMs) and adds minor regularization. With 0.1 Dropout, the same trends still hold, and the HiPPO initialization—in other words, the full S4 method—achieves 84.27% test accuracy with just 100K parameters."
+        }
+      ],
+      "traits": [
+        "names_document",
+        "non_native"
+      ],
+      "note": "The passage is the text that describes Fig. 4. Another document of the corpus, ai-resurrecting-recurrent-neural-networks, argues the opposite about S4 (that HiPPO theory should not be thought of as the main source of its success); the question asks what the S4 paper's own ablation shows."
+    },
+    {
+      "id": 2005,
+      "status": "traced",
+      "doc_id": "ai-explaining-machine-learning-classifiers",
+      "evidence": [
+        {
+          "doc_id": "ai-explaining-machine-learning-classifiers",
+          "page": 4,
+          "kind": "text",
+          "quote": "To encourage sparsity in a generated counterfactual, we conduct a post-hoc operation where we restore the value of continuous features back to their values in x greedily until the predicted class f (c) changes. For this operation, we consider all continuous features cj whose difference from xj is less than a chosen threshold. Although an intuitive threshold is the median absolute distance (MAD), the MAD can be fairly large for features with large variance. Therefore, for each feature, we choose the minimum of MAD and the bottom 10% percentile of the absolute difference between non-identical values from the median."
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "The passage spells MAD out as 'median absolute distance'; elsewhere on the same page it is the median absolute deviation."
+    },
+    {
+      "id": 2006,
+      "status": "traced",
+      "doc_id": "ai-face-feasible-actionable-counterfactual",
+      "evidence": [
+        {
+          "doc_id": "ai-face-feasible-actionable-counterfactual",
+          "page": 4,
+          "kind": "text",
+          "quote": "In practice a base graph can be generated and stored with the most generic conditions imposed, e.g., if the data represent people, edges between people of different sex would be removed. When an explainee requests a counterfactual, he can impose further restrictions (by removing edges) to create a personalised graph, e.g., this individual is not willing to get divorced. On the other hand, if personalised cost function is required, entirely new graph needs to be generated.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-face-feasible-actionable-counterfactual",
+          "page": 3,
+          "kind": "text",
+          "quote": "3If the explainee wants to provide a custom cost function for the feature value changes, e.g., the cost of changing a job is twice that of change a marital status, a new graph has to be built from scratch. If, on the other hand, the cost function stays fixed and only new constraints (inconsistent with the current graph) are introduced, e.g., the counterfactuals should not be conditioned on a job change, the existing graph can be modified by removing some of its edges.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "The case asked about (a refusal to relocate) is not one of the paper's examples; its rule for new constraints decides it. The second passage is footnote 3."
+    },
+    {
+      "id": 2007,
+      "status": "traced",
+      "doc_id": "ai-fcmpy-python-module-constructing",
+      "evidence": [
+        {
+          "doc_id": "ai-fcmpy-python-module-constructing",
+          "page": 10,
+          "kind": "text",
+          "quote": "In the NHL algorithm, all nodes (Ai) and weights (Wij: a direct edge from node i to j) values are simultaneously updated at each time step. In AHL, nodes and weights are updated asynchronously based on a sequence of activation patterns specified by the user. During each simulation time step, a new node becomes an “activated node”; only this node and its incoming edges are updated, while everything else remains unchanged. Along with optimizing existing edges, AHL creates new connections between the concepts, which may be an undesirable behavior if the modeler’s intent is to tweak the weights rather than create connections that have not been endorsed by experts."
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "The acronyms are spelled out a few sentences earlier on the same page: AHL is Active Hebbian Learning and NHL is Non-Linear Hebbian Learning, so an answer that uses the full names is the same answer. The example output on page 11 shows the effect: the matrix optimized by AHL has non-zero weights where the initial matrix had none."
+    },
+    {
+      "id": 2008,
+      "status": "traced",
+      "doc_id": "ai-hidden-vulnerability-distributed-learning",
+      "evidence": [
+        {
+          "doc_id": "ai-hidden-vulnerability-distributed-learning",
+          "page": 5,
+          "kind": "text",
+          "quote": "Let A be any (α, f)-Byzantine–resilient aggregation rule. Bulyan(A ) requires n ≥4f + 3 received gradients in two steps. The first one is to recursively use A to select θ = n −2f gradients, namely:",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-hidden-vulnerability-distributed-learning",
+          "page": 5,
+          "kind": "text",
+          "quote": "With n ≥4f + 3, we ensure that there is a quorum of workers, i.e. 2f + 3, for each use of A. Since θ = n−2f ≥2f +3, this selection S = (S1 . . . Sθ) contains a majority of non–Byzantine gradients. Hence for each i ∈[1 .. d], the median of the θ coordinates i of the selected gradients is always bounded by coordinates from non–Byzantine submissions. With β = θ −2f ≥3, the second step is to generate the resulting gradient",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-hidden-vulnerability-distributed-learning",
+          "page": 5,
+          "kind": "text",
+          "quote": "Simply stated: each i-th coordinate of G is equal to the average of the β closest i-th coordinates to the median i-th coordinate of the θ selected gradients.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "arithmetic",
+        "names_document"
+      ],
+      "note": "The case n = 25 is not in the paper, whose own experiments use n = 39 workers with f = 9 (θ = 21, β = 3). Krum and Brute have other quorum conditions (n ≥ 2f + 3 and n ≥ 2f + 1), which other documents of the corpus also quote."
+    },
+    {
+      "id": 2009,
+      "status": "traced",
+      "doc_id": "ai-improving-position-encoding-transformers",
+      "evidence": [
+        {
+          "doc_id": "ai-improving-position-encoding-transformers",
+          "page": 13,
+          "kind": "text",
+          "quote": "Theoretically, there are many possibilities for integrating relative position information into the attention matrix, but we empirically found that attention models perform better when we add the relative position to the model after applying the softmax to the attention matrix as shown in Equation 14. We presume this is because the position values will be sharper without the softmax. And sharper position embeddings seems to be beneficial in TSC task as it emphasizes more on informative relative positions for classification compared to existing models in which softmax is applied to relative position embeddings."
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "ConvTran is the model of 'Improving Position Encoding of Transformers for Multivariate Time Series Classification'. The WinStat paper of the corpus reuses this paper's tAPE encoding; the phrases of this passage ('after applying the softmax', 'sharper') were searched there and not found."
+    },
+    {
+      "id": 2010,
+      "status": "traced",
+      "doc_id": "ai-inverse-classification-comparison-based",
+      "evidence": [
+        {
+          "doc_id": "ai-inverse-classification-comparison-based",
+          "page": 5,
+          "kind": "figure",
+          "quote": "Figure 2: Sparsity distribution over the news test dataset. Reading: ’30% of the observations of our test dataset have explanations that use 5 features or less’.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-inverse-classification-comparison-based",
+          "page": 5,
+          "kind": "text",
+          "quote": "We observe that the maximum value over the whole test dataset is 17, meaning that each observation of the test dataset only needs to change 17 coordinates or less in order to cross the decision boundary. Moreover, 80% of them only need to move in 9 directions or less, that is 15% of the features only.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-inverse-classification-comparison-based",
+          "page": 5,
+          "kind": "text",
+          "quote": "Given 58 numerical features created from 39644 online news articles from website Mashable, the task is to predict wether said articles have been shared more than 1400 times or not.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "names_document",
+        "non_native"
+      ],
+      "note": "The 30% is stated in the caption of Figure 2 as an example of how to read the plot; nothing has to be read off the curve. The paper's second experiment (MNIST digits 8 and 9) gives a different figure, at most 62 of 784 features, which is why the question names the news popularity classifier."
+    },
+    {
+      "id": 2011,
+      "status": "traced",
+      "doc_id": "ai-momentum-contrast-unsupervised-visual",
+      "evidence": [
+        {
+          "doc_id": "ai-momentum-contrast-unsupervised-visual",
+          "page": 5,
+          "kind": "table",
+          "quote": "Ablation: momentum. The table below shows ResNet-50 accuracy with different MoCo momentum values (m in Eqn.(2)) used in pre-training (K = 4096 here) : momentum m 0 0.9 0.99 0.999 0.9999 accuracy (%) fail 55.2 57.8 59.0 58.9 It performs reasonably well when m is in 0.99 ∼0.9999, showing that a slowly progressing (i.e., relatively large momentum) key encoder is beneficial. When m is too small (e.g., 0.9), the accuracy drops considerably; at the extreme of no momentum (m is 0), the training loss oscillates and fails to converge."
+        }
+      ],
+      "traits": [
+        "arithmetic",
+        "names_document"
+      ],
+      "note": "The values are in a small unnumbered table set inside the running text."
+    },
+    {
+      "id": 2012,
+      "status": "traced",
+      "doc_id": "ai-numerical-index-respect-operator",
+      "evidence": [
+        {
+          "doc_id": "ai-numerical-index-respect-operator",
+          "page": 36,
+          "kind": "text",
+          "quote": "Example 6.16. The inclusion G: c0 −→c satisfies that nG(c0, c) = 1, whereas its adjoint G∗: l1⊕1K −→l1, given by (x, λ) 7−→x, is not even a vertex of L(c∗, c∗ 0) and so, it satisfies that nG∗(c∗, c∗ 0) = 0. Indeed, G is a spear operator by, for instance, [26, Proposition 4.2], so nG(c0, c) = 1."
+        }
+      ],
+      "traits": [],
+      "note": "The question does not name the paper. The passage is set in mathematical notation: arrows come out as '−→' and '7−→', subscripts and stars as separate characters. The example illustrates the section's opening remark (same page) that the index with respect to an operator always dominates the one with respect to its adjoint and that equality does not always hold."
+    },
+    {
+      "id": 2013,
+      "status": "traced",
+      "doc_id": "ai-numerical-index-respect-operator",
+      "evidence": [
+        {
+          "doc_id": "ai-numerical-index-respect-operator",
+          "page": 5,
+          "kind": "text",
+          "quote": "For complex Hilbert spaces H1, H2 of dimension greater than one, we show that N(L(H1, H2)) ⊆{0, 1/2} and the value 1/2 is taken if and only if H1 and H2 are isometrically isomorphic."
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "The passage is the summary of the result in the introduction; the same sentence is in the abstract (page 1). The result is Proposition 4.12 on page 20, whose statement has control characters (U+0000, U+0001) around its formula in the text layer and is therefore not quoted. The case asked about (dimensions 2 and 3) is not spelled out in the paper; it follows from the 'if and only if'."
+    },
+    {
+      "id": 2014,
+      "status": "traced",
+      "doc_id": "ai-onerec-unifying-retrieve-rank",
+      "evidence": [
+        {
+          "doc_id": "ai-onerec-unifying-retrieve-rank",
+          "page": 8,
+          "kind": "figure",
+          "quote": "Furthermore, we observe that the probability distribution in the first layer demonstrates greater divergence (entropy = 6.00) compared to subsequent layers (average entropy = 3.71 in the second layer and entropy = 0.048 in third layer), which exhibit progressively concentrated distributions. This hierarchical uncertainty reduction can be attributed to the autoregressive decoding mechanism: the initial layer’s predictions inherit higher uncertainty from preceding decoding steps, while later layers benefit from accumulated context that constrains the decision space."
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "The passage is the text that comments on Figure 5 (softmax output over the 8192 codes for each layer of the semantic ID); it does not repeat the figure number, which is in the caption on the same page. The entropies are stated in the text, not read off the plot. The question says 'first token' and 'last' for what the paper calls the first and third layer."
+    },
+    {
+      "id": 2015,
+      "status": "traced",
+      "doc_id": "ai-opportunities-risks-foundation-models",
+      "evidence": [
+        {
+          "doc_id": "ai-opportunities-risks-foundation-models",
+          "page": 97,
+          "kind": "figure",
+          "quote": "Fig. 19. Plot showing the growth of number of parameters and number of training operations (FLOPs) of transformer-based language models (shown in blue), and memory capacity and peak device throughput of NVIDIA P100, V100, and A100 GPUs (shown in red) with time. The rate of growth (slope of each line) of state-of-the-art language models (roughly 10× a year) far exceeds the rate of increase in computational capacity of hardware (roughly 10× in four years), motivating the need for parallelism across a large number of accelerators and co-design of algorithms, models, software, and hardware to drive further progress."
+        }
+      ],
+      "traits": [
+        "arithmetic",
+        "names_document"
+      ],
+      "note": "The two rates are given in the caption of Fig. 19. The running text of the same page says that requirements grew by three orders of magnitude in the last three years, which agrees with the first rate."
+    },
+    {
+      "id": 2016,
+      "status": "traced",
+      "doc_id": "ai-opportunities-risks-foundation-models",
+      "evidence": [
+        {
+          "doc_id": "ai-opportunities-risks-foundation-models",
+          "page": 144,
+          "kind": "figure",
+          "quote": "Fig. 27. A hypothetical example of amortized fine-tuning showing the point at which a foundation model (in this case BERT Base) will have lower energy costs than a transformer model trained from scratch. We estimate the up-front energy cost for training BERT from Strubell et al. [2019], and cost for fine-tuning a downstream task from Chaudhary et al. [2020]. We compare against the linearly increasing cost of training a transformer from scratch, from Strubell et al. [2019]. If BERT is used for less than ∼80 tasks, the up-front energy costs are not recovered. After that point, BERT is more energy efficient than the model trained from scratch."
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "The number is stated in the caption of Fig. 27; it does not have to be read off the plot."
+    },
+    {
+      "id": 2017,
+      "status": "traced",
+      "doc_id": "ai-recommender-systems-generative-retrieval",
+      "evidence": [
+        {
+          "doc_id": "ai-recommender-systems-generative-retrieval",
+          "page": 15,
+          "kind": "text",
+          "quote": "Notably, this pre-processing scheme is applied before creating training and testing splits. This results in the creation of a sequential dataset where many sequences are of the form a, a + 1, a + 2, . . . . Given that P5 uses Sentence Piece tokenizer [30] (See Section 4.1 in [8]), the test and train items in a user session may share the sub-word and can lead to information leakage during inference. To resolve the leakage issue, instead of assigning sequentially increasing integer ids to items, we assigned random integer IDs, and then created splits for training and evaluation."
+        }
+      ],
+      "traits": [
+        "names_document",
+        "non_native"
+      ],
+      "note": "Appendix D. The sentences before the quote describe how P5's code renumbers the items 1, 2, 3, ... in order of appearance in the user sessions."
+    },
+    {
+      "id": 2018,
+      "status": "traced",
+      "doc_id": "ai-stable-bias-analyzing-societal",
+      "evidence": [
+        {
+          "doc_id": "ai-stable-bias-analyzing-societal",
+          "page": 8,
+          "kind": "table",
+          "quote": "Top 20% 86.8 83.0 (±0.45) 78.3 (±0.49) 56.3 (±0.62) 22.1 16.8 (±0.66) 16.1 (±0.57) 4.5 (±0.46) Table 3: Comparing cluster assignments to Bureau of Labor Statistics (BLS). Each line corresponds to one fifth of the professions grouped by BLS-reported percentage of women (left), and Black workers (middle). 95% confidence intervals per a bootstrap estimator are provided.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-stable-bias-analyzing-societal",
+          "page": 8,
+          "kind": "table",
+          "quote": "Quintiles by rank BLS Woman Clusters featuring ”woman” phrase % BLS Black Clusters featuring ”Black” phrase % SD 1.4 SD 2 Dall·E 2 SD 1.4 SD 2 Dall·E 2",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "names_document",
+        "non_native"
+      ],
+      "note": "The first four numbers of the row are the 'woman' side of the table (BLS, SD 1.4, SD 2, Dall·E 2), the last four the 'Black' side; the header row is quoted to fix the order of the columns. Table 13 in the appendix gives the same quintiles for other models from the Hugging Face Hub."
+    },
+    {
+      "id": 2019,
+      "status": "traced",
+      "doc_id": "ai-stable-bias-analyzing-societal",
+      "evidence": [
+        {
+          "doc_id": "ai-stable-bias-analyzing-societal",
+          "page": 7,
+          "kind": "figure",
+          "quote": "Figure 3: Examples of Profession images for “laboratory technician” assigned to clusters 4, 15, 1, and 3. There are no Dall·E 2images assigned to 1.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-stable-bias-analyzing-societal",
+          "page": 7,
+          "kind": "text",
+          "quote": "In order to verify our intuition about what cluster assignments mean, we visualize generations for the prompt assigned to selected regions in Figure 3, and find that the representations are coherent with the region summaries from Table 2 – Dall·E 2is missing images for Cluster 1 because none of its generations are assigned to that cluster.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-stable-bias-analyzing-societal",
+          "page": 7,
+          "kind": "table",
+          "quote": "Region # Share Top gender phrases Top ethnicity phrases 4 40.1% unspecified man Caucasian White unspecified Latinx 15 12.6% woman non-binary White Caucasian unspecified First Nation 21 9.2 % man unspecified unspecified White 18 8.8 % man unspecified unspecified White Caucasian 13 7.5 % woman unspecified Latinx Hispanic Latino unspecified 22 3.1 % unspecified man SE Asian Black Indigenous Multiracial 1 2.7 % woman non-binary Black Afr.American Multiracial unspecified",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "The answer is stated in the caption of Figure 3 and in the sentence that comments it; the terms of cluster 1 come from Table 2 on the same page. The paper uses 'cluster' and 'region' for the same thing."
+    },
+    {
+      "id": 2020,
+      "status": "traced",
+      "doc_id": "ai-transformers-ssms-generalized-models",
+      "evidence": [
+        {
+          "doc_id": "ai-transformers-ssms-generalized-models",
+          "page": 26,
+          "kind": "text",
+          "quote": "However, we see that since Δ, B,Care functions are xc, so we would need an extra all-reduce between the GPUs to get the whole of xcbefore computing Δ, B,C. After that the two GPUs can compute the SSM in parallel since they are independent along d. At the end, we can split the output projection matrices W(o) into two partitions each of size ed 2 × d, and do an all-reduce at the end. Compared to Transformers, we would incur two all-reduces instead of one, doubling the time spent in communication.",
+          "group": "a"
+        },
+        {
+          "doc_id": "ai-transformers-ssms-generalized-models",
+          "page": 26,
+          "kind": "text",
+          "quote": "With Mamba-2, our goal is to have only one all-reduce per block, similar to attention or MLP blocks in Transformers. As a result, we have the projection to get Δ, B,Cdirectly from uinstead of from xc, allowing us to split these projection matrices.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "In the text layer the symbols run into the following word ('B,Care', 'xcbefore', 'uinstead')."
+    },
+    {
+      "id": 2021,
+      "status": "traced",
+      "doc_id": "ai-transformers-ssms-generalized-models",
+      "evidence": [
+        {
+          "doc_id": "ai-transformers-ssms-generalized-models",
+          "page": 31,
+          "kind": "table",
+          "quote": "Table 2: (Combining SSD and Attention Blocks.) Perplexity of a 350M model with 48 layers, with different number of attention layers. Having around a 10% ratio of attention layers performs best. Num. Attn Blocks 0 (Mamba-2) 1 2 3 4 5 6 7 9 11 15 24 Transformer++ Perplexity ↓ 8.60 8.38 8.32 8.29 8.29 8.28 8.26 8.27 8.28 8.30 8.34 8.50 8.68"
+        }
+      ],
+      "traits": [
+        "arithmetic",
+        "names_document"
+      ],
+      "note": "The table is extracted as two flat rows of 13 values; the column for 6 blocks has to be aligned with the 7th perplexity. The 48 layers needed for the share are in the caption."
+    },
+    {
+      "id": 2022,
+      "status": "traced",
+      "doc_id": "ai-unified-approach-interpreting-model",
+      "evidence": [
+        {
+          "doc_id": "ai-unified-approach-interpreting-model",
+          "page": 8,
+          "kind": "figure",
+          "quote": "Figure 3: Comparison of three additive feature attribution methods: Kernel SHAP (using a debiased lasso), Shapley sampling values, and LIME (using the open source implementation). Feature importance estimates are shown for one feature in two models as the number of evaluations of the original model function increases. The 10th and 90th percentiles are shown for 200 replicate estimates at each sample size. (A) A decision tree model using all 10 input features is explained for a single input. (B) A decision tree using only 3 of 100 input features is explained for a single input."
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "Everything asked is in the caption of Figure 3; nothing has to be read off the plot. The running text of Section 5.1 calls the two models the dense and the sparse decision tree."
+    },
+    {
+      "id": 2023,
+      "status": "traced",
+      "doc_id": "ai-unsupervised-learning-visual-features",
+      "evidence": [
+        {
+          "doc_id": "ai-unsupervised-learning-visual-features",
+          "page": 7,
+          "kind": "text",
+          "quote": "When SwAV is trained using 2×160 + 4×96 crops, SwAV has a running time 1.2× higher than SimCLR with 2×224 crops and is around 1.4× slower than MoCov2 due to the additional back-propagation [11]. Hence, one epoch of MoCov2 or SimCLR is faster in wall clock time than one of SwAV, but these methods need more epochs for good downstream performance. Indeed, as shown in Table 3, SwAV learns much faster and reaches higher performance in 4× fewer epochs: 72% after 200 epochs (102 hours) while MoCov2 needs 800 epochs to achieve 71.1%."
+        }
+      ],
+      "traits": [
+        "arithmetic",
+        "names_document"
+      ],
+      "note": "The paper does not state MoCo v2's training time; it follows from the 102 hours and the factor of about 1.4. The MoCo v2 note in the corpus (ai-improved-baselines-momentum-contrastive, Table 3) gives 53 hours per 200 epochs for MoCo at batch 256 on 8 V100 GPUs, i.e. 212 hours for 800 epochs on another machine; the question asks for the estimate implied by SwAV's own figures."
+    },
+    {
+      "id": 2024,
+      "status": "traced",
+      "doc_id": "ai-vision-mamba-efficient-visual",
+      "evidence": [
+        {
+          "doc_id": "ai-vision-mamba-efficient-visual",
+          "page": 8,
+          "kind": "table",
+          "quote": "Classification strategy ImageNet top-1 acc. Mean pool 73.9 Max pool 73.4 Head class token 75.2 Double class token 74.3 Middle class token 76.1 Table 5: Ablation study on the classification design. The default setting for Vim is marked in blue . As shown in Tab. 5, experiments show that the middle class token strategy can fully exploit the recurrent nature of SSM and the central object prior in ImageNet, demonstrating the best top-1 accuracy of 76.1."
+        }
+      ],
+      "traits": [
+        "names_document",
+        "non_native"
+      ],
+      "note": "Table 5 and the sentence that comments on it are contiguous in the extracted text. The default setting is marked by colour in the PDF, which is lost in the text; the sentence after the table says which strategy is best."
+    },
+    {
+      "id": 2025,
+      "status": "traced",
+      "doc_id": "ai-zero-shot-learning-comprehensive",
+      "evidence": [
+        {
+          "doc_id": "ai-zero-shot-learning-comprehensive",
+          "page": 8,
+          "kind": "text",
+          "quote": "In addition, while SAE [33] reported 84.7% on AWA1, we obtain only 80.7% on the standard split. This could be explained by two differences. First, we measure per-class accuracy but SAE [33] reports per-image accuracy which is typically higher when the dataset is class-imbalanced, e.g. AWA1. Indeed, their reported accuracy decreases to 82.0% if per-class accuracy is applied. Second, we confirmed with the authors of SAE [33] that they improved GoogleNet [75] by adding Batch Normalization and averaging 5 randomly cropped images to obtain better image features. Therefore, as expected, improving visual features lead to improved results in zero-shot learning."
+        }
+      ],
+      "traits": [
+        "non_native"
+      ],
+      "note": "The question does not name the paper. Table 2 of the same paper lists 84.7 for SAE on AWA1 both as original and as reproduced with the authors' own features and code; the 80.7% is the value under the unified protocol with ResNet features (80.6 in Table 3)."
+    },
+    {
+      "id": 2026,
+      "status": "traced",
+      "doc_id": "dones-advancement-lansce-accelerator-facility",
+      "evidence": [
+        {
+          "doc_id": "dones-advancement-lansce-accelerator-facility",
+          "page": 13,
+          "kind": "table",
+          "quote": "Table 4. RF Parameters of Drift Tube Linac (T1=Tank 1,T2= Tank 2, T3= Tank3, T4=Tank 4). Parameter Value Operation RF duty factor, % 12.4% Duty factor limit, % 15.0% Nominal power (T1/T2/T3/T4), MW 0.322 / 2.60 / 2.22 / 2.68 Beam loading, (T1/T2/T3/T4) ), MW 0.087 / 0.678 / 0.592 / 0.515 Total power (T1/T2/T3/T4), MW 0.409 / 3.278 / 2.812 / 3.195 Peak power limit (T1/T2/T3/T4), , MW 0.425 / 3.60 /3.60 / 3.60"
+        }
+      ],
+      "traits": [
+        "arithmetic"
+      ],
+      "note": "The tables of this paper are on separate pages at the end (pages 12 to 15), far from the text that refers to them; the symbols of the equations are dropped from the running text and collected at the end of each page."
+    },
+    {
+      "id": 2027,
+      "status": "traced",
+      "doc_id": "dones-application-melcor-fusion-code",
+      "evidence": [
+        {
+          "doc_id": "dones-application-melcor-fusion-code",
+          "page": 5,
+          "kind": "text",
+          "quote": "According to the MELCOR code predictions, less than 4% of the total lithium mass inventory will be spilled inside the TC room (as shown in Fig. 4), resulting in the formation of a Li pool at the bottom of the TC floor with a final height of 16.4 mm. Due to the position of the break in the upper part of the PLO, only the column of Li above the break and the portion of Li that is dragged by the inertia of the fluid (the electromagnetic pump has no inertia) is spilled.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-application-melcor-fusion-code",
+          "page": 8,
+          "kind": "text",
+          "quote": "The second studied accident scenario was a break of 10 cm2 in the QT with a Li spill into the TC. To avoid the limitations of MELCOR, concerning the Li EoS extrapolation and the thermodynamic conditions at the Li melting point, the analysis has been divided into two sequences and two MELCOR models have been developed. The results obtained with MELCOR indicate that 630 s are required to empty the QT, spilling around 600 kg of Li into the TC (& 13% of the total Li inventory of the PLO).",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-application-melcor-fusion-code",
+          "page": 4,
+          "kind": "text",
+          "quote": "The first scenario analysed with MELCOR involves a double-ended guillotine break at the outlet of the reducer nozzle of the TA, resulting in a consequent Li spill into the TC room.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "The same paper cites an earlier study of a large quench tank break that spilled approximately 700 kg (page 3); the 600 kg is the result of this work for the 10 cm2 break. In the text layer the approximately-equal sign before 13% comes out as '&'."
+    },
+    {
+      "id": 2028,
+      "status": "traced",
+      "doc_id": "dones-beam-instrumentation-diagnostics",
+      "evidence": [
+        {
+          "doc_id": "dones-beam-instrumentation-diagnostics",
+          "page": 52,
+          "kind": "table",
+          "quote": "Table 6: Basic parameters for the so called RHIC-type co-axial IC [87] and the planar LHC-type IC [88]. Parameter Co-axial IC Planar IC Outer length & diameter [cm] 20 & 6 50 & 9 Active gas volume [l] 0.11 1.5 Gas type & pressure [bar] Ar at 1.1 N2 at 1.1 Number of electrodes 2 61 Distance of electrodes [mm] Øinner = 6.3, Øouter = 38 5.7 Voltage [kV] 1 1.5 Reaction time [μs] ≃3 ≃0.3 Overall dynamic range 106 108",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-beam-instrumentation-diagnostics",
+          "page": 52,
+          "kind": "text",
+          "quote": "The detection threshold of an IC is proportional to the gas volume. To achieve a fast reaction time even for a large gas volume, the drift time of the gas ions and electrons should be shortened. This can be realized by a parallel electrode arrangement with alternating biased and readout electrodes.",
+          "group": "a"
+        }
+      ],
+      "traits": [],
+      "note": "Table 6 gives the reaction times. The running text of the previous page says that the gas ions of the co-axial chamber need about 10 μs to reach the electrode, a different figure for a related quantity."
+    },
+    {
+      "id": 2029,
+      "status": "traced",
+      "doc_id": "dones-beam-instrumentation-diagnostics",
+      "evidence": [
+        {
+          "doc_id": "dones-beam-instrumentation-diagnostics",
+          "page": 13,
+          "kind": "figure",
+          "quote": "Fig. 16: Magnetic field lines of the arrangement of Co-Sm permanent magnets within the yoke for the Faraday cup of Fig. 14. The homogeneous field strength is B ∼60 mT.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-beam-instrumentation-diagnostics",
+          "page": 13,
+          "kind": "text",
+          "quote": "By using a magnetic field created by permanent magnets. In this field B, the secondary electrons spiral around the magnetic field lines with the cyclotron radius rc rc = p2meEkin,⊥ eB (16) with me the electron mass, e its charge and Ekin,⊥the kinetic energy of the velocity component perpendicular to the field lines. For the example of Ekin,⊥= 10 eV and a field of 10 mT the radius is rc ∼1 mm.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "arithmetic"
+      ],
+      "note": "The field strength of the cup (60 mT) is stated only in the caption of Fig. 16, which writes the magnets as Co-Sm; the formula and the worked example at 10 mT are in the text of the same page. Scaling the rounded example gives 0.17 mm, the formula itself 0.18 mm."
+    },
+    {
+      "id": 2030,
+      "status": "traced",
+      "doc_id": "dones-cfd-analyses-quench-tank",
+      "evidence": [
+        {
+          "doc_id": "dones-cfd-analyses-quench-tank",
+          "page": 4,
+          "kind": "figure",
+          "quote": "Both curves limit the evolution of the centreline velocity field. The dashed line shows the expected distance from the jet exit to the wall of the QT. According to this diagram the jet centreline velocity in the impinging zone can vary between 5 and 8 m/s. That means that the jet kinetic energy will not be completely dissipated by the depth of the QT and the highspeed flow will generate swirling and splashing of lithium free-surface. Fig.2 Centreline velocity decrease for the free planar jet."
+        }
+      ],
+      "traits": [],
+      "note": "The passage is the description of Fig. 2 of the paper followed by its caption; the two velocities are stated in the text, not read off the plot."
+    },
+    {
+      "id": 2031,
+      "status": "traced",
+      "doc_id": "dones-development-electrochemical-sensor-hydrogen",
+      "evidence": [
+        {
+          "doc_id": "dones-development-electrochemical-sensor-hydrogen",
+          "page": 4,
+          "kind": "text",
+          "quote": "Unfortunately such a favorable single-material membrane (in EC measurements mostly ceramic solid electrolytes, as it is seen for a molten metal system in Fig.1) does not exist up-to-date for the use in liquid lithium. This means so far, all the functionalities (permeation = conducting for one chemical species + insulation for electric currents + mechanical stability) of such a membrane must be compiled/collocated/merged by several different, but compatible components to forming a whole suitable Li-resistant membrane system i.e. a metallic skin- with strong stability and high permeation rates, and a dielectric matrix that supports the hydrogen permeation.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-development-electrochemical-sensor-hydrogen",
+          "page": 5,
+          "kind": "text",
+          "quote": "Under the intended conditions, i.e. to be stable in liquid lithium and to have high permeation rates for hydrogen, niobium seems to be the favored membrane material, due to its compromise of high permeability and sufficient stability.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-development-electrochemical-sensor-hydrogen",
+          "page": 5,
+          "kind": "text",
+          "quote": "An intense literature research of suitable hydrogen conducting systems lead to calcium chloride (CaCl2) with a small addition (between 5-15 %) of calcium hydride CaH2.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "false_premise"
+      ],
+      "note": "False premise: the sensor has no ceramic membrane; the paper says that such a membrane does not exist for liquid lithium."
+    },
+    {
+      "id": 2032,
+      "status": "traced",
+      "doc_id": "dones-eu-fusion-oriented-neutron",
+      "evidence": [
+        {
+          "doc_id": "dones-eu-fusion-oriented-neutron",
+          "page": 8,
+          "kind": "text",
+          "quote": "radiation streaming through the beam ducts. Thus, increasing the thickness of the wall between TC and TIR has no effect on reducing the dose rate in the TIR. Accordingly, the reduced thickness of 3 m (see Sect. 3.3.1) has been confirmed for this wall. In addition, local shielding of the beam duct crossing TIR is being explored.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-eu-fusion-oriented-neutron",
+          "page": 7,
+          "kind": "text",
+          "quote": "In all the investigated cases with different shielding walls dimensions, the prompt dose rate in the upstream zone of the TC is very high (well above the 100 mSv/h limit in the TIR) because of the effect of",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "non_native"
+      ],
+      "note": "The sentence that gives the reason is split between pages 7 and 8; the first passage is its end, with the decisive fact, the second its beginning."
+    },
+    {
+      "id": 2033,
+      "status": "traced",
+      "doc_id": "dones-high-power-liquid-lithium",
+      "evidence": [
+        {
+          "doc_id": "dones-high-power-liquid-lithium",
+          "page": 3,
+          "kind": "text",
+          "quote": "The setup takes into advantage the exceptionally high specific heat capacity of liquid lithium (Cp= 4350 J/kg·K, as high as that of water) and its extremely low vapor pressure (7×10-9 mbar at 220 oC). A simple expression of the power conveyed is given by qconv = ρ vCp A ΔT, where ρ is the density of liquid lithium (0.51 g/cm3 at 220 oC), v its flow velocity, A the cross section area of the film and ΔT the permitted temperature elevation. For values of ΔT ~ 100 oC and v of the order of 1 m/s, the power conveyed by the flow is ~ 6 kW for the jet dimensions given above.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-high-power-liquid-lithium",
+          "page": 3,
+          "kind": "text",
+          "quote": "A rectangular-shaped nozzle just before the curved wall determines the film width and thickness (18 mm and 1.5 mm respectively, see Section III for details).",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "arithmetic",
+        "names_document"
+      ],
+      "note": "The question names LiLiT, the system this paper describes. The SARAF overview in the corpus (dones-soreq-applied-research-accelerator, pages 5 and 6) repeats the film dimensions, 18 mm by 1.5 mm, but has neither the heat capacity nor the expression for the conveyed power."
+    },
+    {
+      "id": 2034,
+      "status": "traced",
+      "doc_id": "dones-high-power-liquid-lithium",
+      "evidence": [
+        {
+          "doc_id": "dones-high-power-liquid-lithium",
+          "page": 14,
+          "kind": "text",
+          "quote": "1.01×10-6 m2/s, which is almost equal to that of lithium at 225 °C (1.04×10-6 m2/s). Hence, at these temperatures and similar flow geometries, water flow and lithium flow have almost identical Reynolds numbers. In water simulation experiments, the water velocity was up to 26 m/s and the simulation results showed a stable water film with a smooth surface. Water simulations were also made with a nozzle system made of perspex and scaled in dimensions by a factor 6 in order to reproduce both the Reynolds",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-high-power-liquid-lithium",
+          "page": 14,
+          "kind": "text",
+          "quote": "The nozzle was designed following a series of water experimental simulations, since water at 20 °C has a kinematic viscosity of",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-high-power-liquid-lithium",
+          "page": 15,
+          "kind": "text",
+          "quote": "number and the Weber number of the lithium flow (which takes into account of the liquid surface tension). In these conditions, a water flow of 1 m/s, analogous to a Li flow of ~ 7 m/s, was smooth and stable.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "names_document"
+      ],
+      "note": "The question names LiLiT. In the page text the sentence on the two viscosities is cut in two by the caption of Figure 11, and the passage runs over from page 14 to page 15: hence three quotes."
+    },
+    {
+      "id": 2035,
+      "status": "traced",
+      "doc_id": "dones-high-power-target-instrumentation",
+      "evidence": [
+        {
+          "doc_id": "dones-high-power-target-instrumentation",
+          "page": 1,
+          "kind": "text",
+          "quote": "Recently, pitting damage became evident in the mercury target container [7], and the extent of the damage is proportional to the fourth power of the peak current density of the proton beam.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-high-power-target-instrumentation",
+          "page": 4,
+          "kind": "text",
+          "quote": "It is also confirmed that the calculated beam profile by using the muon target showed good agreement with the experiment for both cases with and without octupole magnetic field. By the calculation result, the peak density can be thought to be reduced by 30% compared with the linear optics.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "arithmetic"
+      ],
+      "note": "The paper does not state the resulting reduction of the damage: it follows from its fourth-power law (page 1) and its 30% (page 4, repeated in the conclusion on page 6). The SNS paper of this batch (dones-status-beam-imaging-developments) uses the same fourth-power assumption, for the lifetime of the SNS target."
+    },
+    {
+      "id": 2036,
+      "status": "traced",
+      "doc_id": "dones-ifmif-dones-fusion-oriented",
+      "evidence": [
+        {
+          "doc_id": "dones-ifmif-dones-fusion-oriented",
+          "page": 7,
+          "kind": "text",
+          "quote": "The boiling margin is assured by the centrifugal forces of the fast flowing Li on the concave-shaped channel. The saturation temperature on the free surface is Ts = 342.14 ◦C, at P = 10−3 Pa. The variation of Li jet surface temperature, due to the power deposition, is about 30 ◦C, therefore the Li temperature in operation cannot be increased over 300 ◦C to avoid phenomena of ‘superficial boiling’ and strong superficial evaporation. This physical limit can be increased only by increasing the pressure in the vacuum chamber, which determines the increase of the saturation temperature."
+        },
+        {
+          "doc_id": "dones-lithium-systems-ifmif-dones",
+          "page": 15,
+          "kind": "text",
+          "quote": "The saturation temperature on the free surface is Ts = 342.14 ◦C at 10−3 Pa. Given the temperature variation of approximately 30 ◦C due to the beam power deposition, the Li operating temperature should not exceed 300 ◦C to avoid ‘superficial boiling’ and strong surface evaporation."
+        }
+      ],
+      "traits": [],
+      "note": "The same explanation, with the same numbers, is given almost word for word in the 2025 paper on the lithium systems (second passage); either document answers the question."
+    },
+    {
+      "id": 2037,
+      "status": "traced",
+      "doc_id": "dones-irradiation-facilities-irradiation-methods",
+      "evidence": [
+        {
+          "doc_id": "dones-irradiation-facilities-irradiation-methods",
+          "page": 6,
+          "kind": "text",
+          "quote": "Alternatives are currently being explored to use intense proton sources, electron sources or laser sources to test thermal shock response more effectively and enable high cycle fatigue studies (> 1 × 107 loading cycles). The advantage of using electron or laser beams is that we perform testing using prototypical beam loading parameters without activating the specimens. Currently the HiRadMat beamline at CERN is the only user facility that allows for this intensity but has limitations in the number of consecutive pulses per experiment (~100 pulses maximum), dependence upon the LHC beam operation schedule, and residual activity of the specimens."
+        }
+      ],
+      "traits": [
+        "non_native"
+      ],
+      "note": "Page 8 of the same paper describes HiRadMat again (440 GeV/c, 3.5e13 protons per pulse, 7.2 μs) without the limitations asked about."
+    },
+    {
+      "id": 2038,
+      "status": "traced",
+      "doc_id": "dones-overview-ess-beam-diagnostics",
+      "evidence": [
+        {
+          "doc_id": "dones-overview-ess-beam-diagnostics",
+          "page": 4,
+          "kind": "figure",
+          "quote": "Figure 9: Maximum temperature on a graphite slit for different slit angle in function of the beam pulse length. The mechanical limits of graphite are around 1600 K, the estimation of the temperature shows that the slit cannot handle a 100 μs beam pulse. In order to preserve the slit integrity, the pulse length has to be reduced to 50 μs, in this case, an angle of 30° is enough to keep the thermal load below the limits of the graphite.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-overview-ess-beam-diagnostics",
+          "page": 3,
+          "kind": "text",
+          "quote": "At 3 MeV, the thermal load is an issue and the slit cannot operate during the production mode. Based on LINAC4 design [5], graphite is the best solution for slit material. To lower the thermal load, the energy deposition is spread on a larger surface by tilting the slit with respect to the beam axis. Figure 9 shows the maximum temperature on the slit for 3 angles (45°, 30° and 15°) in function of the beam pulse length.",
+          "group": "a"
+        }
+      ],
+      "traits": [],
+      "note": "The pulse length and the angle are stated in the text that follows the caption of Figure 9, not read off the plot. The paper writes MEBT in most places and once 'MBT' for the medium energy beam transport."
+    },
+    {
+      "id": 2039,
+      "status": "traced",
+      "doc_id": "dones-overview-ifmif-dones-diagnostics",
+      "evidence": [
+        {
+          "doc_id": "dones-overview-ifmif-dones-diagnostics",
+          "page": 6,
+          "kind": "text",
+          "quote": "Prompt Radiation Monitor: Finally, another instrument that shall be developed is related to the actuation of Safety Beam Interlocks in case of prompt radiation produced by a destructive misssteering event. This instrument shall trigger a safety shutdown of the beam before the prompt radiation in adjacent rooms (where personnel may be present) are above radio-protection limits. The difference with the previous monitors (which will feed the MPS) is that this instrument will be subjected to more strict reliability requirements since it will be a Safety Class Component. On the other hand, slower reaction times may be required to this monitor (in the order of hundreds of milliseconds).",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-overview-ifmif-dones-diagnostics",
+          "page": 6,
+          "kind": "text",
+          "quote": "Another challenging aspect of the Accelerator Diagnostics is related to the Beam Loss monitoring due to the particularities of the losses to be detected and the fast response time required (around 10 μs).",
+          "group": "a"
+        }
+      ],
+      "traits": [],
+      "note": "The first passage holds the comparison; the second only adds the response time asked of the other beam loss monitors."
+    },
+    {
+      "id": 2040,
+      "status": "traced",
+      "doc_id": "dones-overview-ifmif-dones-lithium",
+      "evidence": [
+        {
+          "doc_id": "dones-overview-ifmif-dones-lithium",
+          "page": 3,
+          "kind": "text",
+          "quote": "An extreme off-nominal scenario concerns with the lithium jet reduction without sufficient time to shut down the beam (due for example a failure of the electromagnetic pump). The lithium jet has a thickness of 25 mm, sufficient to fully stop the deuteron beam within it. The Bragg peak occurs at a depth of approximately 20 mm, about 5 mm from the backplate. According to the numerical simulations the backplate may melt in a range of 20-150 ms if the beam penetrates towards it [8]. To mitigate this scenario, the electromagnetic pump is equipped with a flywheel, and in case of failure the inertia continues suppling lithium during several seconds."
+        },
+        {
+          "doc_id": "dones-lithium-systems-ifmif-dones",
+          "page": 10,
+          "kind": "text",
+          "quote": "Additionally, it must offer a long coast-down time (several seconds), a critical feature to ensure the lithium layer remains sufficiently present across the target, allowing for a beam stop in the event of pump trip or failure. Those requirements led to the selection of a PMP driven by a 160 kW AC motor, featuring a flywheel coupled to the motor axle."
+        }
+      ],
+      "traits": [],
+      "note": "The second passage is from the 2025 paper on the lithium systems, which gives the same reason and the same means (a flywheel on the pump) without the depth of the Bragg peak or the melting time of the backplate. An older safety analysis of the primary loop in the corpus (dones-safety-analysis-dones-primary) studies the same pump trip with assumed coast-down times of 3 to 10 s and describes the danger as boiling of the lithium in the beam footprint, with no flywheel. The depth of the Bragg peak varies between documents: about 20 mm here and in the DONES papers, 19 mm in the IFMIF/EVEDA overview and in the 2018 workshop summary."
+    },
+    {
+      "id": 2041,
+      "status": "traced",
+      "doc_id": "dones-preliminary-analysis-maintainable-test",
+      "evidence": [
+        {
+          "doc_id": "dones-preliminary-analysis-maintainable-test",
+          "page": 5,
+          "kind": "text",
+          "quote": "Different techniques have been investigated for releasing the RLS from the PLS and all are deemed practicable except for water lubricated mechanical cutting due to the possibility of lithium being present."
+        }
+      ],
+      "traits": [],
+      "note": "The passage uses only the abbreviations RLS and PLS, which the paper defines on page 4 (Removable Liner Section, Permanent Liner Section)."
+    },
+    {
+      "id": 2042,
+      "status": "traced",
+      "doc_id": "dones-preliminary-engineering-design-dones",
+      "evidence": [
+        {
+          "doc_id": "dones-preliminary-engineering-design-dones",
+          "page": 7,
+          "kind": "table",
+          "quote": "The SDC-IC design criteria have been successfully verified in all paths in both scenarios with the exception of the one against the immediate plastic flow localisation in path 3 - Scenario 2 (Tab. 1). Table 1. Verification of the SDC-IC design criteria. Pm/Sm (Pm+Pb)/KeffSm (P+Q)m/Se Scenario 1 Path 1 0.021 0.015 0.243 Path 2 0.013 0.009 0.759 Path 3 0.021 0.014 0.384 Path 4 0.018 0.015 0.291 Scenario 2 Path 1 0.021 0.014 0.682 Path 2 0.013 0.009 0.743 Path 3 0.021 0.014 1.029 Path 4 0.018 0.015 0.291",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-preliminary-engineering-design-dones",
+          "page": 5,
+          "kind": "text",
+          "quote": "In Scenario 1, the 5 MW D+ beam power has been supposed to interact with a foot-print area of 20x5 cm2 (like in IFMIF), while an halved section (10x5 cm2) has been taken into account in case of Scenario 2.",
+          "group": "a"
+        }
+      ],
+      "traits": [],
+      "note": "The table does not say which footprint each scenario stands for; that is on page 5. Path 3 is one of the three paths in the back-plate, and the conclusions call the failed criterion the one that takes thermal stresses into account."
+    },
+    {
+      "id": 2043,
+      "status": "traced",
+      "doc_id": "dones-production-177lu-ifmif-dones",
+      "evidence": [
+        {
+          "doc_id": "dones-production-177lu-ifmif-dones",
+          "page": 2,
+          "kind": "table",
+          "quote": "Table 1. Energy lost in Yb (ΔE) and temperature of the Yb foil and of the Cu backing for different ytterbium thicknesses (lYb) for 40 MeV and 1.25 mA deuteron beam. Similar results were obtained for Yb2O3 sample. ΔE (MeV) lyb (mm) TYb (K) TCu (K) 9.020 1 6492 5454 4.305 0.5 2998 2747 0.833 0.1 762 752 0.414 0.05 514 506 0.083 0.01 423 419",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-production-177lu-ifmif-dones",
+          "page": 2,
+          "kind": "text",
+          "quote": "The maximum deuteron current of 125 mA resulted in temperatures above the melting point for the feasible configurations. Thus, we have optimized the intensity to 1.25 mA to keep the temperature of the sample (TYb = 1096 K) and the backing (TCu = 1358 K) below their melting points, see table 1.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "false_premise"
+      ],
+      "note": "False premise: the table is for 1.25 mA, not for the 125 mA of the facility. Both passages are needed, the table for the temperature and the text for the correction. A later paper of the same group in the corpus (dones-production-177lu-deuterons-ifmif) keeps the 1.25 mA but studies another target (a 0.25 mm Yb2O3 sample on a backing with millichannels, about 1122 K), so the 0.1 mm layer identifies this one."
+    },
+    {
+      "id": 2044,
+      "status": "traced",
+      "doc_id": "dones-proton-beam-imaging-options",
+      "evidence": [
+        {
+          "doc_id": "dones-proton-beam-imaging-options",
+          "page": 3,
+          "kind": "table",
+          "quote": "Table 1: Summary of the optical system properties as given by the ZEMAX primary design and compared to the expected conceptual approach. Expected Values ZEMAX Design Magnification 0.05 - 0.2 0.085 object NAef f R < 1 mm > 0.004 0.00995 DoF > 1 mm < 0.022 T > 0.01 > 0.14 DoF (mm) 5 R (μm ) 30 PSF (mm) 2-4 Geometric T 5 · 10−5"
+        }
+      ],
+      "traits": [
+        "arithmetic"
+      ],
+      "note": "The table is extracted in a scrambled order: the three NA conditions (> 0.004 for R < 1 mm, < 0.022 for DoF > 1 mm, > 0.14 for T > 0.01) come first and the values of the ZEMAX design after them. The text next to it states the same point in words (T = 1 % at NA = 0.14; the design is 'not even close to 0.05')."
+    },
+    {
+      "id": 2045,
+      "status": "traced",
+      "doc_id": "dones-reducing-risk-accelerating-delivery",
+      "evidence": [
+        {
+          "doc_id": "dones-reducing-risk-accelerating-delivery",
+          "page": 4,
+          "kind": "table",
+          "quote": "Table 1 Proposed Phases of FAFNIR IFMIF FAFNIR Target Technology Level Existing (Default) Near-term (Baseline) Prospective (Upgrade) Beam 40MeV, 250mA 40MeV, 2.5mA 40MeV,5mA 40MeV, 30mA Target 10MW Liquid Li 100kW Solid rotating C Single slice 200kW Solid rotating C Single/multi- slice 1.2MW Solid rotating C Various options",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-reducing-risk-accelerating-delivery",
+          "page": 4,
+          "kind": "text",
+          "quote": "The proposed FAcility for Fusion Neutron Irradiation Research (FAFNIR) is a stripping source based on the C(d,n) reaction utilizing a 40MeV D+ beam impinging upon a rotating solid carbon target.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-fafnir-strategy-risk-reduction",
+          "page": 2,
+          "kind": "table",
+          "quote": "Table 1.Proposed Phases of FAFNIR IFMIF FAFNIR Target Technology Level Existing (Default) Near-term (Baseline) Prospective (Upgrade) Beam 40MeV, 250mA 40MeV, 2.5mA 40MeV, 5mA 40MeV, 30mA Target 10MW Liquid Li 100kW Solid C rotating Single slice 200kW Solid C rotating Single/ multi- slice 1.2MW Solid C rotating Various options"
+        }
+      ],
+      "traits": [
+        "false_premise",
+        "names_document"
+      ],
+      "note": "False premise: the target of FAFNIR is solid carbon; liquid lithium is the IFMIF column of the same table. The table is also in the other FAFNIR paper of the corpus (third passage). That paper's running text calls the 100 kW option 'the FAFNIR baseline' while both tables label the 200 kW phase as baseline, so the question asks for the full-current upgrade, on which they agree."
+    },
+    {
+      "id": 2046,
+      "status": "traced",
+      "doc_id": "dones-sodium-filling-heat-conducting",
+      "evidence": [
+        {
+          "doc_id": "dones-sodium-filling-heat-conducting",
+          "page": 4,
+          "kind": "text",
+          "quote": "the presence of potassium in NaK-78 leads to generation of several argon isotopes, most of them are radioactive. The generated amount of argon is rather high, several ccm (at Standard Temperature and Pressure) and would lead to a pressure increase ~30 bar in the capsule. Furthermore, argon which does not dissolve in the NaK-78 will likely appear as dispersed bubbles inside the capsule and possibly rise partially to the expansion volume. This, unfortunately, counteracts the purpose of introducing NaK-78 as a heat conductor; therefore, a new filling material is needed. One option could be pure sodium which does not produce argon or other insoluble gases.",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-sodium-filling-heat-conducting",
+          "page": 3,
+          "kind": "text",
+          "quote": "NaK-78 is replaced by Sodium because potassium generates argon isotopes leading to a pressure increase and formation of bubbles which counteract the purpose of introducing NaK-78 as a heat conductor.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "false_premise"
+      ],
+      "note": "False premise: the argon comes from the potassium of NaK-78, not from sodium. The second passage, from the 2022 overview of the project, corrects the premise in the same way but does not give the 30 bar."
+    },
+    {
+      "id": 2047,
+      "status": "traced",
+      "doc_id": "dones-specific-instrumentation-diagnostics-high",
+      "evidence": [
+        {
+          "doc_id": "dones-specific-instrumentation-diagnostics-high",
+          "page": 14,
+          "kind": "table",
+          "quote": "Table 2: Screen sensitivities for hadron beams, from Refs. [49–51] Material Relative sensitivity Decay time (10%) Maximum emission Al2O3:Cr 1 > 20 ms 700 nm CsI:Tl ≈200 900 ns 550 nm Li Glass:Ce ≈0.05 100 ns 400 nm Quartz SiO2 ≈0.005 1 ns to 10 ns 600 nm P43 (Gd2O2S:Tb) ≈1.5 1 ms 545 nm P46 (Y3Al5O12:Ce) ≈0.2 300 ns 530 nm ZnS:Ag ≈0.1 200 ns 450 nm"
+        }
+      ],
+      "traits": [],
+      "note": "Only this document gives relative sensitivities. Two other general texts of the corpus tabulate decay times of the same materials without sensitivities: dones-transverse-beam-profiles (Table 1, page 10) and dones-beam-instrumentation-diagnostics (Table 4, page 28), which gives CsI:Tl 1 μs and chromium-doped alumina about 10 ms, close to but not the same as the 900 ns and more than 20 ms here. For ZnS:Ag the tables disagree outright: 200 ns here, 3 ms (P11) in the other two."
+    },
+    {
+      "id": 2048,
+      "status": "traced",
+      "doc_id": "dones-status-beam-imaging-developments",
+      "evidence": [
+        {
+          "doc_id": "dones-status-beam-imaging-developments",
+          "page": 2,
+          "kind": "table",
+          "quote": "Table 1: Photon Yields from the 1 GeV SNS Beam Source Photon Yield (photons/proton/steradian) Screen (Cr:Al2O3) 2*10+2 Coating (Cr:Al2O3) 2*10+1 Optical Transition Radiation 3*10-4 Helium scintillation (10 mm) 3*10-3",
+          "group": "a"
+        },
+        {
+          "doc_id": "dones-status-beam-imaging-developments",
+          "page": 2,
+          "kind": "text",
+          "quote": "Helium fills the 2meter long flight path between the target face and the proton beam window (which separates this region from the upstream accelerator vacuum). Therefore, to measure an accurate beam profile, optics with a shallow depth of field must be employed. Table 1 shows the estimated photon yield from a 10 mm thick slab of gas. When other sources are used to image the beam, Helium scintillation from a much thicker section could contribute a noticeable background.",
+          "group": "a"
+        }
+      ],
+      "traits": [
+        "arithmetic"
+      ],
+      "note": "The table writes the yields as 2*10+1 and 3*10-3. The length of the helium path (2 m) and the thickness the table refers to (10 mm) are in the text above it. The estimate assumes that the yield grows in proportion to the thickness and that all of it falls in the field of view."
+    },
+    {
+      "id": 2049,
+      "status": "traced",
+      "doc_id": "dones-transverse-beam-profiles",
+      "evidence": [
+        {
+          "doc_id": "dones-transverse-beam-profiles",
+          "page": 31,
+          "kind": "text",
+          "quote": "and the acceptance angle at the centre of the screen θ = D 2 s = 36 600 = 0.06 rad. (35) We can now calculate the relativistic γ corresponding to this aperture for the OTR radiation: γmin = 1 θ = 1 0.06 = 17. (36) From Eq. (36) we obtain that for the setup of the example and for beams with γ larger than 17 we can observe the whole OTR cone, i.e., we can centre the camera on the reflection axis of the OTR radiator, while for beams of lower momentum we have to centre the camera on one of the lobes as described before."
+        }
+      ],
+      "traits": [
+        "arithmetic"
+      ],
+      "note": "The formulas are flattened in the page text: 'θ = D 2 s = 36 600' is θ = D/(2s) = 36/600 and 'γmin = 1 θ' is 1/θ. The lens diameter and distance of the example are derived on the previous page (page 30)."
+    },
+    {
+      "id": 2050,
+      "status": "traced",
+      "doc_id": "dones-transverse-beam-profiles",
+      "evidence": [
+        {
+          "doc_id": "dones-transverse-beam-profiles",
+          "page": 10,
+          "kind": "table",
+          "quote": "Table 1: Composition and decay times of typical phosphor materials Type Composition Decay time (of light intensity) From 90% to 10% From 10% to 1% P 43 Gd2O2S: Tb 1 ms 1.6 ms P 46 Y3Al5O12: Ce 300 ns 90 μs P 47 Y2SiO5 : Ce, Tb 100 ns 2.9 μs P 20 (Zn, Cd)S: Ag 4 ms 55 ms P 11 ZnS: Ag 3 ms 37 ms"
+        }
+      ],
+      "traits": [],
+      "note": "Another lecture of the corpus (dones-beam-instrumentation-diagnostics, Table 4 on page 28) also lists P47 with a decay time of 100 ns, but only this table has the second column, the decay from 10 % to 1 %. That lecture's table also contains scintillators that are not phosphor powders and are faster still (quartz, alumina, LuAG), hence 'phosphors' in the question."
+    }
+  ]
+}

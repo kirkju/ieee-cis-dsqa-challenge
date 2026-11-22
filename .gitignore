@@ -1,0 +1,22 @@
+# Built submission zips and downloaded model weights: too large for a normal
+# git push (GitHub rejects anything over 100 MB) and not the kind of thing a
+# source repo should carry anyway. Run each example's build.sh to recreate
+# them locally.
+*.zip
+**/docling_models/
+**/embed_model/
+
+# Python bytecode caches, written when the tests and tools run. Left untracked
+# they would make every working tree look modified.
+__pycache__/
+
+# Local output and downloaded material: runs made with a stand-in model, and
+# the development corpus (copyrighted PDFs are never committed). Only at the
+# top of the repository: results/runs/ holds the recorded runs and is kept.
+/runs/
+/data/
+
+# Local environments and tool caches.
+.venv/
+.pytest_cache/
+.ruff_cache/
