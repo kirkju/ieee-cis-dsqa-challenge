@@ -23,7 +23,7 @@ The evaluation takes a zip, imports its `main.py` and calls `answer(question, co
 
 ```mermaid
 flowchart TD
-    subgraph IDX["Once per run: the corpus is read and indexed"]
+    subgraph IDX["Indexing, once per run"]
         PDF["Folder of PDFs"] --> TXT["Text: title, paragraphs, tables, Symbol-font glyphs"]
         TXT --> CH["Chunks that follow each document's structure"]
         CH --> RK["Rankings by shared words and by MiniLM embeddings, fused"]
